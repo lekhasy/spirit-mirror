@@ -1,11 +1,183 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const countries = [
+	{ name: 'Japan', path: '/japan', image: 'https://orizuruya.net/wp-content/uploads/2024/07/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2024-07-29-111659.png', description: 'Seasons and refined traditions — experience tea ceremonies, delicate crafts, and seasonal festivals that celebrate nature and community.', flagColors: ['#ffffff','#bc002d'] },
+	{ name: 'Vietnam', path: '/vietnam', image: 'https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'Market flavors and river life — vibrant street food scenes, bustling markets, and waterways that shape daily rhythms.', flagColors: ['#d80000','#ffdd00'] },
+	{ name: 'Brazil', path: '/brazil', image: 'https://images.unsplash.com/photo-1700677866571-43199bcbc593?q=80&w=3430&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'Rhythm and color — lively music, dance, and festivals that bring communities together along the coast and in cities.', flagColors: ['#009b3a','#ffdf00','#002776'] },
+	{ name: 'Nigeria', path: '/nigeria', image: 'https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'Bold textiles and storytelling — discover rich fashion traditions, contemporary arts, and dynamic urban culture.', flagColors: ['#008751','#ffffff','#008751'] },
+	{ name: 'India', path: '/india', image: 'https://images.unsplash.com/flagged/photo-1577604981316-298e453a19dd?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'A tapestry of festivals, cuisines, and languages — regional diversity offers countless local traditions and celebrations.', flagColors: ['#ff9933','#ffffff','#138808'] }
+];
 ---
 
 <Layout>
-	<Welcome />
+	<div class="hero-carousel" id="hero">
+		<!-- slides will be populated by client JS -->
+	</div>
+	<div class="hero-overlay"></div>
+
+	<main class="site-content">
+		<aside class="search-panel" aria-label="Search countries">
+			<input id="searchInput" class="search-input" placeholder="Type a country..." autocomplete="off" />
+			<div id="results" class="results"></div>
+		</aside>
+
+		<div class="hero-cta">
+			<h1 id="heroTitle" style="margin:0 0 8px;color:white;font-size:28px;text-shadow:0 4px 18px rgba(0,0,0,0.45)"></h1>
+			<p id="heroSubtitle" style="margin:0 0 16px;color:rgba(255,255,255,0.95);max-width:420px">Discover people and culture from around the world.</p>
+			<a id="exploreBtn" class="explore-btn" href="/japan"><span class="explore-label">Explore</span></a>
+		</div>
+	</main>
+
+	<!-- embed server-side data for client script -->
+	<div id="__data" style="display:none" data-countries={JSON.stringify(countries)}></div>
+
+	<script type="module">
+		const countries = JSON.parse(document.getElementById('__data').dataset.countries);
+		const hero = document.getElementById('hero');
+		const exploreBtn = document.getElementById('exploreBtn');
+
+		// create slides
+		countries.forEach((c,i)=>{
+			const div = document.createElement('div');
+			div.className = 'hero-slide' + (i===0? ' active':'');
+			div.style.backgroundImage = `url(${c.image})`;
+			div.dataset.index = i;
+			hero.appendChild(div);
+		});
+
+		let current = 0;
+		function show(index){
+			const slides = document.querySelectorAll('.hero-slide');
+			slides.forEach(s=>s.classList.remove('active'));
+			slides[index].classList.add('active');
+			current = index;
+			exploreBtn.href = countries[index].path;
+
+			// apply flag colors to the explore button
+			const colors = countries[index].flagColors || ['#ffd36e','#ff6ec7'];
+			// move gradient to inner label so the pill covers the whole clickable area and set its text
+			const label = exploreBtn.querySelector('.explore-label');
+			if(label){
+				label.textContent = `Explore ${countries[index].name}`;
+				label.style.background = `linear-gradient(90deg, ${colors.join(',')})`;
+				label.style.display = 'inline-block';
+				label.style.width = '100%';
+				label.style.boxSizing = 'border-box';
+				label.style.textAlign = 'center';
+				label.style.padding = '12px 20px';
+				label.style.borderRadius = '999px';
+			}
+
+			// simple brightness check to pick readable text color
+			function brightness(hex){
+				const h = hex.replace('#','');
+				const r = parseInt(h.substring(0,2),16);
+				const g = parseInt(h.substring(2,4),16);
+				const b = parseInt(h.substring(4,6),16);
+				return (r*299 + g*587 + b*114) / 255000;
+			}
+
+			const primary = colors[0].startsWith('#') ? colors[0] : '#ffffff';
+			const isLight = brightness(primary) > 0.6;
+			// style the inner label pill for stronger separation
+			const labelBgLight = 'rgba(255,255,255,0.92)';
+			const labelBgDark = 'rgba(0,0,0,0.42)';
+			if(label){
+				if(isLight){
+					label.style.background = labelBgLight;
+					label.style.color = '#111';
+					label.style.boxShadow = '0 6px 18px rgba(0,0,0,0.12)';
+					exploreBtn.style.border = '1px solid rgba(0,0,0,0.12)';
+				} else {
+					label.style.background = labelBgDark;
+					label.style.color = '#fff';
+					label.style.boxShadow = '0 6px 24px rgba(0,0,0,0.36)';
+					exploreBtn.style.border = '1px solid rgba(255,255,255,0.08)';
+				}
+				label.style.padding = '10px 16px';
+				label.style.borderRadius = '999px';
+				label.style.fontWeight = '700';
+				label.style.display = 'inline-block';
+			}
+
+			const sub = document.getElementById('heroSubtitle');
+			const title = document.getElementById('heroTitle');
+			if(title) title.textContent = countries[index].name;
+			if(sub) sub.textContent = countries[index].description || '';
+			const siteCurrent = document.getElementById('siteCurrent');
+			if(siteCurrent) siteCurrent.textContent = countries[index].name;
+		}
+
+		// randomize order and cycle every 3s
+		const order = countries.map((_,i)=>i).sort(()=>Math.random()-0.5);
+		let pos = 0;
+		show(order[pos]);
+		setInterval(()=>{
+			pos = (pos+1) % order.length;
+			show(order[pos]);
+		},5000);
+
+		// Search box logic
+		const input = document.getElementById('searchInput');
+		const results = document.getElementById('results');
+
+		function pickRandom(list, n){
+			const copy = list.slice();
+			const out = [];
+			while(out.length < n && copy.length){
+				const i = Math.floor(Math.random() * copy.length);
+				out.push(copy.splice(i,1)[0]);
+			}
+			return out;
+		}
+
+		function showRandomSuggestions(){
+			const picks = pickRandom(countries, 3);
+			renderResults(picks);
+		}
+
+		function renderResults(list){
+			results.innerHTML = '';
+			if(!list.length){
+				results.innerHTML = '<div class="result-item muted">No matches</div>';
+				return;
+			}
+			list.forEach(c=>{
+				const el = document.createElement('div');
+				el.className = 'result-item';
+				el.textContent = c.name;
+				el.addEventListener('click', ()=>{ location.href = c.path });
+				results.appendChild(el);
+			});
+		}
+
+		input.addEventListener('input', (e)=>{
+			const q = e.target.value.trim().toLowerCase();
+			if(!q){ results.innerHTML = ''; return }
+			const filtered = countries.filter(c=>c.name.toLowerCase().includes(q));
+			renderResults(filtered);
+		});
+
+		// show 3 random suggestions when input is focused/clicked and empty
+		input.addEventListener('focus', (e)=>{ if(!e.target.value.trim()) showRandomSuggestions(); });
+		input.addEventListener('click', (e)=>{ if(!e.target.value.trim()) showRandomSuggestions(); });
+
+		input.addEventListener('keydown', (e)=>{
+			if(e.key === 'Enter'){
+				const q = e.target.value.trim().toLowerCase();
+				const match = countries.find(c=>c.name.toLowerCase() === q) || countries.find(c=>c.name.toLowerCase().includes(q));
+				if(match) location.href = match.path;
+			}
+		});
+
+		// hide results when clicking outside the search panel
+		document.addEventListener('click', (e) => {
+			const panel = document.querySelector('.search-panel');
+			if (!panel) return;
+			if (!panel.contains(e.target)) {
+				results.innerHTML = '';
+			}
+		});
+	</script>
 </Layout>

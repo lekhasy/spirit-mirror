@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div style="min-height:100vh;background:linear-gradient(120deg,#ffb199,#ffecd2);color:#2b2b2b">
+    <header style="padding:56px 6vw;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <h1 style="margin:0 0 8px;font-size:44px">Vietnam</h1>
+        <p style="margin:0;max-width:56%">A landscape of rivers, food markets and living traditions — warm, convivial and vivid.</p>
+      </div>
+      <a href="/" style="padding:10px 14px;background:#2b2b2b;color:white;border-radius:10px;text-decoration:none">Back</a>
+    </header>
+
+    <section style="display:flex;gap:24px;padding:0 6vw 56px;align-items:stretch">
+      <div style="flex:1;background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1600&auto=format&fit=crop');background-size:cover;border-radius:18px;min-height:46vh;box-shadow:0 12px 40px rgba(0,0,0,0.18)"></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:18px">
+        <div style="background:rgba(255,255,255,0.8);padding:18px;border-radius:12px">
+          <h3>Street Food</h3>
+          <p>Markets and street vendors are the beating heart of everyday flavor, with pho, bun cha, and fresh herbs.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.85);padding:18px;border-radius:12px">
+          <h3>Craft & Community</h3>
+          <p>Small craft villages and communal rituals hold knowledge passed down through generations.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
