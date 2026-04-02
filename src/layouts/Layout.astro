@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+const { title = 'Spirit Mirror — Discover World Cultures' } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -10,7 +11,7 @@ import '../styles/global.css';
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#ff6ec7" />
-		<title>Spirit Mirror — Discover World Cultures</title>
+		<title>{title}</title>
 	</head>
 	<body class="site-root">
 		<header class="site-header" role="banner">
