@@ -1,29 +1,741 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import data from '../data/vietnam.json';
+const pillars = data.pillars;
 ---
 
-<Layout>
-  <div style="min-height:100vh;background:linear-gradient(120deg,#ffb199,#ffecd2);color:#2b2b2b">
-    <header style="padding:56px 6vw;display:flex;align-items:center;justify-content:space-between">
-      <div>
-        <h1 style="margin:0 0 8px;font-size:44px">Vietnam</h1>
-        <p style="margin:0;max-width:56%">A landscape of rivers, food markets and living traditions — warm, convivial and vivid.</p>
-      </div>
-      <a href="/" style="padding:10px 14px;background:#2b2b2b;color:white;border-radius:10px;text-decoration:none">Back</a>
-    </header>
+<Layout title="Vietnam — Spirit Mirror">
 
-    <section style="display:flex;gap:24px;padding:0 6vw 56px;align-items:stretch">
-      <div style="flex:1;background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1600&auto=format&fit=crop');background-size:cover;border-radius:18px;min-height:46vh;box-shadow:0 12px 40px rgba(0,0,0,0.18)"></div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:18px">
-        <div style="background:rgba(255,255,255,0.8);padding:18px;border-radius:12px">
-          <h3>Street Food</h3>
-          <p>Markets and street vendors are the beating heart of everyday flavor, with pho, bun cha, and fresh herbs.</p>
+<!-- Hero -->
+<section class="vn-hero">
+  <div class="vn-hero-bg" aria-hidden="true"></div>
+  <div class="vn-hero-inner">
+    <div class="vn-hero-tag">Culture · Heritage · Identity</div>
+    <h1 class="vn-hero-title">
+      <span class="vn-hero-viet">Việt</span>
+      <span class="vn-hero-nam">Nam</span>
+    </h1>
+    <p class="vn-hero-subtitle">Four thousand years of resilience, artistry, and spirit — explored through the pillars that define who the Vietnamese people are.</p>
+    <div class="vn-hero-stats">
+      <div class="vn-stat"><span class="vn-stat-n">4,000+</span><span class="vn-stat-l">Years of History</span></div>
+      <div class="vn-stat-divider" aria-hidden="true"></div>
+      <div class="vn-stat"><span class="vn-stat-n">54</span><span class="vn-stat-l">Ethnic Groups</span></div>
+      <div class="vn-stat-divider" aria-hidden="true"></div>
+      <div class="vn-stat"><span class="vn-stat-n">9</span><span class="vn-stat-l">Cultural Pillars</span></div>
+    </div>
+  </div>
+  <div class="vn-hero-scroll" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <span class="vn-scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- Pillar Navigation -->
+<nav class="vn-tabs" aria-label="Culture pillars">
+  <div class="vn-tabs-inner">
+    {pillars.map((p, i) => (
+      <button
+        class={`vn-tab${i === 0 ? ' active' : ''}`}
+        data-pillar={p.id}
+        aria-selected={i === 0 ? 'true' : 'false'}
+      >
+        <span class="vn-tab-icon">{p.icon}</span>
+        <span class="vn-tab-label">{p.title}</span>
+      </button>
+    ))}
+  </div>
+</nav>
+
+<!-- Content -->
+<main class="vn-main">
+  {pillars.map((p, pi) => (
+    <section
+      class={`vn-pillar${pi === 0 ? ' active' : ''}`}
+      id={`pillar-${p.id}`}
+      aria-hidden={pi !== 0 ? 'true' : 'false'}
+    >
+      <div class="vn-pillar-header">
+        <div class="vn-pillar-header-left">
+          <span class="vn-pillar-number">0{pi + 1}</span>
+          <div>
+            <h2 class="vn-pillar-title">{p.title}</h2>
+            <p class="vn-pillar-sub">{p.entries.length} chapters across time</p>
+          </div>
         </div>
-        <div style="background:rgba(255,255,255,0.85);padding:18px;border-radius:12px">
-          <h3>Craft & Community</h3>
-          <p>Small craft villages and communal rituals hold knowledge passed down through generations.</p>
-        </div>
+        <span class="vn-pillar-icon-lg">{p.icon}</span>
+      </div>
+
+      <div class="vn-timeline">
+        <div class="vn-timeline-line" aria-hidden="true"></div>
+        {p.entries.map((entry, ei) => (
+          <div class={`vn-card-wrap ${ei % 2 === 0 ? 'left' : 'right'}`}>
+            <div class="vn-timeline-node" aria-hidden="true">
+              <div class="vn-node-outer"></div>
+              <div class="vn-node-inner"></div>
+            </div>
+            <article class="vn-card">
+              <div class="vn-card-top">
+                <span class="vn-card-period">{entry.period}</span>
+                <span class="vn-card-era">{entry.era}</span>
+              </div>
+              <h3 class="vn-card-title">{entry.title}</h3>
+              <p class="vn-card-summary">{entry.summary}</p>
+              <div class="vn-card-content" hidden>
+                <p>{entry.content}</p>
+              </div>
+              <button class="vn-card-toggle" aria-expanded="false">
+                <span class="vn-toggle-text">Read more</span>
+                <span class="vn-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </article>
+          </div>
+        ))}
       </div>
     </section>
+  ))}
+</main>
+
+<footer class="vn-footer">
+  <div class="vn-footer-inner">
+    <a href="/" class="vn-footer-logo">Spirit Mirror</a>
+    <p class="vn-footer-copy">Exploring cultures, one story at a time.</p>
+    <a href="/" class="vn-footer-back">← All Cultures</a>
   </div>
+</footer>
+
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap');
+
+  /* ── Variables ─────────────────────────────── */
+  :root {
+    --vn-dark: #0a0f0d;
+    --vn-dark2: #111a15;
+    --vn-green: #0d4a2a;
+    --vn-green-mid: #1a6b3c;
+    --vn-accent: #e8a020;
+    --vn-accent2: #ff4d4d;
+    --vn-red: #da2339;
+    --vn-white: #f8f9f7;
+    --vn-off: #f0f2ee;
+    --vn-card: #ffffff;
+    --vn-text: #1a1a1a;
+    --vn-muted: #6b7280;
+    --vn-border: #e5e7e3;
+    --vn-node: #e8a020;
+  }
+
+  /* ── Global overrides ───────────────────────── */
+  :global(.site-root) {
+    background: var(--vn-white) !important;
+  }
+  :global(.site-header) {
+    background: var(--vn-dark) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+  :global(.site-logo) {
+    color: #fff !important;
+    font-family: 'Playfair Display', serif !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* ── Hero ───────────────────────────────────── */
+  .vn-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 120px;
+    overflow: hidden;
+    background: var(--vn-dark);
+  }
+
+  .vn-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 50%, rgba(13,74,42,0.7) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(218,35,57,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 100% 100% at 50% 100%, rgba(232,160,32,0.08) 0%, transparent 60%);
+  }
+
+  .vn-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .vn-hero-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--vn-accent);
+    border: 1px solid rgba(232,160,32,0.35);
+    border-radius: 100px;
+    padding: 6px 18px;
+    margin-bottom: 32px;
+  }
+
+  .vn-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 14vw, 9rem);
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 0 0 28px;
+    display: block;
+  }
+
+  .vn-hero-viet {
+    display: block;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .vn-hero-nam {
+    display: block;
+    color: var(--vn-accent);
+    letter-spacing: -0.02em;
+  }
+
+  .vn-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+    max-width: 560px;
+    margin: 0 auto 52px;
+  }
+
+  .vn-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .vn-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .vn-stat-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .vn-stat-l {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .vn-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .vn-hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    z-index: 1;
+  }
+
+  .vn-scroll-arrow {
+    animation: vn-bounce 1.6s ease-in-out infinite;
+    display: block;
+  }
+
+  @keyframes vn-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── Tabs ───────────────────────────────────── */
+  .vn-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,15,13,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .vn-tabs-inner {
+    display: flex;
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    padding: 0 8px;
+  }
+  .vn-tabs-inner::-webkit-scrollbar { display: none; }
+
+  .vn-tab {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .vn-tab:hover {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .vn-tab.active {
+    color: #fff;
+    border-bottom-color: var(--vn-accent);
+  }
+
+  .vn-tab-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  /* ── Main ───────────────────────────────────── */
+  .vn-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .vn-pillar { display: none; }
+  .vn-pillar.active {
+    display: block;
+    animation: vn-in 0.35s ease;
+  }
+
+  @keyframes vn-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Pillar header */
+  .vn-pillar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--vn-border);
+  }
+
+  .vn-pillar-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .vn-pillar-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--vn-border);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .vn-pillar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--vn-text);
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+
+  .vn-pillar-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--vn-muted);
+    margin: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .vn-pillar-icon-lg {
+    font-size: 3rem;
+    opacity: 0.15;
+    user-select: none;
+  }
+
+  /* ── Timeline ───────────────────────────────── */
+  .vn-timeline {
+    position: relative;
+  }
+
+  .vn-timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--vn-border) 5%, var(--vn-border) 95%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .vn-card-wrap {
+    position: relative;
+    display: flex;
+    margin-bottom: 56px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .vn-card-wrap.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .vn-card-wrap.left {
+    padding-right: calc(50% + 36px);
+  }
+
+  .vn-card-wrap.right {
+    flex-direction: row-reverse;
+    padding-left: calc(50% + 36px);
+  }
+
+  .vn-card-wrap.left .vn-card {
+    text-align: right;
+  }
+
+  .vn-card-wrap.left .vn-card-top {
+    justify-content: flex-end;
+  }
+
+  .vn-card-wrap.left .vn-card-toggle {
+    margin-left: auto;
+  }
+
+  /* Node */
+  .vn-timeline-node {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .vn-node-outer {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--vn-accent);
+    background: var(--vn-white);
+    transition: transform 0.2s;
+  }
+
+  .vn-card-wrap:hover .vn-node-outer {
+    transform: scale(1.3);
+  }
+
+  .vn-node-inner {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--vn-accent);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Card ───────────────────────────────────── */
+  .vn-card {
+    background: var(--vn-card);
+    border: 1px solid var(--vn-border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .vn-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .vn-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .vn-card-period {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--vn-accent);
+    background: rgba(232,160,32,0.1);
+    border: 1px solid rgba(232,160,32,0.25);
+    border-radius: 100px;
+    padding: 3px 12px;
+  }
+
+  .vn-card-era {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: var(--vn-muted);
+    font-weight: 400;
+  }
+
+  .vn-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--vn-text);
+    margin: 0 0 10px;
+    line-height: 1.35;
+  }
+
+  .vn-card-summary {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin: 0 0 16px;
+    font-weight: 400;
+  }
+
+  .vn-card-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #374151;
+    border-top: 1px solid var(--vn-border);
+    padding-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .vn-card-content p { margin: 0; }
+
+  .vn-card-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--vn-green-mid);
+    padding: 0;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .vn-card-toggle:hover {
+    color: var(--vn-accent);
+  }
+
+  .vn-toggle-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+    position: relative;
+  }
+
+  .vn-toggle-icon::before,
+  .vn-toggle-icon::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 2px;
+  }
+  .vn-toggle-icon::before {
+    width: 7px; height: 1.5px;
+  }
+  .vn-toggle-icon::after {
+    width: 1.5px; height: 7px;
+    transition: transform 0.25s;
+  }
+
+  .vn-card-toggle[aria-expanded="true"] .vn-toggle-icon::after {
+    transform: rotate(90deg);
+  }
+
+  /* ── Footer ─────────────────────────────────── */
+  .vn-footer {
+    background: var(--vn-dark);
+    padding: 48px 24px;
+  }
+
+  .vn-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .vn-footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .vn-footer-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    margin: 0;
+  }
+
+  .vn-footer-back {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--vn-accent);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+
+  .vn-footer-back:hover {
+    color: #fff;
+  }
+
+  /* ── Mobile ─────────────────────────────────── */
+  @media (max-width: 640px) {
+    .vn-timeline-line { left: 16px; }
+
+    .vn-card-wrap.left,
+    .vn-card-wrap.right {
+      flex-direction: column;
+      padding-left: 44px;
+      padding-right: 0;
+    }
+
+    .vn-card-wrap.left .vn-card { text-align: left; }
+    .vn-card-wrap.left .vn-card-top { justify-content: flex-start; }
+    .vn-card-wrap.left .vn-card-toggle { margin-left: 0; }
+
+    .vn-timeline-node {
+      left: 16px;
+      top: 18px;
+    }
+
+    .vn-tab-label { display: none; }
+    .vn-tab { padding: 14px 16px; }
+    .vn-tab-icon { font-size: 1.1rem; }
+
+    .vn-pillar-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .vn-pillar-icon-lg { display: none; }
+
+    .vn-hero-stats { gap: 20px; }
+    .vn-stat-divider { height: 28px; }
+
+    .vn-footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.vn-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.vn-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const target = tab.dataset.pillar;
+      document.querySelectorAll('.vn-pillar').forEach(p => {
+        const active = p.id === `pillar-${target}`;
+        p.classList.toggle('active', active);
+        p.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+
+      observeCards();
+    });
+  });
+
+  // Expand / collapse
+  document.querySelectorAll('.vn-card-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.closest('.vn-card').querySelector('.vn-card-content');
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      content.hidden = open;
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      btn.querySelector('.vn-toggle-text').textContent = open ? 'Read more' : 'Read less';
+    });
+  });
+
+  // Scroll animation
+  let observer;
+  function observeCards() {
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.vn-pillar.active .vn-card-wrap:not(.visible)')
+      .forEach(c => observer.observe(c));
+  }
+
+  observeCards();
+</script>
