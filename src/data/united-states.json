@@ -1,0 +1,298 @@
+{
+  "pillars": [
+    {
+      "id": "history",
+      "title": "History",
+      "icon": "📜",
+      "entries": [
+        {
+          "period": "Before 1607",
+          "era": "Indigenous Civilizations",
+          "title": "A Continent of Nations",
+          "summary": "Long before European contact, North America was home to hundreds of distinct nations — sophisticated, trading, warring, and deeply connected to the land.",
+          "content": "The continent north of what is now Mexico was home to an estimated 300 to 500 distinct indigenous nations, speaking dozens of language families. The Iroquois Confederacy of the Northeast was a sophisticated political union of six nations that governed through a written constitution — the Great Law of Peace — predating many European democratic institutions. The Mississippian culture built vast earthen mounds at Cahokia that housed a city of 20,000 people at its peak around 1050 CE. The Navajo and Apache arrived later, displacing earlier Pueblo peoples in the Southwest. Trade networks stretched from the Great Lakes to the Gulf of Mexico, carrying copper, shells, and obsidian. Each nation had its own governance, spiritual traditions, and art — no single 'indigenous experience' exists, only a rich tapestry of distinct cultures."
+        },
+        {
+          "period": "1607–1776",
+          "era": "Colonial Era",
+          "title": "Thirteen Colonies and the Seeds of Revolution",
+          "summary": "European settlers built thirteen colonies along the Atlantic seaboard, creating a society of unprecedented diversity and tension.",
+          "content": "Jamestown, Virginia — England's first permanent settlement in 1607 — nearly perished within its first years, saved only by the acquisition of agricultural knowledge from the Powhatan people. The 1692 Salem witch trials revealed the paranoid underside of early colonial society. By the mid-18th century, the thirteen colonies had developed a distinct identity: diverse, pragmatic, and increasingly resistant to British imperial control. The Great Awakening of the 1730s–1740s — a wave of evangelical revival — unified colonists across denominational lines through shared emotional religious experience. Benjamin Franklin's newspaper network made the colonial press a powerful tool of cultural unification. The French and Indian War (1754–1763) left Britain deeply indebted, setting the stage for taxation disputes that would ignite revolution."
+        },
+        {
+          "period": "1776–1865",
+          "era": "Expansion and Division",
+          "title": "Independence, Westward Spread, and Civil War",
+          "summary": "The young republic expanded westward while confronting the deep contradictions between its ideals of liberty and the institution of slavery.",
+          "content": "The Declaration of Independence in 1776 proclaimed that 'all men are created equal' — a phrase that rang hollow for the 700,000 enslaved Africans living in the new nation. The Constitution's three-fifths compromise counted enslaved people as three-fifths of a person for legislative representation, codifying slavery's centrality to the young republic. The Louisiana Purchase of 1803 doubled the nation's size overnight, and Lewis and Clark's expedition opened American imagination to the vast western frontier. The Trail of Tears (1831–1838) forced the relocation of the Cherokee and other southeastern nations, killing approximately 16,000 people in what remains one of American history's darkest chapters. The Civil War (1861–1865) claimed 620,000 American lives and ended slavery — but Reconstruction's failure would leave the country grappling with its racial divisions for generations."
+        },
+        {
+          "period": "1914–1945",
+          "era": "World Wars and the American Century",
+          "title": "From Isolation to Global Dominance",
+          "summary": "The two World Wars transformed America from an isolationist republic into the world's dominant economic and military power.",
+          "content": "The Progressive Era of the early 20th century saw muckraking journalists expose industrial abuses, women's suffrage finally won the vote in 1920, and Prohibition revealed the nation's ongoing cultural tensions. The Great Depression crushed American confidence — in 1933, one quarter of the workforce was unemployed, and Franklin Roosevelt's New Deal fundamentally transformed the relationship between government and citizen. World War II ended the Depression and established American global supremacy. The war effort mobilized 16 million servicemen, produced the atomic bomb, and demonstrated America's industrial capacity. The post-war boom created a prosperous middle class suburban civilization — the Levittown housing developments, the Interstate Highway System, and the GI Bill that educated a generation. America's global leadership was cemented by the Marshall Plan, NATO, and the emerging Cold War against the Soviet Union."
+        },
+        {
+          "period": "1950–present",
+          "era": "Modern America",
+          "title": "Rights, Wars, and a Changing Nation",
+          "summary": "Civil rights, Vietnam, the fall of communism, 9/11, and a digital revolution remade America repeatedly in seven decades.",
+          "content": "The Civil Rights Movement of the 1950s and 1960s — led by Martin Luther King Jr., Rosa Parks, and countless unnamed activists — dismantled legal segregation and transformed American democracy. The Civil Rights Act of 1964 and the Voting Rights Act of 1965 were the most significant pieces of social legislation since Reconstruction. The Vietnam War divided the nation profoundly, with antiwar protests and the draft exposing deep rifts between generations and classes. The Cold War ended in 1991 with the unexpected collapse of the Soviet Union, leaving America as the world's sole superpower — a status tested by the 9/11 attacks in 2001 and subsequent wars in Afghanistan and Iraq. The 2008 financial crisis exposed deep structural inequalities, and the election of Barack Obama in 2008 — the first Black president — while celebrated as transformative, was soon followed by a fierce political backlash that reshaped American politics."
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "icon": "🎵",
+      "entries": [
+        {
+          "period": "1600–1865",
+          "era": "African Roots",
+          "title": "The Blues Is Born",
+          "summary": "African musical traditions, transplanted through slavery, fused with European forms to create entirely new American genres.",
+          "content": "The transatlantic slave trade brought millions of Africans to North America carrying rich musical traditions — complex polyrhythmic drumming, call-and-response singing, and a deep relationship between music and spiritual expression. Enslaved people created spirituals (Work songs, field hollers, and the sorrow songs of the plantations) that became the foundation of African American sacred and secular music. The banjo — derived from West African string instruments — became the defining sound of antebellum America. After emancipation, Black musicians developed the blues, a fundamentally new harmonic and emotional form built on bent notes, blue notes, and raw emotional honesty about suffering, love, and survival. Ma Rainey, Bessie Smith, and the classic blues women of the 1920s established the genre as a commercial force."
+        },
+        {
+          "period": "1920–1945",
+          "era": "Jazz Age",
+          "title": "America's Classical Music",
+          "summary": "Jazz exploded from New Orleans to become the defining American art form — sophisticated, rebellious, and internationally celebrated.",
+          "content": "Jazz emerged in New Orleans around 1910, synthesized from blues, ragtime, marching band music, and the improvisational traditions of African American communities. Louis Armstrong's revolutionary virtuosity transformed jazz from ensemble music into an art form built on individual expression. Duke Ellington brought orchestral sophistication and compositional ambition to jazz at the Cotton Club in Harlem. The swing era of the 1930s made jazz America's popular music, with big bands led by Count Basie, Benny Goodman, and Glenn Miller filling dance halls nationwide. Jazz became the soundtrack of the Harlem Renaissance — a flowering of Black art, literature, and intellectual life that reshaped American culture. By World War II, jazz had become America's diplomatic cultural weapon and Europe's preferred window into American modernity."
+        },
+        {
+          "period": "1950–1975",
+          "era": "Rock Revolution",
+          "title": "The Sound of Youth",
+          "summary": "Rock and roll, country, and soul fused into a generational declaration of independence that reshaped global youth culture.",
+          "content": "Rock and roll emerged in the 1950s as a fusion of Black rhythm and blues with white country music — Elvis Presley, Chuck Berry, Little Richard, and Jerry Lee Lewis brought Black music to white teenage audiences and changed American culture permanently. The British Invasion of 1964 — led by the Beatles and Rolling Stones — returned the energy to rock and opened a transatlantic creative dialogue. Bob Dylan emerged from the folk scene to become rock's first great poet, his lyrics carrying the weight of the civil rights movement and antiwar protest. Motown Records in Detroit created a Black-owned music industry empire, with The Supremes, Stevie Wonder, and Marvin Gaye defining soul music. Jimi Hendrix redefined the electric guitar's possibilities. Rock was no longer just entertainment — it was the sound of generational identity."
+        },
+        {
+          "period": "1970–1995",
+          "era": "Hip-Hop Emerges",
+          "title": "From the Bronx to the World",
+          "summary": "Born in the South Bronx among Black and Latino youth, hip-hop became the most influential musical movement of the late 20th century.",
+          "content": "Hip-hop emerged in the South Bronx in the early 1970s — Kool Herc's back-to-school parties, Grandmaster Flash's turntable innovations, and Afrika Bambaataa's cultural programming turned marginalized youth culture into a global art form. DJ Kool Herc's technique of isolating and repeating the instrumental 'break' section of records became the foundation of hip-hop production. The five elements — MCing (rapping), DJing, breakdancing, graffiti, and knowledge of self — constituted a complete counterculture. Run-DMC's 1984 'Raising Hell' was the first rap album to go platinum without a single character. By the 1990s, NWA's 'Straight Outta Compton' brought raw Los Angeles street reality to national attention, while Tupac Shakur and Notorious B.I.G. turned East Coast rap into a national obsession. Hip-hop's influence on fashion, film, politics, and language has been more pervasive than any musical form in history."
+        },
+        {
+          "period": "1995–present",
+          "era": "Streaming Era",
+          "title": "Democratization and Global Dominance",
+          "summary": "The internet fractured mainstream music into infinite niches while hip-hop and pop achieved unprecedented global cultural dominance.",
+          "content": "The Napster revolution of 1999 began the internet's disruption of the music industry, eventually collapsing CD sales and transforming how music is distributed and discovered. File sharing devastated major labels' revenues while simultaneously enabling indie artists to build audiences without gatekeepers. MP3 players, iPods, and finally streaming services (Spotify launched in 2008) changed listening habits permanently — from owning music to renting access to an infinite library. Beyoncé redefined what a pop star could be, blending hip-hop swagger with Black feminist politics and masterful album-as-art-event marketing. Hip-hop and R&B became the dominant force in American popular music, with Kendrick Lamar winning the Pulitzer Prize in 2018 for 'DAMN' — the first non-jazz or classical popular album to win. Country music experienced a massive crossover renaissance with Taylor Swift and Lil Nas X breaking genre boundaries. Globalization meant American hip-hop became the world's dominant popular music form."
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "title": "Literature",
+      "icon": "✍️",
+      "entries": [
+        {
+          "period": "1850–1900",
+          "era": "19th-Century Foundations",
+          "title": "The American Canon Takes Shape",
+          "summary": "Hawthorne, Melville, Twain, and Dickinson established the themes — identity, nature, democracy, and the American dream — that would define American literature forever.",
+          "content": "Herman Melville's 'Moby-Dick' (1851) — now considered the greatest American novel — was a commercial failure in its time, dismissed as eccentric and obscure. Its story of Captain Ahab's monomaniacal pursuit of a white whale contains within it everything: existential philosophy, American hubris, the natural world, the democratic impulse, and the tragedy of obsession. Nathaniel Hawthorne explored the dark Puritan legacy of New England in 'The Scarlet Letter' (1850), examining guilt, sin, and the human heart. Emily Dickinson's 1,800 poems — nearly all unpublished in her lifetime — created an entirely new poetic form: compressed, cryptic, radically experimental in punctuation and rhyme. Mark Twain's 'Adventures of Huckleberry Finn' (1884) created the American vernacular novel and remains the most controversial book in American high school curricula for its unflinching portrayal of racism and the moral awakening of a white boy."
+        },
+        {
+          "period": "1920–1940",
+          "era": "Lost Generation & Modernism",
+          "title": "The American Renaissance in Paris",
+          "summary": "Ernest Hemingway, F. Scott Fitzgerald, and a generation of expatriate writers remade the novel for the modern age from the cafés of Paris.",
+          "content": "The Lost Generation — writers who came of age during World War I — fled American puritanism and materialism for the freedom of Paris. F. Scott Fitzgerald's 'The Great Gatsby' (1925) captured the Jazz Age's glittering excess and moral emptiness with prose of crystalline beauty, creating the definitive novel of the American dream corrupted. Ernest Hemingway stripped prose to its bones in 'The Sun Also Rises' and 'A Farewell to Arms,' inventing a new minimalist style built on short sentences, concrete nouns, and what was left unsaid. William Faulkner created thestream-of-consciousness novel in 'The Sound and the Fury,' applying modernist literary techniques to the raw material of Southern history, slavery, and racial violence. Langston Hughes wrote poetry that celebrated Black urban life and the African American vernacular tradition with joy, anger, and stunning technical mastery. These writers didn't just describe the modern condition — they invented the literary forms to express it."
+        },
+        {
+          "period": "1945–1980",
+          "era": "Post-War & The Sixties",
+          "title": "Beatniks, Noir, and New Voices",
+          "summary": "The post-war period saw a generation of writers who challenged conformity — Beat Generation poets, noir crime writers, and the first great Black female novelists.",
+          "content": "The Beat Generation — Allen Ginsberg, Jack Kerouac, and William S. Burroughs — exploded onto the literary scene in the 1950s with an explicitly political and sexual rebellion against Cold War conformism. Ginsberg's 'Howl' (1956) was a landmark obscenity trial that redefined the boundaries of American poetry. James Baldwin emerged as the defining voice on race, sexuality, and American identity in 'Go Tell It on the Mountain' (1953) and 'Notes of a Native Son' (1955). Toni Morrison's 'The Bluest Eye' (1970) — rejected by major publishers before being taken by Random House — gave literary form to the particular damage of internalized racism in a Black girl dreaming of blue-eyed whiteness. Raymond Chandler created the hard-boiled detective novel as a vehicle for exploring Los Angeles corruption and the hollowness of American masculinity."
+        },
+        {
+          "period": "1980–present",
+          "era": "Contemporary Voices",
+          "title": "Diversity, Fragmentation, and the New American Novel",
+          "summary": "American literature fractured into rich, overlapping voices — women, immigrants, LGBTQ+ writers, and writers of color fundamentally changed what 'American literature' means.",
+          "content": "Don DeLillo's 'White Noise' (1985) created the great novel of postmodern America — a nation saturated in media noise, consumer goods, and the terror of mortality. Toni Morrison won the Nobel Prize in Literature in 1993, the committee citing her 'novels characterized by force and vivacity of imagination.' Jhumpa Lahiri's 'The Namesake' (2003) and Junot Díaz's 'Drown' (1996) mapped the immigrant experience of identity and assimilation with prose of precise, painful beauty. Colson Whitehead's 'The Underground Railroad' (2016) won the Pulitzer, as did his novel about housing discrimination, 'The Nickel Boys.' The Trump era produced a wave of political fiction and nonfiction. Ocean Vuong's 'On Earth We're Briefly Gorgeous' (2019) brought Vietnamese immigrant experience to the literary mainstream with lyrical, devastating prose. American literature today is richer and more diverse than at any point in its history — and still grappling with the same fundamental questions Melville asked in 1851."
+        }
+      ]
+    },
+    {
+      "id": "film",
+      "title": "Film & TV",
+      "icon": "🎬",
+      "entries": [
+        {
+          "period": "1890–1930",
+          "era": "Silent Era",
+          "title": "Where Cinema Was Born",
+          "summary": "America invented the movie business, and by the 1920s Hollywood had become the most powerful storytelling factory the world had ever seen.",
+          "content": "Thomas Edison's Black Maria studio in West Orange, New Jersey produced the first motion pictures in the 1890s, but it was D.W. Griffith — with 'The Birth of a Nation' (1915) and 'Intolerance' (1916) — who invented the grammar of cinema: cross-cutting, close-ups, the fade, the iris wipe. 'The Birth of a Nation' was also the most morally catastrophic film ever made — a KKK glorification that galvanized the rebirth of the white supremacist movement. The silent era's greatest comic genius was Buster Keaton, whose stunts ('The General,' 1926) remain technically audacious beyond belief. Charlie Chaplin's 'The Gold Rush' (1925) made him the world's first global film star. By 1927, 'The Jazz Singer' introduced synchronized sound and effectively ended silent cinema — and the Great Depression's audience demanded escapist entertainment more than ever."
+        },
+        {
+          "period": "1930–1960",
+          "era": "Golden Age & Noir",
+          "title": "The Studio System and the Dark Side",
+          "summary": "Hollywood's golden age was a factory system that produced entertainment on a scale and quality that has never been matched — while secretly telling darker stories.",
+          "content": "The studio system — MGM, Warner Bros., Paramount, RKO — controlled every aspect of film production, distribution, and exhibition, creating a factory that produced hundreds of films annually. The Hays Code enforced strict self-censorship from 1934 to 1966, prohibiting explicit sexuality, nudity, and 'glorifying crime.' Yet filmmakers found ways to smuggle in themes of sexual frustration, class resentment, and corruption — giving us film noir, Hollywood's most enduring and influential genre. Billy Wilder's 'Double Indemnity' (1944) and 'Sunset Boulevard' (1950) depicted a corrupt, sexually obsessed, greedy America that coexisted uneasily with the era's optimistic self-image. Alfred Hitchcock brought psychological terror to mainstream cinema. Orson Welles' 'Citizen Kane' (1941) — widely considered the greatest film ever made — was also the greatest commercial failure, destroyed by William Randolph Hearst's campaign against it. The HUAC witch hunts of the late 1940s and 1950s blacklisted some of Hollywood's most talented writers and directors."
+        },
+        {
+          "period": "1967–1990",
+          "era": "New Hollywood & Blockbuster",
+          "title": "A Generation Breaks Free",
+          "summary": "The collapse of the studio system in the late 1960s opened the door to a generation of filmmakers who made personal, controversial, politically engaged films.",
+          "content": "The counterculture and the collapse of the Production Code in 1968 opened Hollywood to explicit sex, violence, and political critique. Easy Rider (1969), made for $375,000 and grossing $60 million, proved that young audiences wanted films that spoke to their world. Francis Ford Coppola's 'The Godfather' (1972) redefined what American cinema could aspire to be — an epic family tragedy with operatic scope. Martin Scorsese's 'Mean Streets' (1973) and 'Taxi Driver' (1976) created a new cinema of urban alienation and religious guilt. Steven Spielberg's 'Jaws' (1975) created the modern blockbuster and changed Hollywood economics forever — the studio system was replaced by franchise-driven tentpole filmmaking. The Star Wars (1977) and Indiana Jones franchises demonstrated that mythology and spectacle could dominate global culture. By the 1980s, the Ronald Reagan era's emphasis on blockbusters and franchises began the slow death of mid-budget adult drama."
+        },
+        {
+          "period": "1990–present",
+          "era": "Streaming & Global Dominance",
+          "title": "Franchises, Prestige TV, and the Internet",
+          "summary": "The franchise era, the rise of prestige television, and streaming have transformed Hollywood while American films dominate global culture more completely than ever.",
+          "content": "James Cameron's 'Titanic' (1997) demonstrated that romantic spectacle could be the ultimate blockbuster — it remained the highest-grossing film for 12 years. The Marvel Cinematic Universe, launched with 'Iron Man' in 2008, created the most commercially successful film franchise in history — 33 films grossing over $29 billion — but also sparked an ongoing debate about whether superhero cinema is crowding out adult drama. The streaming revolution, beginning with Netflix in 2007 and accelerating with HBO Max, Amazon Prime, and Apple TV+, created a second Golden Age of television. 'The Wire,' 'Mad Men,' 'Breaking Bad,' 'The Sopranos,' and 'Game of Thrones' redefined what television could achieve narratively. American films now gross over $40 billion annually worldwide, and Hollywood's cultural influence extends to every corner of the globe — creating both American soft power and accusations of cultural imperialism."
+        }
+      ]
+    },
+    {
+      "id": "belief",
+      "title": "Belief",
+      "icon": "🙏",
+      "entries": [
+        {
+          "period": "1600–1750",
+          "era": "Puritan Roots",
+          "title": "The City Upon a Hill",
+          "summary": "The first American religious tradition was Puritanism — a demanding, intellectual Calvinism that shaped American moral culture for centuries.",
+          "content": "The Puritans who settled New England in the 1630s brought a demanding religious vision: predestination, the sovereignty of God, and the absolute depravity of mankind apart from divine grace. John Winthrop's 1630 sermon 'A Model of Christian Charity' — in which he described America as a 'city upon a hill' watched by the world — became the foundational text of American exceptionalism. Puritan worship was austere — no music, no ornament, only the spoken sermon and the congregation's prayer. Yet Puritanism also bred intellectual rigor and a tradition of political dissent — Roger Williams was banished from Massachusetts Bay for arguing for religious liberty. The First Great Awakening of the 1730s–1740s challenged the established churches' intellectualized religion with emotional evangelicalism, democratizing faith for ordinary people but also causing bitter divisions between 'new lights' and 'old lights.'"
+        },
+        {
+          "period": "1750–1900",
+          "era": "Revival and Diversity",
+          "title": "Many Flames, Many Fires",
+          "summary": "The Second Great Awakening created new denominations and democratic religious culture, while Catholic and Jewish immigrants created a genuinely pluralist religious landscape.",
+          "content": "The Second Great Awakening (1790–1840) transformed American religion — camp meetings revivals drew thousands, Baptist and Methodist denominations exploded in size, and the new terrain of the western frontier allowed religious experimentation. Joseph Smith founded the Church of Jesus Christ of Latter-day Saints in upstate New York in 1830, creating one of America's most distinctive indigenous religions. Catholic immigrants from Ireland and Germany created tension with the Protestant establishment — anti-Catholic sentiment was a significant force in 19th-century politics. Jewish immigrants from Central and Eastern Europe built the institutional infrastructure of American Judaism. The 1893 World's Parliament of Religions in Chicago was the first major gathering to introduce American Protestants to Buddhism, Hinduism, Islam, and other world religions. American religious liberty — however imperfectly practiced — began to create genuine theological diversity."
+        },
+        {
+          "period": "1950–2000",
+          "era": "Evangelicalism and Secularism",
+          "title": "The Rise and Fall of the Religious Consensus",
+          "summary": "Post-war suburban prosperity created an evangelical middle class, while simultaneously planting the seeds of the secular counter-movement.",
+          "content": "The post-war period saw a 'Golden Age of Evangelicalism' — Billy Graham became America's most trusted religious figure, Billy James Hargis toured colleges with his anti-communist Christianity, and the new suburbs built thousands of evangelical churches. The religious right emerged as a political force in the late 1970s, mobilized by opposition to school desegregation, abortion rights, and the proposed Equal Rights Amendment. Jerry Falwell's Moral Majority (founded 1981) and Pat Robertson's Christian Coalition (1989) demonstrated evangelicalism's extraordinary political mobilization capacity. Simultaneously, the secularization of American culture accelerated — mainline Protestant denominations lost members while the 'nones' (those with no religious affiliation) grew from under 10% in 1990 to over 25% by 2020. American civil religion — a diffuse but powerful faith in God, country, and the American dream — coexisted uneasily with this growing secularism."
+        },
+        {
+          "period": "2000–present",
+          "era": "Modern Spiritual Landscape",
+          "title": "The Unaffiliated and the Spiritually Entrepreneurial",
+          "summary": "America is simultaneously becoming more secular and more obsessed with spirituality — a nation of seekers building their own custom belief systems.",
+          "content": "The 2020s American religious landscape is characterized by polarization and fragmentation. White evangelicalism remains a powerful political force despite declining numbers. The 'nones' — those checking 'none' on religious affiliation surveys — now represent over 29% of Americans, particularly strong among Millennials and Gen Z. The spiritual but not religious phenomenon has created a booming wellness industry — yoga studios, meditation apps, crystals, energy healing, and a proliferation of non-denominational 'spiritual communities.' Megachurches — evangelical congregations with over 5,000 weekly attendees — have become America's dominant form of Protestant Christianity, blending worship, entertainment, and community programming. The rise of prosperity gospel churches (Joel Osteen's Lakewood Church being the most prominent example) has generated controversy over the commercialization of faith. At the same time, Islam, Buddhism, and Hinduism have grown substantially through immigration, creating the most religiously diverse American society in history."
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "title": "Sports",
+      "icon": "🏈",
+      "entries": [
+        {
+          "period": "1865–1920",
+          "era": "Baseball's Golden Age",
+          "title": "America's Pastime",
+          "summary": "Baseball became the nation's most beloved sport through a combination of democratic accessibility and the mythmaking of figures like Babe Ruth.",
+          "content": "Baseball emerged from older bat-and-ball games in the mid-19th century and became professionally organized by the 1870s. It was Abraham Zapruder who accidentally captured the Kennedy assassination on film in 1963 — not a baseball moment, but baseball's cultural dominance was so complete that every American moment was measured against it. The 1903 World Series between Boston and Pittsburgh drew enormous national attention, establishing baseball as a truly national sport. The Negro Leagues — created because Black players were barred from the majors — produced some of the greatest athletes in baseball history, including Satchel Paige and Josh Gibson. Babe Ruth's prodigious home run hitting in the 1920s transformed baseball's appeal from a game of craft and strategy to a theater of spectacular individual achievement. By the 1920s, baseball had become what scholars called a 'civil religion' — a ritual practice that bound the American nation together across regional, ethnic, and class lines."
+        },
+        {
+          "period": "1920–1980",
+          "era": "Football's Dominance",
+          "title": "The Violent New Religion",
+          "summary": "Football surpassed baseball as America's favorite sport by combining the violence of gladiatorial combat with strategic depth no other sport could match.",
+          "content": "American football emerged from rugby and soccer in the late 19th century, with explosive growth following the 1912 introduction of the forward pass. The NFL was founded in 1920, but it was the AFL's merger with the NFL in 1970 that created the modern NFL — a $20 billion enterprise. The Super Bowl — first played in 1967 — became America's most-watched annual television event, watched by over 100 million Americans. Vince Lombardi's Green Bay Packers of the 1960s created the template for football's heroic mythology. College football generated its own devoted following, with storied programs like Alabama, Notre Dame, and Michigan becoming institutions with fan bases as passionate as any professional team. The sport's inherent violence — documented most devastatingly in the film 'Concussion' (2015) and the CTE research showing brain damage in former players — remains its defining controversy."
+        },
+        {
+          "period": "1946–present",
+          "era": "Basketball and Global Games",
+          "title": "From Naismith to the World",
+          "summary": "Invented in 1891 in Springfield, Massachusetts, basketball became America's most globally influential sport and one of the most diverse.",
+          "content": "James Naismith, a Canadian-born physical education instructor, invented basketball in December 1891 as an indoor game for students at Springfield College, Massachusetts. Dr. James Naismith's simple creation — two peach baskets and a soccer ball — evolved into a global sport played by over 450 million people worldwide. The NBA's merger in 1976 with the ABA brought the three-point line and a more entertaining style of play, setting the stage for the Magic Johnson-Larry Bird rivalry of the 1980s. Michael Jordan's career from 1984 to 1998 made the NBA a global phenomenon — his six championships, his commercial empire, and his global brand introduced basketball to hundreds of millions of new fans worldwide. The Dream Team at the 1992 Barcelona Olympics — featuring Jordan, Magic, Bird, and others — was the first time NBA stars represented the US Olympic team, and the first time many Europeans saw the world's best players live. Today, basketball's global reach means international players like Dirk Nowitzki, Yao Ming, Giannis Antetokounmpo, and Luka Dončić have become American sports heroes."
+        },
+        {
+          "period": "1972–present",
+          "era": "Women's Sports & Paralympics",
+          "title": "Equal Pay, Equal Play",
+          "summary": "Title IX (1972) and the growth of women's professional leagues transformed women's sports from afterthought to cultural force.",
+          "content": "Title IX — passed in 1972 as part of the Education Amendments — prohibited sex discrimination in any educational program or activity receiving federal funding. Its impact on women's sports was revolutionary: female athletic participation in high school sports increased by 1,000% between 1972 and 2011. The women's soccer team — World Cup champions in 1991, 1999, and 2019 — became arguably the most successful team in American sports history, and their fight for equal pay with the men's team became a landmark workplace discrimination case. The WNBA launched in 1997 and has grown into a stable, influential league with a devoted fanbase. The Special Olympics (founded 1968) and the Paralympics for athletes with disabilities have created inclusive sporting frameworks that have transformed millions of lives. The 1999 Women's World Cup final — watched by 40 million Americans — remains one of the most-watched sporting events in American television history."
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Food",
+      "icon": "🍔",
+      "entries": [
+        {
+          "period": "Pre-1600",
+          "era": "Indigenous Abundance",
+          "title": "The Most Diverse Agricultural Landscape on Earth",
+          "summary": "Indigenous Americans had developed sophisticated agriculture over 5,000 years, domesticating maize, beans, squash, tomatoes, potatoes, and hundreds of other crops.",
+          "content": "What European colonists called the 'New World' had been continuously farmed for millennia, with indigenous peoples cultivating the most diverse agricultural system on earth. The 'Three Sisters' — corn, beans, and squash planted together in a synergistic polyculture — fed millions across North America. The Haudenosaunee (Iroquois) had developed a sophisticated system of government, diplomacy, and trade that controlled agricultural surplus across the Northeast. Wild foods — venison, wild turkey, fish, berries, maple syrup — supplemented cultivated crops. The colonists' first winters would have killed them without Indigenous agricultural knowledge: the Wampanoag people taught the Pilgrims how to plant corn. Colonists took Indigenous crops global: maize, potatoes, and tomatoes transformed European, Asian, and African diets. The phrase 'comfort food' doesn't exist in Indigenous food traditions — the notion that food should be bland or soothing rather than flavorful, spicy, and varied was a European cultural imposition."
+        },
+        {
+          "period": "1850–1920",
+          "era": "Immigrant Fusion",
+          "title": "The Melting Pot on a Plate",
+          "summary": "The great waves of immigrant cuisine — German, Italian, Jewish, Chinese — created America's distinctive regional food cultures.",
+          "content": "The great waves of immigration between 1840 and 1920 — Irish, German, Italian, Eastern European Jewish, Chinese — created America's distinctive regional food cultures. German immigrants brought beer gardens, deli sandwiches, and sausage traditions to Milwaukee, Cincinnati, and New York. Cincinnati became famous for its chili — a uniquely American adaptation of Mediterranean spices developed by Macedonian immigrants. Italian immigrants in New York's Little Italy and Boston's North End created the Italian-American cuisine that would dominate American food culture: pizza (which didn't exist in Italy in its current form), spaghetti and meatballs, and garlic as a defining flavor. Chinese immigrants on the West Coast created American Chinese food — dishes like chop suey, orange chicken, and fortune cookies that were invented in America as adaptations to American tastes. The 1882 Chinese Exclusion Act and the Japanese internment of World War II disrupted these communities but not before they had fundamentally shaped American food culture."
+        },
+        {
+          "period": "1920–1980",
+          "era": "Fast Food Empire",
+          "title": "The McDonald's Revolution",
+          "summary": "The fast food industry transformed American dining, created the world's largest restaurant companies, and changed global eating habits permanently.",
+          "content": "The modern fast food industry was born in 1940 with the first McDonald's restaurant in San Bernardino, California — the brothers Richard and Maurice McDonald revolutionized the industry with their 'Speedee Service System' in 1948. Ray Kroc, a milkshake machine salesman, turned McDonald's into a franchise empire starting in 1955, spreading the fast food model nationwide. The 1950s and 1960s interstate highway system was built with the expectation that fast food restaurants would line every exit — they did. Fast food chains — McDonald's, Burger King, Wendy's, Kentucky Fried Chicken — became American icons exported worldwide. The drive-in restaurant of the 1950s, with carhops serving teenagers, created a distinctly American institution. The 1970s saw growing awareness of fast food's health consequences — obesity rates began climbing and have continued to rise. Fast food franchises became major employers of minimum-wage workers, disproportionately women and minorities."
+        },
+        {
+          "period": "1980–present",
+          "era": "The Food Revolution",
+          "title": "Farm to Table and the Instagram Meal",
+          "summary": "A food counterculture emerged — farmers' markets, organic farming, celebrity chefs, food TV — even as fast food continued to dominate.",
+          "content": "Alice Waters' Chez Panisse restaurant in Berkeley, California (founded 1971) launched the California cuisine movement that would eventually become the farm-to-table philosophy: seasonal, locally sourced, organic ingredients prepared with minimal intervention. The movement transformed fine dining and eventually trickled down to mainstream grocery stores and chain restaurants. Michael Pollan's 'The Omnivore's Dilemma' (2006) and 'Food, Inc.' (2008 documentary) exposed the industrial food system's environmental and ethical costs, catalyzing a generation of food activism. The Slow Food movement, Chipotle, Panera, and Sweetgreen all represent different facets of a mainstreaming of food quality concerns. Food television — from Julia Child to Anthony Bourdain to the proliferation of food competition shows — made cooking entertainment. Yet obesity rates continued to climb, food deserts in low-income communities persisted, and the industrial food system showed no signs of retreat. The internet has created a paradox: more Americans than ever cook shows, recipes, and food content — yet overall home cooking rates continue to decline."
+        }
+      ]
+    },
+    {
+      "id": "festivals",
+      "title": "Festivals & Rituals",
+      "icon": "🎆",
+      "entries": [
+        {
+          "period": "1776–present",
+          "era": "National Identity",
+          "title": "Independence Day",
+          "summary": "July 4th is America's civil religion made festive — fireworks, parades, barbecues, and a massive civic celebration of the nation's founding.",
+          "content": "Independence Day celebrates the Declaration of Independence on July 4, 1776 — when the Continental Congress formally severed ties with Britain. It is the most patriotic day in the American calendar, marked by fireworks (an estimated 13,000+ fireworks shows nationwide), parades featuring marching bands and veterans' organizations, political speeches, and cookouts that have become as ritualized as the fireworks themselves. The Philadelphia Mummers Parade — featuring elaborate handcrafted costumes — has been running since 1901. The Declaration of Independence's signing has been mythologized as the singular founding moment, obscuring the contradictions: enslaved people in Philadelphia while independence was declared, women excluded from political participation, and Indigenous nations whose lands the new nation claimed. These tensions have made the Fourth of July a site of ongoing debate about what American identity actually means — Frederick Douglass gave his searing 1852 speech 'What to the Slave Is the Fourth of July?' describing this dissonance."
+        },
+        {
+          "period": "1621–present",
+          "era": "Thanksgiving",
+          "title": "The Most Complicated Meal in America",
+          "summary": "Thanksgiving began as a harvest celebration but became a national ritual about family, abundance, and a mythologized Pilgrim-Indigenous relationship.",
+          "content": "The first Thanksgiving — a harvest celebration in Plymouth Colony in 1621 — lasted three days and was attended by approximately 53 Pilgrims and 90 Wampanoag people. It was not particularly remarkable as colonial events go, and was not annual. Abraham Lincoln proclaimed a national Thanksgiving Day in 1863 during the Civil War, partly as a deliberate attempt to create unity. The meal itself has evolved: themenu was standardized by the 1950s to turkey, stuffing, mashed potatoes, gravy, cranberry sauce, and pumpkin pie. The Macy's Thanksgiving Day Parade in New York — begun in 1924 — has run for nearly 100 years and now features giant character balloons watched by millions. The 'Black Friday' shopping day that follows Thanksgiving has become ritualized commercial excess — crowds at 3 AM, door-buster deals, and occasional violence. For many Indigenous Americans, Thanksgiving is a National Day of Mourning — a reminder of the genocide, land theft, and broken treaties that underlie the Pilgrim mythology."
+        },
+        {
+          "period": "1700s–present",
+          "era": "Regional Celebrations",
+          "title": "Mardi Gras, St. Patrick's Day, and Local Rites",
+          "summary": "America's regional festivals reflect the cultural diversity of its immigrant history — each community celebrating its heritage.",
+          "content": "Mardi Gras in New Orleans — the most famous festival in America — dates to French colonial Louisiana in the 1690s and has evolved into a week-long pre-Lenten celebration of parades, jazz, beads, and deliberate excess. New Orleans' French, African, Spanish, and Creole cultures blend in ways that make Mardi Gras genuinely unique in the world. St. Patrick's Day (March 17) is celebrated nationwide but nowhere more intensely than in New York City, Boston, and Chicago — Irish American communities that have maintained the tradition as an assertion of ethnic identity since the 18th century. Chicago's tradition of dyeing the Chicago River green began in 1962. The Rose Parade (New Year's Day, Pasadena, California) — begun in 1890 — showcases elaborate flower-covered floats and is watched by millions. Powwows — traditional Indigenous gatherings featuring dance, music, food, and social gathering — have become important public celebrations of Native American culture and identity, attracting both Indigenous participants and non-Native spectators."
+        },
+        {
+          "period": "1969–present",
+          "era": "New American Rituals",
+          "title": "Pride, Juneteenth, and a Nation's Reckoning",
+          "summary": "New national celebrations — Pride, Juneteenth, and 9/11 memorials — reflect America's evolving understanding of its own identity.",
+          "content": "The first Pride march was held in New York City on June 28, 1970 — one year after the Stonewall uprising. Pride has grown from a protest into a celebration of LGBTQ+ identity, culture, and visibility observed in every major city and many small towns across America. It has also become fiercely contested terrain — the clash between Pride celebrations and religious liberty arguments, and debates within the LGBTQ+ community about assimilation versus radical politics, reveal the ongoing complexity of American sexual and gender politics. Juneteenth — June 19th — commemorates the arrival of Union troops in Galveston, Texas on June 19, 1865, two months after the Civil War ended, to announce that enslaved people were free. It has been celebrated by Black Americans for over 150 years but became a federal holiday in 2021 — a recognition of slavery's centrality to American history that would have been politically impossible in previous generations. These new rituals reveal a nation still actively negotiating its founding contradictions."
+        }
+      ]
+    }
+  ]
+}
