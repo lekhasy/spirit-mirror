@@ -2,182 +2,672 @@
 import Layout from '../layouts/Layout.astro';
 
 const countries = [
-	{ name: 'Japan', path: '/japan', image: 'https://orizuruya.net/wp-content/uploads/2024/07/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2024-07-29-111659.png', description: 'Seasons and refined traditions — experience tea ceremonies, delicate crafts, and seasonal festivals that celebrate nature and community.', flagColors: ['#ffffff','#bc002d'] },
-	{ name: 'Vietnam', path: '/vietnam', image: 'https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'Market flavors and river life — vibrant street food scenes, bustling markets, and waterways that shape daily rhythms.', flagColors: ['#d80000','#ffdd00'] },
-	{ name: 'Brazil', path: '/brazil', image: 'https://images.unsplash.com/photo-1700677866571-43199bcbc593?q=80&w=3430&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'Rhythm and color — lively music, dance, and festivals that bring communities together along the coast and in cities.', flagColors: ['#009b3a','#ffdf00','#002776'] },
-	{ name: 'Nigeria', path: '/nigeria', image: 'https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'Bold textiles and storytelling — discover rich fashion traditions, contemporary arts, and dynamic urban culture.', flagColors: ['#008751','#ffffff','#008751'] },
-	{ name: 'India', path: '/india', image: 'https://images.unsplash.com/flagged/photo-1577604981316-298e453a19dd?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', description: 'A tapestry of festivals, cuisines, and languages — regional diversity offers countless local traditions and celebrations.', flagColors: ['#ff9933','#ffffff','#138808'] }
+  {
+    name: 'Vietnam',
+    native: 'Việt Nam',
+    path: '/vietnam',
+    image: 'https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2940&auto=format&fit=crop',
+    tagline: '96M people · 4,000 years of history',
+    description: 'Market flavors, river life, and a spirit forged through centuries of resilience.',
+    accent: '#e8a020',
+    bg: 'linear-gradient(135deg, #0a2e18 0%, #1a5c2a 100%)',
+    pillars: ['History', 'Music', 'Belief', 'Festivals'],
+    ready: true,
+  },
+  {
+    name: 'Japan',
+    native: '日本',
+    path: '/japan',
+    image: 'https://orizuruya.net/wp-content/uploads/2024/07/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2024-07-29-111659.png',
+    tagline: '125M people · 2,600 years of tradition',
+    description: 'Seasons, silence, and the beauty found in impermanence.',
+    accent: '#bc002d',
+    bg: 'linear-gradient(135deg, #1a0a0a 0%, #4a0f1a 100%)',
+    pillars: ['Rituals', 'Stories', 'Dance', 'History'],
+    ready: false,
+  },
+  {
+    name: 'Brazil',
+    native: 'Brasil',
+    path: '/brazil',
+    image: 'https://images.unsplash.com/photo-1700677866571-43199bcbc593?q=80&w=3430&auto=format&fit=crop',
+    tagline: '215M people · 500 years of mixing',
+    description: 'Rhythm, color, and a people who turn hardship into celebration.',
+    accent: '#ffdf00',
+    bg: 'linear-gradient(135deg, #0a2000 0%, #1a5000 100%)',
+    pillars: ['Music', 'Festivals', 'Dance', 'Stories'],
+    ready: false,
+  },
+  {
+    name: 'Nigeria',
+    native: 'Naìjíríà',
+    path: '/nigeria',
+    image: 'https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?q=80&w=3432&auto=format&fit=crop',
+    tagline: '220M people · 250+ ethnic groups',
+    description: 'Bold textiles, griot storytelling, and the continent\'s creative heartbeat.',
+    accent: '#008751',
+    bg: 'linear-gradient(135deg, #001a00 0%, #003a10 100%)',
+    pillars: ['Stories', 'Music', 'Belief', 'Rituals'],
+    ready: false,
+  },
+  {
+    name: 'India',
+    native: 'भारत',
+    path: '/india',
+    image: 'https://images.unsplash.com/flagged/photo-1577604981316-298e453a19dd?q=80&w=2946&auto=format&fit=crop',
+    tagline: '1.4B people · 5,000 years of civilization',
+    description: 'A tapestry of languages, faiths, and festivals that defies easy description.',
+    accent: '#ff9933',
+    bg: 'linear-gradient(135deg, #1a0a00 0%, #4a1800 100%)',
+    pillars: ['Belief', 'Festivals', 'Literature', 'Dance'],
+    ready: false,
+  },
+];
+
+const themes = [
+  { icon: '📜', label: 'History', desc: 'How the past shapes the present' },
+  { icon: '👨‍👩‍👧', label: 'Parenting', desc: 'How children are raised' },
+  { icon: '📖', label: 'Stories', desc: 'Myths, fables, and folk tales' },
+  { icon: '🙏', label: 'Belief', desc: 'Faith, spirituality, and worldview' },
+  { icon: '🪔', label: 'Rituals', desc: 'The ceremonies of life' },
+  { icon: '🎆', label: 'Festivals', desc: 'Celebrations across the year' },
+  { icon: '🎵', label: 'Music', desc: 'Sound and soul across time' },
+  { icon: '✍️', label: 'Literature', desc: 'Words that carry a culture' },
+  { icon: '💃', label: 'Dance', desc: 'Movement as expression' },
 ];
 ---
 
-<Layout>
-	<div class="hero-carousel" id="hero">
-		<!-- slides will be populated by client JS -->
-	</div>
-	<div class="hero-overlay"></div>
+<Layout title="Spirit Mirror — Discover World Cultures">
 
-	<main class="site-content">
-		<aside class="search-panel" aria-label="Search countries">
-			<input id="searchInput" class="search-input" placeholder="Type a country..." autocomplete="off" />
-			<div id="results" class="results"></div>
-		</aside>
+<!-- Nav override -->
+<style is:global>
+  .site-header {
+    background: rgba(5,8,6,0.92) !important;
+    backdrop-filter: blur(12px) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 200 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+  .site-logo { color: #fff !important; font-size: 1.1rem !important; font-weight: 700 !important; letter-spacing: 0.04em !important; }
+  .site-root { background: #050806 !important; }
+</style>
 
-		<div class="hero-cta">
-			<h1 id="heroTitle" style="margin:0 0 8px;color:white;font-size:28px;text-shadow:0 4px 18px rgba(0,0,0,0.45)"></h1>
-			<p id="heroSubtitle" style="margin:0 0 16px;color:rgba(255,255,255,0.95);max-width:420px">Discover people and culture from around the world.</p>
-			<a id="exploreBtn" class="explore-btn" href="/japan"><span class="explore-label">Explore</span></a>
-		</div>
-	</main>
+<!-- ① HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">🌍 Spirit Mirror</p>
+    <h1 class="hero-h1">Every culture has<br/><em>a story to tell.</em></h1>
+    <p class="hero-sub">Step beyond borders. Explore the beliefs, rituals, music, and history that make each people who they are — told through the pillars that shape every human life.</p>
+    <div class="hero-actions">
+      <a href="#countries" class="btn-primary">Start Exploring →</a>
+      <a href="#themes" class="btn-ghost">Browse by Theme</a>
+    </div>
+    <p class="hero-hint">5 cultures · 9 pillars · countless stories</p>
+  </div>
+  <div class="hero-wave" aria-hidden="true"></div>
+</section>
 
-	<!-- embed server-side data for client script -->
-	<div id="__data" style="display:none" data-countries={JSON.stringify(countries)}></div>
+<!-- ② COUNTRIES -->
+<section class="countries" id="countries">
+  <div class="section-header">
+    <h2 class="section-title">Choose a Culture</h2>
+    <p class="section-sub">Each country is a doorway. Pick one and start exploring.</p>
+  </div>
 
-	<script type="module">
-		const countries = JSON.parse(document.getElementById('__data').dataset.countries);
-		const hero = document.getElementById('hero');
-		const exploreBtn = document.getElementById('exploreBtn');
+  <div class="country-grid">
+    {countries.map((c) => (
+      <a href={c.path} class={`country-card${c.ready ? '' : ' coming-soon'}`} style={`--card-accent: ${c.accent};`}>
+        <div class="card-img-wrap">
+          <img src={c.image} alt={c.name} class="card-img" loading="lazy" />
+          <div class="card-img-overlay" style={`background: ${c.bg};`}></div>
+          {!c.ready && <span class="card-badge">Coming soon</span>}
+        </div>
+        <div class="card-body">
+          <div class="card-names">
+            <span class="card-native">{c.native}</span>
+            <span class="card-name">{c.name}</span>
+          </div>
+          <p class="card-tagline">{c.tagline}</p>
+          <p class="card-desc">{c.description}</p>
+          <div class="card-pillars">
+            {c.pillars.map(p => <span class="card-pill">{p}</span>)}
+          </div>
+          <div class="card-cta">
+            {c.ready ? 'Explore culture →' : 'Coming soon'}
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
 
-		// create slides
-		countries.forEach((c,i)=>{
-			const div = document.createElement('div');
-			div.className = 'hero-slide' + (i===0? ' active':'');
-			div.style.backgroundImage = `url(${c.image})`;
-			div.dataset.index = i;
-			hero.appendChild(div);
-		});
+<!-- ③ THEMES -->
+<section class="themes" id="themes">
+  <div class="section-header">
+    <h2 class="section-title">Explore by Theme</h2>
+    <p class="section-sub">Curious about how cultures approach music? Or how children are raised across the world? Start with a theme.</p>
+  </div>
+  <div class="theme-row">
+    {themes.map(t => (
+      <a href={`/vietnam#pillar-${t.label.toLowerCase()}`} class="theme-card">
+        <span class="theme-icon">{t.icon}</span>
+        <span class="theme-label">{t.label}</span>
+        <span class="theme-desc">{t.desc}</span>
+      </a>
+    ))}
+  </div>
+</section>
 
-		let current = 0;
-		function show(index){
-			const slides = document.querySelectorAll('.hero-slide');
-			slides.forEach(s=>s.classList.remove('active'));
-			slides[index].classList.add('active');
-			current = index;
-			exploreBtn.href = countries[index].path;
+<!-- ④ WHY -->
+<section class="why">
+  <div class="why-inner">
+    <h2 class="section-title" style="color:#fff">A different kind of cultural guide</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5)">Not a travel blog. Not a Wikipedia summary. Something deeper.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🧭</div>
+        <h3>Built around understanding, not tourism</h3>
+        <p>We explore the pillars that shape how people think — parenting, belief, stories, rituals — not just landmarks and food.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⏳</div>
+        <h3>History as a living thread</h3>
+        <p>Every pillar is shown as a timeline. See how Vietnamese music evolved from Bronze Age drums to V-Pop. Context changes everything.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎨</div>
+        <h3>Every culture, its own identity</h3>
+        <p>Japan doesn't look like Vietnam. Brazil doesn't look like Nigeria. Each page is designed to feel like that culture, not a template.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-			// apply flag colors to the explore button
-			const colors = countries[index].flagColors || ['#ffd36e','#ff6ec7'];
-			// move gradient to inner label so the pill covers the whole clickable area and set its text
-			const label = exploreBtn.querySelector('.explore-label');
-			if(label){
-				label.textContent = `Explore ${countries[index].name}`;
-				label.style.background = `linear-gradient(90deg, ${colors.join(',')})`;
-				label.style.display = 'inline-block';
-				label.style.width = '100%';
-				label.style.boxSizing = 'border-box';
-				label.style.textAlign = 'center';
-				label.style.padding = '12px 20px';
-				label.style.borderRadius = '999px';
-			}
+<!-- ⑤ FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">Spirit Mirror</span>
+    <p class="footer-copy">Exploring cultures, one story at a time.</p>
+  </div>
+</footer>
 
-			// simple brightness check to pick readable text color
-			function brightness(hex){
-				const h = hex.replace('#','');
-				const r = parseInt(h.substring(0,2),16);
-				const g = parseInt(h.substring(2,4),16);
-				const b = parseInt(h.substring(4,6),16);
-				return (r*299 + g*587 + b*114) / 255000;
-			}
-
-			const primary = colors[0].startsWith('#') ? colors[0] : '#ffffff';
-			const isLight = brightness(primary) > 0.6;
-			// style the inner label pill for stronger separation
-			const labelBgLight = 'rgba(255,255,255,0.92)';
-			const labelBgDark = 'rgba(0,0,0,0.42)';
-			if(label){
-				if(isLight){
-					label.style.background = labelBgLight;
-					label.style.color = '#111';
-					label.style.boxShadow = '0 6px 18px rgba(0,0,0,0.12)';
-					exploreBtn.style.border = '1px solid rgba(0,0,0,0.12)';
-				} else {
-					label.style.background = labelBgDark;
-					label.style.color = '#fff';
-					label.style.boxShadow = '0 6px 24px rgba(0,0,0,0.36)';
-					exploreBtn.style.border = '1px solid rgba(255,255,255,0.08)';
-				}
-				label.style.padding = '10px 16px';
-				label.style.borderRadius = '999px';
-				label.style.fontWeight = '700';
-				label.style.display = 'inline-block';
-			}
-
-			const sub = document.getElementById('heroSubtitle');
-			const title = document.getElementById('heroTitle');
-			if(title) title.textContent = countries[index].name;
-			if(sub) sub.textContent = countries[index].description || '';
-			const siteCurrent = document.getElementById('siteCurrent');
-			if(siteCurrent) siteCurrent.textContent = countries[index].name;
-		}
-
-		// randomize order and cycle every 3s
-		const order = countries.map((_,i)=>i).sort(()=>Math.random()-0.5);
-		let pos = 0;
-		show(order[pos]);
-		setInterval(()=>{
-			pos = (pos+1) % order.length;
-			show(order[pos]);
-		},5000);
-
-		// Search box logic
-		const input = document.getElementById('searchInput');
-		const results = document.getElementById('results');
-
-		function pickRandom(list, n){
-			const copy = list.slice();
-			const out = [];
-			while(out.length < n && copy.length){
-				const i = Math.floor(Math.random() * copy.length);
-				out.push(copy.splice(i,1)[0]);
-			}
-			return out;
-		}
-
-		function showRandomSuggestions(){
-			const picks = pickRandom(countries, 3);
-			renderResults(picks);
-		}
-
-		function renderResults(list){
-			results.innerHTML = '';
-			if(!list.length){
-				results.innerHTML = '<div class="result-item muted">No matches</div>';
-				return;
-			}
-			list.forEach(c=>{
-				const el = document.createElement('div');
-				el.className = 'result-item';
-				el.textContent = c.name;
-				el.addEventListener('click', ()=>{ location.href = c.path });
-				results.appendChild(el);
-			});
-		}
-
-		input.addEventListener('input', (e)=>{
-			const q = e.target.value.trim().toLowerCase();
-			if(!q){ results.innerHTML = ''; return }
-			const filtered = countries.filter(c=>c.name.toLowerCase().includes(q));
-			renderResults(filtered);
-		});
-
-		// show 3 random suggestions when input is focused/clicked and empty
-		input.addEventListener('focus', (e)=>{ if(!e.target.value.trim()) showRandomSuggestions(); });
-		input.addEventListener('click', (e)=>{ if(!e.target.value.trim()) showRandomSuggestions(); });
-
-		input.addEventListener('keydown', (e)=>{
-			if(e.key === 'Enter'){
-				const q = e.target.value.trim().toLowerCase();
-				const match = countries.find(c=>c.name.toLowerCase() === q) || countries.find(c=>c.name.toLowerCase().includes(q));
-				if(match) location.href = match.path;
-			}
-		});
-
-		// hide results when clicking outside the search panel
-		document.addEventListener('click', (e) => {
-			const panel = document.querySelector('.search-panel');
-			if (!panel) return;
-			if (!panel.contains(e.target)) {
-				results.innerHTML = '';
-			}
-		});
-	</script>
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* ── Tokens ─────────────────────────────────── */
+  :root {
+    --bg: #050806;
+    --bg2: #0c110e;
+    --bg3: #111810;
+    --white: #f8f9f7;
+    --muted: rgba(255,255,255,0.45);
+    --border: rgba(255,255,255,0.08);
+    --accent: #4ade80;
+    --accent2: #e8a020;
+  }
+
+  /* ── Base ───────────────────────────────────── */
+  .hero, .countries, .themes, .why, .footer {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ── Hero ───────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 100px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+  }
+  .hero-orb-1 { width: 600px; height: 600px; background: #1a5c2a; top: -100px; left: -150px; }
+  .hero-orb-2 { width: 400px; height: 400px; background: #7c3aed; top: 20%; right: -100px; }
+  .hero-orb-3 { width: 500px; height: 300px; background: #b45309; bottom: 0; left: 30%; }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 24px;
+  }
+
+  .hero-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    color: #fff;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #050806;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 32px rgba(74,222,128,0.25);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 48px rgba(74,222,128,0.4);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 14px 28px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.25);
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .hero-hint {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  .hero-wave {
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 80px;
+    background: #0c110e;
+    clip-path: ellipse(60% 100% at 50% 100%);
+  }
+
+  /* ── Section shared ─────────────────────────── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-sub {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Countries ──────────────────────────────── */
+  .countries {
+    background: var(--bg2);
+    padding: 96px 24px;
+  }
+
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .country-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+  }
+
+  .country-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    border-color: var(--card-accent, rgba(255,255,255,0.2));
+  }
+
+  .country-card.coming-soon {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .card-img-wrap {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .country-card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .card-img-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .card-body {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-names {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .card-native {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .card-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .card-tagline {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--card-accent, #4ade80);
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    margin: 0 0 16px;
+    flex: 1;
+  }
+
+  .card-pillars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .card-pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 3px 10px;
+  }
+
+  .card-cta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--card-accent, #4ade80);
+    letter-spacing: 0.03em;
+    transition: gap 0.2s;
+  }
+
+  /* ── Themes ─────────────────────────────────── */
+  .themes {
+    background: var(--bg);
+    padding: 96px 24px;
+  }
+
+  .theme-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .theme-row::-webkit-scrollbar { display: none; }
+
+  .theme-card {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 24px 20px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-decoration: none;
+    width: 130px;
+    transition: all 0.2s;
+  }
+
+  .theme-card:hover {
+    background: var(--bg3);
+    border-color: rgba(255,255,255,0.18);
+    transform: translateY(-3px);
+  }
+
+  .theme-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .theme-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .theme-desc {
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── Why ────────────────────────────────────── */
+  .why {
+    background: var(--bg2);
+    padding: 96px 24px;
+  }
+
+  .why-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+    text-align: left;
+  }
+
+  .why-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 28px 32px;
+    transition: border-color 0.2s;
+  }
+
+  .why-card:hover {
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  .why-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .why-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+    line-height: 1.35;
+  }
+
+  .why-card p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+  }
+
+  /* ── Footer ─────────────────────────────────── */
+  .footer {
+    background: #020403;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    margin: 0;
+  }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 640px) {
+    .country-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+
