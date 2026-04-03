@@ -12,48 +12,82 @@ const seasonMap = {
 <Layout title="Japan — Spirit Mirror">
 
 <!-- ═══════════════════════════════════════════════════════════
-     FULL-SCREEN CULTURAL MODAL
+     FULL-SCREEN IMMERSIVE CULTURAL MODAL
+     Two-column: 45% visual | 55% content
 ══════════════════════════════════════════════════════════════ -->
 <div id="jp-modal" class="jp-modal" role="dialog" aria-modal="true" aria-labelledby="jp-modal-title" hidden>
   <div class="jp-modal-backdrop"></div>
-  <div class="jp-modal-panel">
-    <!-- Washi texture overlay -->
-    <div class="jp-modal-washi" aria-hidden="true"></div>
-    <!-- Seigaiha wave accent top -->
-    <div class="jp-modal-wave-top" aria-hidden="true">
-      <svg viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 15 Q25 0 50 15 T100 15 T150 15 T200 15 T250 15 T300 15 T350 15 T400 15" fill="none" stroke="rgba(196,30,58,0.15)" stroke-width="1.5"/>
-        <path d="M0 22 Q25 7 50 22 T100 22 T150 22 T200 22 T250 22 T300 22 T350 22 T400 22" fill="none" stroke="rgba(196,30,58,0.08)" stroke-width="1"/>
-      </svg>
+  <div class="jp-modal-layout">
+    <!-- LEFT: Visual Panel -->
+    <div class="jp-modal-visual" id="jp-modal-visual">
+      <!-- Seigaiha wave band at top -->
+      <div class="jp-modal-wave" aria-hidden="true">
+        <svg viewBox="0 0 400 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 24 Q20 0 40 24 T80 24 T120 24 T160 24 T200 24 T240 24 T280 24 T320 24 T360 24 T400 24" fill="none" stroke="rgba(196,30,58,0.18)" stroke-width="2"/>
+          <path d="M0 36 Q20 12 40 36 T80 36 T120 36 T160 36 T200 36 T240 36 T280 36 T320 36 T360 36 T400 36" fill="none" stroke="rgba(196,30,58,0.10)" stroke-width="1.5"/>
+          <path d="M-20 48 Q0 24 20 48 T60 48 T100 48 T140 48 T180 48 T220 48 T260 48 T300 48 T340 48 T380 48 T420 48" fill="none" stroke="rgba(196,30,58,0.06)" stroke-width="1"/>
+        </svg>
+      </div>
+      <!-- Hero image wrapper -->
+      <div class="jp-modal-hero-wrap" id="jp-modal-hero-wrap">
+        <img class="jp-modal-hero-img" id="jp-modal-hero-img" src="" alt="" />
+        <video class="jp-modal-hero-video" id="jp-modal-hero-video" preload="metadata"></video>
+        <!-- Fallback gradient when no hero image/video -->
+        <div class="jp-modal-visual-fallback" id="jp-modal-visual-fallback"></div>
+        <!-- Bottom overlay gradient -->
+        <div class="jp-modal-hero-overlay" aria-hidden="true"></div>
+      </div>
+      <!-- Inline media (optional) -->
+      <div class="jp-modal-media" id="jp-modal-media"></div>
+      <!-- Kumiko watermark -->
+      <div class="jp-modal-kumiko" aria-hidden="true">
+        <svg viewBox="0 0 80 70" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="40,2 76,52 4,52" fill="none" stroke="white" stroke-width="1.2"/>
+          <polygon points="40,68 4,18 76,18" fill="none" stroke="white" stroke-width="1.2"/>
+          <circle cx="40" cy="35" r="3.5" fill="white"/>
+        </svg>
+      </div>
     </div>
-    <!-- Close button -->
-    <button class="jp-modal-close" id="jp-modal-close" aria-label="Close">
+    <!-- RIGHT: Content Panel -->
+    <div class="jp-modal-content-panel">
+      <button class="jp-modal-close" id="jp-modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="jp-modal-content">
+        <span class="jp-modal-period" id="jp-modal-period"></span>
+        <span class="jp-modal-era" id="jp-modal-era"></span>
+        <h2 class="jp-modal-title" id="jp-modal-title"></h2>
+        <div class="jp-modal-divider" aria-hidden="true">
+          <svg viewBox="0 0 240 6" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 3 Q60 0 120 3 Q180 6 240 3" fill="none" stroke="rgba(196,30,58,0.22)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="jp-modal-body" id="jp-modal-body"></div>
+        <div class="jp-modal-img-grid" id="jp-modal-img-grid"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Lightbox -->
+  <div class="jp-modal-lightbox" id="jp-modal-lightbox" hidden>
+    <button class="jp-modal-lightbox-close" id="jp-modal-lightbox-close" aria-label="Close image">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
     </button>
-    <!-- Modal content area -->
-    <div class="jp-modal-content">
-      <div class="jp-modal-meta">
-        <span class="jp-modal-period" id="jp-modal-period"></span>
-        <span class="jp-modal-era" id="jp-modal-era"></span>
-      </div>
-      <h2 class="jp-modal-title" id="jp-modal-title"></h2>
-      <div class="jp-modal-divider" aria-hidden="true">
-        <svg viewBox="0 0 200 4" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 2 Q50 0 100 2 Q150 4 200 2" fill="none" stroke="rgba(196,30,58,0.25)" stroke-width="1" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="jp-modal-body" id="jp-modal-body"></div>
-    </div>
-    <!-- Kumiko pattern watermark -->
-    <div class="jp-modal-kumiko" aria-hidden="true">
-      <svg viewBox="0 0 80 70" xmlns="http://www.w3.org/2000/svg" opacity="0.05">
-        <polygon points="40,2 76,52 4,52" fill="none" stroke="currentColor" stroke-width="1.2"/>
-        <polygon points="40,68 4,18 76,18" fill="none" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="40" cy="35" r="3.5" fill="currentColor"/>
+    <button class="jp-modal-lightbox-prev" id="jp-modal-lightbox-prev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="15,18 9,12 15,6"/>
       </svg>
-    </div>
+    </button>
+    <img class="jp-modal-lightbox-img" id="jp-modal-lightbox-img" src="" alt="" />
+    <p class="jp-modal-lightbox-caption" id="jp-modal-lightbox-caption"></p>
+    <button class="jp-modal-lightbox-next" id="jp-modal-lightbox-next" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="9,18 15,12 9,6"/>
+      </svg>
+    </button>
   </div>
 </div>
 
@@ -261,7 +295,7 @@ const seasonMap = {
         <div class="jp-timeline-line" aria-hidden="true"></div>
         {p.entries.map((entry, ei) => (
           <div class={`jp-card-wrap ${ei % 2 === 0 ? 'left' : 'right'}${ei === 0 ? ' first-in-section' : ''}`}>
-            <div class="jp-timeline-node" aria-hidden="true">
+            <div class="jp-timeline-node" role="button" tabindex="0" aria-label={`Open ${entry.title}`} data-period={entry.period} data-era={entry.era} data-title={entry.title} data-content={entry.content}>
               <div class="jp-node-outer"></div>
               <div class="jp-node-inner"></div>
             </div>
@@ -1364,6 +1398,70 @@ const seasonMap = {
     }
   }
 
+  .jp-modal-panel.closing {
+    animation: jp-modal-panel-out 280ms cubic-bezier(0.7, 0, 0.84, 0) both;
+  }
+
+  @keyframes jp-modal-panel-out {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to { opacity: 0; transform: scale(0.96) translateY(8px); }
+  }
+
+  /* Modal hero section */
+  .jp-modal-hero-wrap {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1714 0%, #2d2620 50%, #3d3228 100%);
+    margin: -20px -20px 0 -20px;
+  }
+
+  .jp-modal-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    visibility: hidden;
+  }
+
+  .jp-modal-hero-img[src]:not([src=""]) {
+    visibility: visible;
+  }
+
+  .jp-modal-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  .jp-modal-hero-video[src]:not([src=""]) {
+    display: block;
+  }
+
+  .jp-modal-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.6) 100%);
+  }
+
+  /* Visual fallback (gradient) when no hero image/video */
+  .jp-modal-visual-fallback {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2a1f1a 0%, #4a3228 30%, #6b4a38 60%, #8b5a42 100%);
+    z-index: 0;
+  }
+
+  .jp-modal-hero-img[src] ~ .jp-modal-visual-fallback,
+  .jp-modal-hero-video[src] ~ .jp-modal-visual-fallback {
+    display: none;
+  }
+
   /* Washi texture overlay inside panel */
   .jp-modal-washi {
     position: absolute;
@@ -1371,6 +1469,7 @@ const seasonMap = {
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='w2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23w2)' opacity='0.03'/%3E%3C/svg%3E");
     border-radius: inherit;
+    z-index: 0;
   }
 
   /* Seigaiha wave at top */
@@ -1403,7 +1502,7 @@ const seasonMap = {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
     padding: 0;
   }
   .jp-modal-close svg {
@@ -1416,12 +1515,21 @@ const seasonMap = {
     border-color: var(--jp-vermillion);
     transform: scale(1.08);
   }
+  .jp-modal-close:focus-visible {
+    outline: 2px solid var(--jp-vermillion);
+    outline-offset: 2px;
+  }
+  .jp-modal-close:active {
+    transform: scale(0.95);
+  }
 
   /* Modal content */
   .jp-modal-content {
     position: relative;
     z-index: 1;
     padding: 48px 56px 56px;
+    max-width: 680px;
+    margin: 0 auto;
   }
 
   .jp-modal-meta {
@@ -1430,6 +1538,14 @@ const seasonMap = {
     gap: 12px;
     margin-bottom: 16px;
     flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: jp-modal-meta-in 320ms var(--ease-arrival) 60ms both;
+  }
+
+  @keyframes jp-modal-meta-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .jp-modal-period {
@@ -1457,15 +1573,30 @@ const seasonMap = {
     color: var(--jp-sumi);
     line-height: 1.2;
     margin: 0 0 20px;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: jp-modal-title-in 320ms var(--ease-arrival) 120ms both;
+  }
+
+  @keyframes jp-modal-title-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .jp-modal-divider {
-    max-width: 200px;
+    max-width: 220px;
     margin-bottom: 28px;
+    opacity: 0;
+    animation: jp-modal-fade-in 320ms var(--ease-arrival) 180ms both;
   }
   .jp-modal-divider svg {
     width: 100%;
     height: auto;
+  }
+
+  @keyframes jp-modal-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .jp-modal-body {
@@ -1474,6 +1605,23 @@ const seasonMap = {
     line-height: 2.0;
     color: rgba(26, 23, 20, 0.80);
     font-weight: 400;
+  }
+
+  .jp-modal-body p {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  .jp-modal-body p:nth-child(1) { animation: jp-modal-para-in 300ms var(--ease-arrival) 240ms both; }
+  .jp-modal-body p:nth-child(2) { animation: jp-modal-para-in 300ms var(--ease-arrival) 290ms both; }
+  .jp-modal-body p:nth-child(3) { animation: jp-modal-para-in 300ms var(--ease-arrival) 340ms both; }
+  .jp-modal-body p:nth-child(4) { animation: jp-modal-para-in 300ms var(--ease-arrival) 390ms both; }
+  .jp-modal-body p:nth-child(5) { animation: jp-modal-para-in 300ms var(--ease-arrival) 440ms both; }
+  .jp-modal-body p:nth-child(6) { animation: jp-modal-para-in 300ms var(--ease-arrival) 490ms both; }
+  .jp-modal-body p:nth-child(n+7) { animation: jp-modal-para-in 300ms var(--ease-arrival) 540ms both; }
+
+  @keyframes jp-modal-para-in {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .jp-modal-body p {
@@ -1488,7 +1636,7 @@ const seasonMap = {
     position: absolute;
     bottom: 20px;
     right: 24px;
-    width: 60px;
+    width: 64px;
     color: var(--jp-sumi);
     pointer-events: none;
     opacity: 0.06;
@@ -1673,8 +1821,13 @@ const seasonMap = {
 
   function closeModal() {
     if (!modal) return;
-    modal.hidden = true;
-    document.body.style.overflow = '';
+    const panel = modal.querySelector('.jp-modal-panel');
+    panel?.classList.add('closing');
+    setTimeout(() => {
+      modal!.hidden = true;
+      panel?.classList.remove('closing');
+      document.body.style.overflow = '';
+    }, 280);
   }
 
   // Open modal when clicking "Read full entry" button
@@ -1687,6 +1840,26 @@ const seasonMap = {
         title: el.dataset.title || '',
         content: el.dataset.content || '',
       });
+    });
+  });
+
+  // Timeline nodes as modal triggers
+  document.querySelectorAll('.jp-timeline-node').forEach(node => {
+    const el = node as HTMLElement;
+    const handleOpen = () => {
+      openModal({
+        period: el.dataset.period || '',
+        era: el.dataset.era || '',
+        title: el.dataset.title || '',
+        content: el.dataset.content || '',
+      });
+    };
+    el.addEventListener('click', handleOpen);
+    el.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleOpen();
+      }
     });
   });
 
