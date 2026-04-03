@@ -1,23 +1,755 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import data from '../data/india.json';
+const pillars = data.pillars;
 ---
 
-<Layout>
-  <div style="min-height:100vh;background:linear-gradient(180deg,#ff9a9e,#fecfef);color:#3b0b2e">
-    <header style="padding:56px 6vw;display:flex;justify-content:space-between;align-items:center">
-      <div>
-        <h1 style="margin:0;font-size:48px">India</h1>
-        <p style="margin:8px 0 0">A tapestry of languages, religions, food, and festivals across regions and seasons.</p>
-      </div>
-      <a href="/" style="background:#3b0b2e;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none">Home</a>
-    </header>
+<Layout title="India — Spirit Mirror">
 
-    <section style="padding:24px 6vw;display:flex;gap:18px;align-items:flex-start">
-      <div style="flex:1;background-image:url('https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=1200&auto=format&fit=crop');background-size:cover;border-radius:16px;min-height:44vh"></div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:12px">
-        <div style="background:rgba(255,255,255,0.9);padding:14px;border-radius:12px">Festivals: Holi, Diwali, regional fairs</div>
-        <div style="background:rgba(255,255,255,0.9);padding:14px;border-radius:12px">Culinary diversity by state and climate</div>
+<!-- Hero -->
+<section class="in-hero">
+  <div class="in-hero-bg" aria-hidden="true">
+    <div class="in-hero-mandala"></div>
+    <div class="in-hero-warm"></div>
+  </div>
+  <div class="in-hero-inner">
+    <div class="in-hero-tag">🇮🇳 Culture · Heritage · Identity</div>
+    <h1 class="in-hero-title">
+      <span class="in-h1-bharat">भारत</span>
+    </h1>
+    <p class="in-hero-subtitle">Five thousand years of civilization, spirituality, and artistic brilliance — explored through nine pillars that define one of humanity's oldest and most complex cultures.</p>
+    <div class="in-hero-stats">
+      <div class="in-stat"><span class="in-stat-n">5,000+</span><span class="in-stat-l">Years of Civilization</span></div>
+      <div class="in-stat-divider" aria-hidden="true"></div>
+      <div class="in-stat"><span class="in-stat-n">1.4B</span><span class="in-stat-l">People</span></div>
+      <div class="in-stat-divider" aria-hidden="true"></div>
+      <div class="in-stat"><span class="in-stat-n">9</span><span class="in-stat-l">Cultural Pillars</span></div>
+    </div>
+  </div>
+  <div class="in-hero-scroll" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <span class="in-scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- Pillar Navigation -->
+<nav class="in-tabs" aria-label="Culture pillars">
+  <div class="in-tabs-inner">
+    {pillars.map((p, i) => (
+      <button
+        class={`in-tab${i === 0 ? ' active' : ''}`}
+        data-pillar={p.id}
+        aria-selected={i === 0 ? 'true' : 'false'}
+      >
+        <span class="in-tab-icon">{p.icon}</span>
+        <span class="in-tab-label">{p.title}</span>
+      </button>
+    ))}
+  </div>
+</nav>
+
+<!-- Content -->
+<main class="in-main">
+  {pillars.map((p, pi) => (
+    <section
+      class={`in-pillar${pi === 0 ? ' active' : ''}`}
+      id={`pillar-${p.id}`}
+      aria-hidden={pi !== 0 ? 'true' : 'false'}
+    >
+      <div class="in-pillar-header">
+        <div class="in-pillar-header-left">
+          <span class="in-pillar-number">0{pi + 1}</span>
+          <div>
+            <h2 class="in-pillar-title">{p.title}</h2>
+            <p class="in-pillar-sub">{p.entries.length} chapters across time</p>
+          </div>
+        </div>
+        <span class="in-pillar-icon-lg">{p.icon}</span>
+      </div>
+
+      <div class="in-timeline">
+        <div class="in-timeline-line" aria-hidden="true"></div>
+        {p.entries.map((entry, ei) => (
+          <div class={`in-card-wrap ${ei % 2 === 0 ? 'left' : 'right'}`}>
+            <div class="in-timeline-node" aria-hidden="true">
+              <div class="in-node-outer"></div>
+              <div class="in-node-inner"></div>
+            </div>
+            <article class="in-card">
+              <div class="in-card-top">
+                <span class="in-card-period">{entry.period}</span>
+                <span class="in-card-era">{entry.era}</span>
+              </div>
+              <h3 class="in-card-title">{entry.title}</h3>
+              <p class="in-card-summary">{entry.summary}</p>
+              <div class="in-card-content" hidden>
+                <p>{entry.content}</p>
+              </div>
+              <button class="in-card-toggle" aria-expanded="false">
+                <span class="in-toggle-text">Read more</span>
+                <span class="in-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </article>
+          </div>
+        ))}
       </div>
     </section>
+  ))}
+</main>
+
+<footer class="in-footer">
+  <div class="in-footer-inner">
+    <a href="/" class="in-footer-logo">Spirit Mirror</a>
+    <p class="in-footer-copy">Exploring cultures, one story at a time.</p>
+    <a href="/" class="in-footer-back">← All Cultures</a>
   </div>
+</footer>
+
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap');
+
+  /* ── Variables ─────────────────────────────── */
+  :root {
+    --in-saffron: #ff9933;
+    --in-saffron-light: #ffb366;
+    --in-green: #138808;
+    --in-dark: #1a0a00;
+    --in-warm: #fdf5e6;
+    --in-white: #fff8f0;
+    --in-bg: #fdf5e6;
+    --in-text: #1a0f0a;
+    --in-muted: #7a6a60;
+    --in-border: #e0d0c0;
+    --in-node: #ff9933;
+    --in-red: #c41e3a;
+  }
+
+  /* ── Global overrides ───────────────────────── */
+  :global(.site-root) {
+    background: var(--in-bg) !important;
+  }
+  :global(.site-header) {
+    background: var(--in-dark) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+  :global(.site-logo) {
+    color: var(--in-saffron) !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* ── Hero ───────────────────────────────────── */
+  .in-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 120px;
+    overflow: hidden;
+    background: var(--in-dark);
+  }
+
+  .in-hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .in-hero-mandala {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 153, 51, 0.08);
+    background:
+      radial-gradient(circle, rgba(255, 153, 51, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 30% 30%, rgba(19, 136, 8, 0.05) 0%, transparent 40%);
+  }
+
+  .in-hero-warm {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 40%, rgba(255, 153, 51, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 80% at 70% 60%, rgba(196, 30, 58, 0.06) 0%, transparent 40%);
+  }
+
+  .in-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .in-hero-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--in-saffron);
+    border: 1px solid rgba(255, 153, 51, 0.35);
+    border-radius: 100px;
+    padding: 6px 18px;
+    margin-bottom: 32px;
+  }
+
+  .in-hero-title {
+    margin: 0 0 28px;
+    display: block;
+  }
+
+  .in-h1-bharat {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: clamp(5rem, 18vw, 10rem);
+    font-weight: 700;
+    color: var(--in-saffron);
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 80px rgba(255, 153, 51, 0.25);
+  }
+
+  .in-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 248, 240, 0.5);
+    max-width: 560px;
+    margin: 0 auto 52px;
+  }
+
+  .in-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .in-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .in-stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .in-stat-l {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 248, 240, 0.35);
+  }
+
+  .in-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 248, 240, 0.12);
+  }
+
+  .in-hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 248, 240, 0.25);
+    z-index: 1;
+  }
+
+  .in-scroll-arrow {
+    animation: in-bounce 1.6s ease-in-out infinite;
+    display: block;
+  }
+
+  @keyframes in-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── Tabs ───────────────────────────────────── */
+  .in-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(26, 10, 0, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 153, 51, 0.12);
+  }
+
+  .in-tabs-inner {
+    display: flex;
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    padding: 0 8px;
+  }
+  .in-tabs-inner::-webkit-scrollbar { display: none; }
+
+  .in-tab {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255, 248, 240, 0.4);
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .in-tab:hover {
+    color: rgba(255, 248, 240, 0.8);
+  }
+
+  .in-tab.active {
+    color: var(--in-saffron);
+    border-bottom-color: var(--in-saffron);
+  }
+
+  .in-tab-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  /* ── Main ───────────────────────────────────── */
+  .in-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .in-pillar { display: none; }
+  .in-pillar.active {
+    display: block;
+    animation: in-in 0.35s ease;
+  }
+
+  @keyframes in-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Pillar header */
+  .in-pillar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--in-border);
+  }
+
+  .in-pillar-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .in-pillar-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--in-border);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .in-pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--in-text);
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+
+  .in-pillar-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--in-muted);
+    margin: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .in-pillar-icon-lg {
+    font-size: 3rem;
+    opacity: 0.12;
+    user-select: none;
+  }
+
+  /* ── Timeline ───────────────────────────────── */
+  .in-timeline {
+    position: relative;
+  }
+
+  .in-timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--in-border) 5%, var(--in-border) 95%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .in-card-wrap {
+    position: relative;
+    display: flex;
+    margin-bottom: 56px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .in-card-wrap.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .in-card-wrap.left {
+    padding-right: calc(50% + 36px);
+  }
+
+  .in-card-wrap.right {
+    flex-direction: row-reverse;
+    padding-left: calc(50% + 36px);
+  }
+
+  .in-card-wrap.left .in-card {
+    text-align: right;
+  }
+
+  .in-card-wrap.left .in-card-top {
+    justify-content: flex-end;
+  }
+
+  .in-card-wrap.left .in-card-toggle {
+    margin-left: auto;
+  }
+
+  /* Node */
+  .in-timeline-node {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .in-node-outer {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--in-saffron);
+    background: var(--in-bg);
+    transition: transform 0.2s;
+  }
+
+  .in-card-wrap:hover .in-node-outer {
+    transform: scale(1.3);
+  }
+
+  .in-node-inner {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--in-saffron);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Card ───────────────────────────────────── */
+  .in-card {
+    background: var(--in-white);
+    border: 1px solid var(--in-border);
+    border-radius: 4px;
+    padding: 24px 28px;
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    border-top: 4px solid var(--in-saffron);
+  }
+
+  .in-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .in-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .in-card-period {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--in-saffron);
+    background: rgba(255, 153, 51, 0.08);
+    border: 1px solid rgba(255, 153, 51, 0.2);
+    border-radius: 4px;
+    padding: 3px 12px;
+  }
+
+  .in-card-era {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: var(--in-muted);
+    font-weight: 400;
+  }
+
+  .in-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--in-text);
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+
+  .in-card-summary {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: #4b4540;
+    margin: 0 0 16px;
+    font-weight: 400;
+  }
+
+  .in-card-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.85;
+    color: #374150;
+    border-top: 1px solid var(--in-border);
+    padding-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .in-card-content p { margin: 0; }
+
+  .in-card-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--in-red);
+    padding: 0;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .in-card-toggle:hover {
+    color: var(--in-saffron);
+  }
+
+  .in-toggle-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+    position: relative;
+  }
+
+  .in-toggle-icon::before,
+  .in-toggle-icon::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 2px;
+  }
+  .in-toggle-icon::before {
+    width: 7px; height: 1.5px;
+  }
+  .in-toggle-icon::after {
+    width: 1.5px; height: 7px;
+    transition: transform 0.25s;
+  }
+
+  .in-card-toggle[aria-expanded="true"] .in-toggle-icon::after {
+    transform: rotate(90deg);
+  }
+
+  /* ── Footer ─────────────────────────────────── */
+  .in-footer {
+    background: var(--in-dark);
+    padding: 48px 24px;
+  }
+
+  .in-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .in-footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--in-saffron);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+  }
+
+  .in-footer-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 153, 51, 0.25);
+    margin: 0;
+  }
+
+  .in-footer-back {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--in-saffron);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+
+  .in-footer-back:hover {
+    color: var(--in-white);
+  }
+
+  /* ── Mobile ─────────────────────────────────── */
+  @media (max-width: 640px) {
+    .in-timeline-line { left: 16px; }
+
+    .in-card-wrap.left,
+    .in-card-wrap.right {
+      flex-direction: column;
+      padding-left: 44px;
+      padding-right: 0;
+    }
+
+    .in-card-wrap.left .in-card { text-align: left; }
+    .in-card-wrap.left .in-card-top { justify-content: flex-start; }
+    .in-card-wrap.left .in-card-toggle { margin-left: 0; }
+
+    .in-timeline-node {
+      left: 16px;
+      top: 18px;
+    }
+
+    .in-tab-label { display: none; }
+    .in-tab { padding: 14px 16px; }
+    .in-tab-icon { font-size: 1.1rem; }
+
+    .in-pillar-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .in-pillar-icon-lg { display: none; }
+
+    .in-hero-stats { gap: 20px; }
+    .in-stat-divider { height: 28px; }
+
+    .in-footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.in-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.in-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const target = tab.dataset.pillar;
+      document.querySelectorAll('.in-pillar').forEach(p => {
+        const active = p.id === `pillar-${target}`;
+        p.classList.toggle('active', active);
+        p.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+
+      observeCards();
+    });
+  });
+
+  // Expand / collapse
+  document.querySelectorAll('.in-card-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.closest('.in-card').querySelector('.in-card-content');
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      content.hidden = open;
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      btn.querySelector('.in-toggle-text').textContent = open ? 'Read more' : 'Read less';
+    });
+  });
+
+  // Scroll animation
+  let observer;
+  function observeCards() {
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.in-pillar.active .in-card-wrap:not(.visible)')
+      .forEach(c => observer.observe(c));
+  }
+
+  observeCards();
+</script>
