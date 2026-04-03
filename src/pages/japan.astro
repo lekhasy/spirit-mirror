@@ -1331,23 +1331,23 @@ const seasonMap = {
     inset: 0;
     z-index: 1000;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
   }
 
   .jp-modal[hidden] {
     display: none;
   }
 
-  /* Dark overlay backdrop */
+  /* Full viewport backdrop */
   .jp-modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(20, 16, 12, 0.82);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    animation: jp-modal-backdrop-in 350ms var(--ease-arrival) both;
+    background: rgba(18, 14, 10, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: jp-modal-backdrop-in 350ms ease both;
   }
 
   @keyframes jp-modal-backdrop-in {
@@ -1355,66 +1355,93 @@ const seasonMap = {
     to { opacity: 1; }
   }
 
-  /* Main panel */
-  .jp-modal-panel {
+  /* Two-column layout container */
+  .jp-modal-layout {
     position: relative;
-    background: var(--jp-washi);
-    border: 1px solid rgba(196, 30, 58, 0.15);
-    border-top: 3px solid var(--jp-vermillion);
-    border-radius: 3px 3px 4px 4px;
-    width: min(860px, 92vw);
-    max-height: 88vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    box-shadow:
-      0 24px 80px rgba(26, 23, 20, 0.35),
-      0 8px 24px rgba(26, 23, 20, 0.18),
-      inset 0 1px 0 rgba(255, 253, 249, 0.6);
-    animation: jp-modal-panel-in 420ms var(--ease-arrival) both;
-    /* Washi paper base */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23w)' opacity='0.025'/%3E%3C/svg%3E");
+    display: flex;
+    width: min(1400px, 100vw);
+    height: min(900px, 100vh);
+    margin: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 32px 100px rgba(26, 23, 20, 0.5);
+    animation: jp-modal-layout-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  /* Custom scrollbar */
-  .jp-modal-panel::-webkit-scrollbar {
+  @keyframes jp-modal-layout-in {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .jp-modal-layout.closing {
+    animation: jp-modal-layout-out 300ms cubic-bezier(0.7, 0, 0.84, 0) both;
+  }
+
+  @keyframes jp-modal-layout-out {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+  }
+
+  /* LEFT: Visual panel (45%) */
+  .jp-modal-visual {
+    position: relative;
+    width: 45%;
+    background: var(--jp-washi);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* RIGHT: Content panel (55%) */
+  .jp-modal-content-panel {
+    position: relative;
+    width: 55%;
+    background: var(--jp-washi);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Washi texture for content panel */
+  .jp-modal-content-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23w)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Custom scrollbar for content panel */
+  .jp-modal-content-panel::-webkit-scrollbar {
     width: 5px;
   }
-  .jp-modal-panel::-webkit-scrollbar-track {
+  .jp-modal-content-panel::-webkit-scrollbar-track {
     background: var(--jp-washi-dark);
   }
-  .jp-modal-panel::-webkit-scrollbar-thumb {
+  .jp-modal-content-panel::-webkit-scrollbar-thumb {
     background: rgba(196, 30, 58, 0.25);
     border-radius: 3px;
   }
 
-  @keyframes jp-modal-panel-in {
-    from {
-      opacity: 0;
-      transform: scale(0.96) translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  .jp-modal-panel.closing {
-    animation: jp-modal-panel-out 280ms cubic-bezier(0.7, 0, 0.84, 0) both;
-  }
-
-  @keyframes jp-modal-panel-out {
-    from { opacity: 1; transform: scale(1) translateY(0); }
-    to { opacity: 0; transform: scale(0.96) translateY(8px); }
-  }
-
-  /* Modal hero section */
-  .jp-modal-hero-wrap {
+  /* Seigaiha wave band at top of left panel */
+  .jp-modal-wave {
     position: relative;
+    height: 48px;
+    background: var(--jp-washi);
+    z-index: 2;
+  }
+
+  .jp-modal-wave svg {
     width: 100%;
-    height: 220px;
+    height: 48px;
+    display: block;
+  }
+
+  /* Modal hero section - left panel */
+  .jp-modal-hero-wrap {
+    position: absolute;
+    inset: 0;
+    top: 48px;
     overflow: hidden;
-    background: linear-gradient(135deg, #1a1714 0%, #2d2620 50%, #3d3228 100%);
-    margin: -20px -20px 0 -20px;
   }
 
   .jp-modal-hero-img {
@@ -1423,11 +1450,11 @@ const seasonMap = {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    visibility: hidden;
+    display: none;
   }
 
   .jp-modal-hero-img[src]:not([src=""]) {
-    visibility: visible;
+    display: block;
   }
 
   .jp-modal-hero-video {
@@ -1446,14 +1473,15 @@ const seasonMap = {
   .jp-modal-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.6) 100%);
+    background: linear-gradient(to bottom, rgba(26,23,20,0.05) 0%, rgba(26,23,20,0.3) 100%);
+    z-index: 1;
   }
 
-  /* Visual fallback (gradient) when no hero image/video */
+  /* Visual fallback - warm Japanese gradient when no hero image/video */
   .jp-modal-visual-fallback {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #2a1f1a 0%, #4a3228 30%, #6b4a38 60%, #8b5a42 100%);
+    background: linear-gradient(160deg, #8B1520 0%, #C9A84C 35%, #FAF7F2 75%);
     z-index: 0;
   }
 
@@ -1527,16 +1555,20 @@ const seasonMap = {
   .jp-modal-content {
     position: relative;
     z-index: 1;
-    padding: 48px 56px 56px;
-    max-width: 680px;
+    padding: clamp(32px, 5vw, 64px);
+    max-width: 60ch;
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .jp-modal-meta {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
     opacity: 0;
     transform: translateY(6px);
@@ -1550,29 +1582,29 @@ const seasonMap = {
 
   .jp-modal-period {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--jp-white);
     background: var(--jp-vermillion);
     border-radius: 2px;
-    padding: 4px 14px;
+    padding: 6px 16px;
   }
 
   .jp-modal-era {
     font-family: var(--font-body);
-    font-size: 0.72rem;
-    color: var(--jp-warm-gray);
-    font-weight: 400;
+    font-size: 0.82rem;
+    color: #8B6914;
+    font-weight: 500;
   }
 
   .jp-modal-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     color: var(--jp-sumi);
-    line-height: 1.2;
-    margin: 0 0 20px;
+    line-height: 1.1;
+    margin: 0 0 28px;
     opacity: 0;
     transform: translateY(6px);
     animation: jp-modal-title-in 320ms var(--ease-arrival) 120ms both;
@@ -1601,9 +1633,9 @@ const seasonMap = {
 
   .jp-modal-body {
     font-family: var(--font-body);
-    font-size: clamp(0.92rem, 1.8vw, 1.0rem);
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
     line-height: 2.0;
-    color: rgba(26, 23, 20, 0.80);
+    color: #1A1714;
     font-weight: 400;
   }
 
