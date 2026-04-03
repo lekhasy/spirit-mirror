@@ -115,7 +115,7 @@ const pillars = data.pillars;
     --in-saffron: #ff9933;
     --in-saffron-light: #ffb366;
     --in-green: #138808;
-    --in-dark: #1a0a00;
+    --in-dark: #fdf5e6;
     --in-warm: #fdf5e6;
     --in-white: #fff8f0;
     --in-bg: #fdf5e6;
@@ -131,8 +131,9 @@ const pillars = data.pillars;
     background: var(--in-bg) !important;
   }
   :global(.site-header) {
-    background: var(--in-dark) !important;
-    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    background: rgba(255, 255, 250, 0.97) !important;
+    border-bottom: 1px solid rgba(255, 153, 51, 0.12) !important;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06) !important;
   }
   :global(.site-logo) {
     color: var(--in-saffron) !important;
@@ -151,7 +152,7 @@ const pillars = data.pillars;
     text-align: center;
     padding: 80px 24px 120px;
     overflow: hidden;
-    background: var(--in-dark);
+    background: var(--in-bg);
   }
 
   .in-hero-bg {
@@ -222,7 +223,7 @@ const pillars = data.pillars;
     font-size: clamp(0.95rem, 2.2vw, 1.05rem);
     font-weight: 300;
     line-height: 1.8;
-    color: rgba(255, 248, 240, 0.5);
+    color: rgba(60, 40, 20, 0.6);
     max-width: 560px;
     margin: 0 auto 52px;
   }
@@ -245,7 +246,7 @@ const pillars = data.pillars;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--in-text);
     line-height: 1;
   }
 
@@ -255,7 +256,7 @@ const pillars = data.pillars;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 248, 240, 0.35);
+    color: var(--in-muted);
   }
 
   .in-stat-divider {
@@ -277,7 +278,7 @@ const pillars = data.pillars;
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255, 248, 240, 0.25);
+    color: rgba(60, 40, 20, 0.3);
     z-index: 1;
   }
 
@@ -296,10 +297,11 @@ const pillars = data.pillars;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(26, 10, 0, 0.97);
+    background: rgba(255, 255, 250, 0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 153, 51, 0.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
 
   .in-tabs-inner {
@@ -325,14 +327,14 @@ const pillars = data.pillars;
     font-family: 'Inter', sans-serif;
     font-size: 0.82rem;
     font-weight: 500;
-    color: rgba(255, 248, 240, 0.4);
+    color: rgba(60, 40, 20, 0.5);
     transition: all 0.2s;
     white-space: nowrap;
     letter-spacing: 0.01em;
   }
 
   .in-tab:hover {
-    color: rgba(255, 248, 240, 0.8);
+    color: rgba(60, 40, 20, 0.85);
   }
 
   .in-tab.active {
@@ -624,8 +626,9 @@ const pillars = data.pillars;
 
   /* ── Footer ─────────────────────────────────── */
   .in-footer {
-    background: var(--in-dark);
+    background: var(--in-bg);
     padding: 48px 24px;
+    border-top: 1px solid var(--in-border);
   }
 
   .in-footer-inner {
@@ -650,7 +653,7 @@ const pillars = data.pillars;
   .in-footer-copy {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    color: rgba(255, 153, 51, 0.25);
+    color: var(--in-muted);
     margin: 0;
   }
 
