@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import data from '../data/japan.json';
 const pillars = data.pillars;
+const seasonMap = {
+  history: 'autumn', parenting: 'winter', stories: 'spring',
+  belief: 'autumn', rituals: 'winter', festivals: 'spring',
+  music: 'summer', literature: 'autumn', dance: 'summer'
+};
 ---
 
 <Layout title="Japan — Spirit Mirror">
@@ -15,18 +20,54 @@ const pillars = data.pillars;
     <div class="jp-sun-gradient"></div>
     <!-- Fuji mountain silhouette -->
     <div class="jp-fuji">
-      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <!-- Mountain base shadow -->
-        <ellipse cx="400" cy="395" rx="380" ry="30" fill="rgba(0,0,0,0.08)"/>
-        <!-- Main Fuji body -->
-        <path d="M400 80 C440 130 520 180 580 260 C610 305 650 340 700 380 L100 380 C150 340 190 305 220 260 C280 180 360 130 400 80Z" fill="#E8DDD0" opacity="0.9"/>
-        <!-- Snow cap -->
-        <path d="M400 80 C408 100 418 120 430 145 C418 135 412 125 400 120 C388 125 382 135 370 145 C382 120 392 100 400 80Z" fill="#FFFDF9"/>
-        <path d="M400 80 C412 105 425 130 438 155 C424 142 416 128 400 120 C384 128 376 142 362 155 C375 130 388 105 400 80Z" fill="#FFFDF9"/>
-        <!-- Snow details -->
-        <path d="M400 120 C390 130 382 138 376 145 C385 140 392 134 400 132 C408 134 415 140 424 145 C418 138 410 130 400 120Z" fill="#FFFDF9"/>
+      <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <!-- Atmospheric haze at base -->
+        <ellipse cx="450" cy="415" rx="420" ry="28" fill="rgba(200,180,160,0.12)"/>
+        <!-- Main Fuji body - natural S-curve profile -->
+        <path d="M450 60
+                 C478 95 530 155 578 220
+                 C608 265 648 310 700 365
+                 L200 365
+                 C252 310 292 265 322 220
+                 C370 155 422 95 450 60Z"
+              fill="#EDE5D8" opacity="0.95"/>
+        <!-- Left slope shadow - gives natural depth -->
+        <path d="M450 60
+                 C440 85 428 115 418 145
+                 C408 115 400 90 395 70
+                 C415 65 430 60 450 60Z"
+              fill="rgba(180,155,135,0.18)"/>
+        <!-- Snow cap - organic asymmetric blob -->
+        <path d="M450 60
+                 C440 82 430 100 422 115
+                 C432 108 440 98 450 90
+                 C460 98 468 108 478 115
+                 C470 100 460 82 450 60Z"
+              fill="#FFFEFB"/>
+        <path d="M450 60
+                 C442 78 435 94 430 108
+                 C420 100 415 90 420 80
+                 C430 75 440 68 450 60Z"
+              fill="#FFFEFB"/>
+        <path d="M450 60
+                 C458 78 465 94 470 108
+                 C480 100 485 90 480 80
+                 C470 75 460 68 450 60Z"
+              fill="#FFFEFB"/>
+        <!-- Snow streak left -->
+        <path d="M415 130 C410 145 408 158 412 168 C405 158 405 145 415 130Z"
+              fill="#FFFEFB" opacity="0.85"/>
+        <!-- Snow streak right -->
+        <path d="M485 130 C490 145 492 158 488 168 C495 158 495 145 485 130Z"
+              fill="#FFFEFB" opacity="0.85"/>
         <!-- Subtle contour line -->
-        <path d="M400 80 C440 130 520 180 580 260 C610 305 650 340 700 380 L100 380 C150 340 190 305 220 260 C280 180 360 130 400 80Z" fill="none" stroke="rgba(180,150,130,0.2)" stroke-width="1.5"/>
+        <path d="M450 60
+                 C478 95 530 155 578 220
+                 C608 265 648 310 700 365
+                 L200 365
+                 C252 310 292 265 322 220
+                 C370 155 422 95 450 60Z"
+              fill="none" stroke="rgba(160,140,120,0.25)" stroke-width="1.2"/>
       </svg>
     </div>
     <!-- Seigaiha wave watermark (subtle) -->
@@ -79,11 +120,12 @@ const pillars = data.pillars;
 <!-- Content -->
 <main class="jp-main">
   {pillars.map((p, pi) => (
-    <section
-      class={`jp-pillar${pi === 0 ? ' active' : ''}`}
-      id={`element-${p.id}`}
-      aria-hidden={pi !== 0 ? 'true' : 'false'}
-    >
+      <section
+        class={`jp-pillar${pi === 0 ? ' active' : ''}`}
+        id={`element-${p.id}`}
+        aria-hidden={pi !== 0 ? 'true' : 'false'}
+        data-season={seasonMap[p.id] || 'autumn'}
+      >
       <div class="jp-pillar-header">
         <div class="jp-pillar-header-left">
           <span class="jp-pillar-number">0{pi + 1}</span>
@@ -123,6 +165,7 @@ const pillars = data.pillars;
       </div>
     </section>
   ))}
+
 
   <!-- Ainu / Okinawa Callout -->
   <aside class="jp-callout" aria-label="Cultural diversity note">
@@ -166,9 +209,9 @@ const pillars = data.pillars;
 
   /* ── Variables ─────────────────────────────── */
   :root {
-    --jp-vermillion: #C41E3A;
-    --jp-vermillion-deep: #B01A2E;
-    --jp-vermillion-soft: #E8564F;
+    --jp-vermillion: #BC1B21;
+    --jp-vermillion-deep: #A0151C;
+    --jp-vermillion-soft: #D94F45;
     --jp-cream: #FAF7F2;
     --jp-gold: #C9A84C;
     --jp-sumi: #1B2A4A;
@@ -179,12 +222,14 @@ const pillars = data.pillars;
     --jp-shadow: rgba(26, 23, 20, 0.08);
     --jp-shadow-deep: rgba(26, 23, 20, 0.15);
 
-    /* Spring tint (for Stories, Festivals) */
-    --jp-spring-tint: rgba(255, 240, 238, 0.5);
-    /* Summer tint (for Music, Dance) */
-    --jp-summer-tint: rgba(230, 238, 245, 0.4);
-    /* Autumn tint (for History, Belief) */
-    --jp-autumn-tint: rgba(245, 238, 225, 0.5);
+    /* Spring tint (Stories, Festivals) */
+    --jp-spring-tint: rgba(255, 240, 238, 0.45);
+    /* Summer tint (Music, Dance) */
+    --jp-summer-tint: rgba(230, 238, 245, 0.35);
+    /* Autumn tint (History, Belief) */
+    --jp-autumn-tint: rgba(248, 238, 220, 0.5);
+    /* Winter tint (Parenting, Rituals) */
+    --jp-winter-tint: rgba(242, 240, 235, 0.4);
   }
 
   /* ── Global overrides ───────────────────────── */
@@ -229,15 +274,23 @@ const pillars = data.pillars;
   /* Rising sun radial gradient */
   .jp-sun-gradient {
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
-    width: min(700px, 90vw);
-    height: min(700px, 90vw);
+    width: min(800px, 92vw);
+    height: min(800px, 92vw);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(196, 30, 58, 0.15) 0%, rgba(196, 30, 58, 0.06) 35%, transparent 65%);
+    background: radial-gradient(circle, rgba(188, 27, 33, 0.22) 0%, rgba(188, 27, 33, 0.10) 30%, rgba(188, 27, 33, 0.04) 55%, transparent 75%);
     pointer-events: none;
     z-index: 2;
+  }
+
+  .jp-sun-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(188, 27, 33, 0.12) 0%, transparent 70%);
   }
 
   /* Fuji mountain */
@@ -473,6 +526,7 @@ const pillars = data.pillars;
   .jp-pillar[data-season="spring"] { background: linear-gradient(180deg, transparent 0%, var(--jp-spring-tint) 100%); }
   .jp-pillar[data-season="summer"] { background: linear-gradient(180deg, transparent 0%, var(--jp-summer-tint) 100%); }
   .jp-pillar[data-season="autumn"] { background: linear-gradient(180deg, transparent 0%, var(--jp-autumn-tint) 100%); }
+  .jp-pillar[data-season="winter"] { background: linear-gradient(180deg, transparent 0%, var(--jp-winter-tint) 100%); }
 
   /* Element header */
   .jp-pillar-header {
@@ -596,7 +650,7 @@ const pillars = data.pillars;
 
   .jp-card-wrap:hover .jp-node-outer {
     transform: scale(1.35);
-    box-shadow: 0 0 10px rgba(196, 30, 58, 0.35);
+    box-shadow: 0 0 10px rgba(188, 27, 33, 0.4);
   }
 
   .jp-node-inner {
@@ -750,11 +804,28 @@ const pillars = data.pillars;
 
   .jp-callout-inner {
     position: relative;
-    border: 1px solid rgba(27, 42, 74, 0.2);
+    border: 2px solid rgba(27, 42, 74, 0.2);
     border-radius: 4px;
     padding: 28px 32px;
-    background: rgba(27, 42, 74, 0.02);
+    background: rgba(27, 42, 74, 0.018);
     overflow: hidden;
+  }
+
+  /* Seigaiha wave rule at top */
+  .jp-callout-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(27, 42, 74, 0.18) 0px,
+      rgba(27, 42, 74, 0.18) 8px,
+      transparent 8px,
+      transparent 16px
+    );
   }
 
   .jp-callout-wave {
@@ -763,6 +834,7 @@ const pillars = data.pillars;
     right: 0;
     width: 120px;
     pointer-events: none;
+    opacity: 0.12;
   }
 
   .jp-callout-label {
@@ -773,19 +845,19 @@ const pillars = data.pillars;
     text-transform: uppercase;
     color: var(--jp-sumi);
     margin: 0 0 10px;
-    opacity: 0.7;
+    opacity: 0.65;
   }
 
   .jp-callout-text {
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
     line-height: 1.8;
-    color: rgba(27, 42, 74, 0.75);
+    color: rgba(27, 42, 74, 0.72);
     margin: 0;
   }
 
   .jp-callout-text strong {
-    color: rgba(27, 42, 74, 0.9);
+    color: rgba(27, 42, 74, 0.88);
     font-weight: 600;
   }
 
@@ -803,8 +875,9 @@ const pillars = data.pillars;
     top: 50%;
     right: 8%;
     transform: translateY(-50%);
-    width: 60px;
+    width: 70px;
     pointer-events: none;
+    opacity: 0.09;
   }
 
   .jp-footer-inner {
