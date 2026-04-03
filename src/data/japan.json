@@ -1,0 +1,333 @@
+{
+  "pillars": [
+    {
+      "id": "history",
+      "title": "History",
+      "icon": "📜",
+      "entries": [
+        {
+          "period": "Before 660 BCE",
+          "era": "Legendary Origins",
+          "title": "The Age of the Gods and Emperor Jimmu",
+          "summary": "Japanese mythology traces the nation's birth to the sun goddess Amaterasu and the divine foundation of an unbroken imperial lineage.",
+          "content": "Japanese tradition holds that the nation was founded in 660 BCE by Emperor Jimmu, a descendant of the sun goddess Amaterasu Ōmikami — a claim that gave the imperial family unbroken legitimacy for over 2,600 years. The Kojiki (712 CE) and Nihon Shoki (720 CE) record these myths in detail: the creation from the cosmic mud of Izanagi and Izanami, the birth of Japan's islands, and the descent of Amaterasu's grandson Ninigi to rule the earth. Though mythology, these narratives shaped Japanese identity profoundly. The imperial institution itself — the world's oldest hereditary monarchy — remains living proof of Japan's exceptional continuity. Every emperor is believed descended directly from the sun goddess, a claim no other monarchy can parallel."
+        },
+        {
+          "period": "538–1185",
+          "era": "Classical Age",
+          "title": "Buddhist Civilization and the Heian Court",
+          "summary": "Buddhism transformed Japan into a cultured civilization whose capital at Heian-kyō set the standard for East Asian refinement.",
+          "content": "Buddhism arrived in Japan via Korea in 538 CE, sparking a cultural transformation that would define Japanese aesthetics for centuries. The Nara period (710–794) saw the building of massive Buddhist temples like Tōdai-ji, and the Heian period (794–1185) that followed is considered Japan's cultural golden age. The capital Heian-kyō (modern Kyoto) was designed as a perfect grid modeled on Tang dynasty Chang'an, and its aristocratic court produced some of the world's most refined literature. Lady Murasaki Shikibu wrote The Tale of Genji — often called the world's first novel — in the early 11th century, a work of extraordinary psychological subtlety. The Heian aristocracy lived in aesthetic immersion: poetry, calligraphy, music, and painting were not hobbies but the substance of political and social life. Their obsession with beauty, refinement, and emotional nuance established a cultural template Japan has never abandoned."
+        },
+        {
+          "period": "1185–1603",
+          "era": "Feudal Age",
+          "title": "The Shogunate and the Way of the Warrior",
+          "summary": "Samurai warriors seized power from the imperial court and created a warrior culture whose ethics of loyalty and honor still shape Japan's self-image.",
+          "content": "The Kamakura shogunate established in 1185 marked the beginning of over 600 years of military rule. Minamoto no Yoshitsune's victories over the Taira clan inaugurated the age of the samurai — men for whom death in battle was not an ending but a culmination of meaning. The warrior code of bushidō (the way of the warrior) would become Japan's most enduring export: absolute loyalty, personal honor above life, stoic endurance of suffering, and the beauty of impermanence. Zen Buddhism particularly suited the samurai mind — its emphasis on direct experience over intellectual learning, and on the present moment as the only real arena of life, gave warriors a philosophy equal to their mortality. The Mongol invasions of 1274 and 1281, repelled by typhoons (kamikaze) as much as samurai valor, further hardened Japanese national identity as something distinct from China and the continent."
+        },
+        {
+          "period": "1603–1868",
+          "era": "Isolation",
+          "title": "The Tokugawa Peace and Sakoku",
+          "summary": "Under the Tokugawa shoguns, Japan entered two centuries of internal peace that produced a sophisticated urban culture — and deliberate isolation from the outside world.",
+          "content": "The Tokugawa shogunate (1603–1868) unified Japan after centuries of civil war and maintained absolute peace for over 250 years — the longest continuous peace any major society has ever known. This peace enabled an extraordinary flowering of urban culture: Edo (modern Tokyo) grew to over one million inhabitants, the largest city in the world by 1800. A new urban middle class — merchants, artisans, actors, courtesans — created the culture of ukiyo (the floating world): woodblock prints, kabuki theater, haiku poetry, and the pleasure districts. Simultaneously, the Tokugawa regime enforced sakoku — a policy of near-total isolation, expelling missionaries and limiting foreign contact to a single Dutch trading post at Nagasaki. This isolation preserved Japanese culture from colonial influence but also left Japan strategically vulnerable when American Commodore Perry arrived with his 'Black Ships' in 1853, demanding trade access."
+        },
+        {
+          "period": "1868–1945",
+          "era": "Empire and War",
+          "title": "Meiji Restoration, Imperial Expansion, and Catastrophe",
+          "summary": "Japan's rapid modernization as an industrial and military power ended in catastrophic militarism and the devastation of World War II.",
+          "content": "The Meiji Restoration of 1868 overturned 250 years of isolation in a generation. Japan adopted Western technology, constitutional government, and industrial methods with astonishing speed — building railways, factories, and a modern navy in decades. The 1905 Russo-Japanese War proved Japan's status as a great power by defeating a European nation. Yet militarism gradually captured the state: the 1931 Manchurian Incident, the 1937 Nanking Massacre, and the 1941 attack on Pearl Harbor reflected a dangerous logic of imperial expansion driven by resource scarcity and militarist ideology. Japan's surrender in August 1945, following the atomic bombings of Hiroshima and Nagasaki, killed 200,000 people and left the nation in ruins — but also began the long, painful process of rebuilding a peaceful identity."
+        },
+        {
+          "period": "1945–present",
+          "era": "Postwar and Contemporary",
+          "title": "From Ruins to the World's Sixth Largest Economy",
+          "summary": "Defeated and occupied, Japan rebuilt itself through economic miracle into a technological and cultural powerhouse with global influence.",
+          "content": "The US occupation (1945–1952) under MacArthur transformed Japan: a new democratic constitution drafted by Americans renounced war and established civil liberties. Japan's economic miracle of the 1950s–1980s produced corporate giants like Toyota, Sony, and Nintendo and made Japan the world's second-largest economy by 1985. The bust that followed — the 'Lost Decade' of stagnation — taught Japan painful lessons about asset bubbles and demographic decline. Today, Japan faces an aging population and a conservative political culture resistant to immigration, yet its cultural influence remains enormous: anime, video games, fashion, cuisine, and design exports shape global youth culture. Japan holds more Nobel Prizes in science than any Asian nation and maintains one of the world's highest standards of living."
+        }
+      ]
+    },
+    {
+      "id": "parenting",
+      "title": "Parenting",
+      "icon": "👨👩👧",
+      "entries": [
+        {
+          "period": "Nara–Heian Period",
+          "era": "Aristocratic Child-rearing",
+          "title": "Children of the Court",
+          "summary": "Heian aristocratic children were raised in extended household networks with wet nurses and servants, learning poetry and calligraphy as early as age four.",
+          "content": "Heian aristocrats raised children within a complex household system that included wet nurses, governesses (often the mother's younger sisters), tutors, and numerous servants. Boys typically remained in the women's quarters until age seven (the 'gentle' age), surrounded by female caregivers who nurtured aesthetic sensitivity: listening to story scrolls read aloud, watching court ceremonies, learning the subtle social codes that governed aristocratic life. Girls were educated at home in the Chinese classics, waka poetry, and the graceful arts of the biwa (lute) and koto (zither). The concept of mono no aware — an acute sensitivity to the beauty and sadness of transience — was instilled early, as was the importance of reading social context through the subtext of poetry exchanges."
+        },
+        {
+          "period": "Kamakura–Edo Period",
+          "era": "Samurai and Peasant Values",
+          "title": "Discipline, Obedience, and the Warrior's Child",
+          "summary": "Samurai children were raised to embrace hardship, honor their ancestors, and view duty to lord and family as the highest purpose.",
+          "content": "Samurai child-rearing was rigorous by design. Boys as young as five were sent to train with their fathers' lord or a martial tutor, learning swordsmanship, archery, and the austerities of the warrior life. The concept of giri — the deep sense of obligation and reciprocity owed to those who have done one favors — was the central moral lesson of childhood. filial piety was understood not merely as respect for parents but as loyalty to one's lineage extending backward through ancestors and forward through descendants. Peasant children, by contrast, were raised with greater physical freedom but absorbed the rhythms of agricultural labor early. Both classes shared a common emphasis: children were never simply individuals. Each child was a link in a chain stretching back to founding ancestors and forward to unborn generations."
+        },
+        {
+          "period": "Meiji–WWII",
+          "era": "Modernization of Child-rearing",
+          "title": "Education, National Identity, and the Imperial Subject",
+          "summary": "Modern schooling and state ideology reshaped Japanese parenting in the Meiji era, creating the figure of the 'national child' loyal to emperor and nation.",
+          "content": "The Meiji state created a universal education system in the 1870s–1880s that transformed childhood. Mass schooling instilled not just literacy but a shared national identity centered on loyalty to the imperial family and reverence for State Shinto. Elementary school children learned the nation's founding mythology, theMeiji constitution's provisions, and the moral teachings of Confucian-derived ethics. Parenting outside school was expected to reinforce what teachers taught: respect for authority, dedication to academic achievement, and the subordination of individual desire to collective good. The pressure of fitting children into the imperial mold was intense — reflected in the famous Japanese saying that the nail that sticks up must be hammered down. After 1937, wartime ideology further militarized childhood, with children drilled in patriotic songs, physical training, and preparation for national service."
+        },
+        {
+          "period": "1945–present",
+          "era": "Postwar to Contemporary",
+          "title": "The Exam-Style Child and the Rise of Individual Choice",
+          "summary": "Postwar Japan traded imperial ideology for exam pressure, creating a new culture of academic intensity and evolving family structures.",
+          "content": "Postwar parenting exchanged imperial loyalty for examination intensity. The postwar education system created a brutal credential hierarchy: entrance exams for elite middle schools determined high school placement, which determined university access, which determined career trajectory. Juku (cram schools) became a second school for most urban children, running evenings and weekends. Parents — particularly mothers, the famous 'education mamas' — invested enormous emotional and financial capital in children's academic success as the primary route to middle-class stability. Yet since the 1990s, Japan has seen growing discussion of 'free-range' children, children's rights, and the mental health costs of hyper-competitive schooling. Birth rates have collapsed as young Japanese increasingly choose not to have children rather than subject them to the system they survived."
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "title": "Traditional Stories",
+      "icon": "📖",
+      "entries": [
+        {
+          "period": "Ancient",
+          "era": "Mythology",
+          "title": "Amaterasu, Susanoo, and the Birth of Japan",
+          "summary": "The sun goddess Amaterasu and the storm god Susanoo's epic rivalry produced the Japanese islands, the imperial line, and the mythological foundations of Japanese identity.",
+          "content": "In the earliest mythology, the gods Izanagi and Izanami stirred the primordial ocean with a sacred spear, from which the first island — Onogoro — crystallized. They descended to inhabit it and bore the islands of Japan and a pantheon of deities. When Izanami died and descended to the land of the dead, Izanagi followed and returned bearing dangerous pollution from the underworld. He bathed in a sacred purification at Awagihara, and from the different parts of his body emerged the sun goddess Amaterasu (from his left eye), the moon god Tsukuyomi (from his right eye), and the storm god Susanoo (from his nose). Amaterasu was assigned dominion over the heavens; Susanoo was banished to earth. Susanoo's discovery of the sacred sword Kusanagi in the tail of an eight-headed serpent became central to imperial legitimacy. The mythology encoded deep truths about Japan's relationship to nature, hierarchy, and the cosmic importance of purity and ritual."
+        },
+        {
+          "period": "Heian Period",
+          "era": "Court Literature",
+          "title": "The Tale of Genji — The World's First Novel",
+          "summary": "Lady Murasaki's 11th-century masterpiece depicts the emotional life of Prince Genji with a psychological depth that was not matched in European fiction for 700 years.",
+          "content": "The Tale of Genji (Genji monogatari), written by Lady Murasaki Shikibu around 1008 CE, is universally recognized as the world's first psychological novel. Its protagonist, Hikaru Genji — the 'shining prince' — is an illegitimate son of the emperor who is demoted to common status and embarks on a lifetime of passionate, often tragic romantic entanglements. Murasaki's genius was to treat human emotion — desire, jealousy, nostalgia, the ache of impermanence — with complete seriousness and extraordinary subtlety. The work runs to 54 chapters and over 1,100 pages, depicting three generations of characters across the full range of Heian aristocratic life. Its influence on Japanese literature, art, and aesthetics is incalculable: Genji's world of refined sensibility established the template for Japanese ideas about love, beauty, and emotional complexity that endures today."
+        },
+        {
+          "period": "Edo Period",
+          "era": "Folk Tales",
+          "title": "Momotarō, Urashima-tarō, and the Yokai",
+          "summary": "Japan's oral folk tradition produced supernatural tales of boy heroes born from peaches and fishermen who rescue turtles — and terrifying monsters that lurk at civilization's edge.",
+          "content": "Momotarō (Peach Boy) is Japan's most beloved folk tale: an old woodcutter and his wife find a giant peach at their door, which splits open to reveal a boy who grows to become a hero who defeats the oni (demons) of Onigashima island with the help of a dog, a monkey, and a pheasant. The story encodes deeply Japanese values: the special child born from supernatural means, the importance of loyalty among allies, and the obligation to rid the world of evil forces. Urashima-tarō tells of a fisherman who rescues a turtle and is rewarded with an invitation to the Ryūgū-jō, the Dragon King's palace beneath the sea. Enchanted by the beauty of the undersea world and the princess Otohime, he stays for what seems like days — only to discover on returning home that 700 years have passed. The tale expresses Japan's deep awareness of time's irreversible passage and the melancholy beauty of impermanence."
+        },
+        {
+          "period": "Medieval",
+          "era": "Warrior Legends",
+          "title": "The 47 Ronin and the Soul of Bushidō",
+          "summary": "The 47 Ronin story — 47 masterless samurai who avenged their lord's death and then committed ritual suicide — became the definitive expression of samurai honor.",
+          "content": "In 1701, two minor lords insulted the daimyō Kira Yoshinaka at the Tokugawa shogun's court. Lord Asano Takuminokami, unable to contain his rage, wounded Kira with a sword — a capital offense inside the shogun's castle. Ordered to commit seppuku (ritual suicide), Asano died with his retainers gathered around him. His 47 retainers were dismissed and became ronin (masterless samurai). Over the next year, they secretly planned and executed a brilliant revenge attack on Kira's mansion, killing him and presenting his head at their lord's grave. After a celebrated trial, the shogun ordered all 47 to commit seppuku — a death they accepted as the highest honor. Their story became the definitive legend of bushidō: the loyalty that transcends death, the patience that can sustain a 12-month plan, and the willingness to choose an honorable death over a comfortable life. Their graves at Sengaku-ji temple in Tokyo remain pilgrimage sites today."
+        }
+      ]
+    },
+    {
+      "id": "belief",
+      "title": "Belief",
+      "icon": "🙏",
+      "entries": [
+        {
+          "period": "Ancient–present",
+          "era": "Indigenous Spirituality",
+          "title": "Shintō — The Way of the Gods",
+          "summary": "Shintō is Japan's indigenous spirituality — a polytheistic, nature-revering faith centered on the worship of kami (sacred spirits) that predates Buddhism by centuries.",
+          "content": "Shintō has no founder, no fixed scripture, and no unified doctrine — it is the accumulated spiritual sensibility of the Japanese people, focused on the worship of kami, spirits that inhabit natural features, ancestors, heroic figures, and abstract concepts like growth and fertility. Famous kami include Amaterasu (sun goddess), Inari (fox spirit of rice and prosperity), and Hachiman (god of war and archery). Shintō shrines — identifiable by their torii gates — are found at natural sites of beauty and power throughout Japan. The core Shintō value is purity (kiyō), and ritual purification (misogi) by water or fire is central to worship. Shintō has always comfortably coexisted with Buddhism, and most Japanese consider themselves simultaneously Shintō and Buddhist — a syncretism so natural that most practitioners don't perceive any contradiction."
+        },
+        {
+          "period": "6th century–present",
+          "era": "Buddhist Arrival",
+          "title": "Buddhism and the Search for Enlightenment",
+          "summary": "Buddhism arrived in Japan in the 6th century and became the spiritual engine of Japanese art, architecture, and philosophical life.",
+          "content": "Buddhism entered Japan via the Korean kingdom of Baekje in 538 CE with a mission from the Sui dynasty Chinese court. The emperor and court adopted Buddhism as a state religion, and Buddhist temples became the most magnificent structures in the Japanese landscape. Buddhism offered something Shintō lacked: a comprehensive philosophy of suffering, impermanence, and the path to transcendence. Zen Buddhism, which arrived in the 12th century via both Chinese Chan and directly from India, proved particularly suited to the Japanese temperament — its emphasis on meditation, sudden enlightenment experiences, and the martial arts gave it practical dimensions that pure scholarly Buddhism lacked. The great Zen temples of Kyoto — Nanzen-ji, Tōfuku-ji, Ryoan-ji — became centers of culture where monks practiced calligraphy, haiku poetry, tea ceremony, and architecture as forms of spiritual discipline."
+        },
+        {
+          "period": "17th century–present",
+          "era": "Popular Religion",
+          "title": "Folk Buddhism and the Salvation Sects",
+          "summary": "While elite Buddhism flourished in temples, popular Buddhism developed lay movements focused on salvation, ancestor care, and practical benefits.",
+          "content": "Pure Land Buddhism (Jōdo-shū) became the most popular Buddhist movement among ordinary Japanese from the Kamakura period onward. Founded by Hōnen (1133–1212), Pure Land teaching promised salvation through sincere repetition of the name of Amida Buddha (the 'nenbutsu' chant). Unlike the demanding discipline of Zen, Pure Land offered a simple path accessible to all — farmers, merchants, women — through faith rather than works. Shinran, Hōnen's disciple, went further: he taught that sincere gratitude for Amida's saving grace would automatically produce virtuous behavior, making the individual incapable of sinning through the power of grace. This became Jōdo Shinshū (True Pure Land), today Japan's largest Buddhist sect with over 20 million adherents. The funeral Buddhism of most Japanese households — concerned with proper care of ancestors and safe passage through the afterlife — is primarily Pure Land in character."
+        },
+        {
+          "period": "Ancient–present",
+          "era": "Ancestor Veneration",
+          "title": "The Dead Are Always Present",
+          "summary": "Japanese household Buddhist altars (butsudan) maintain a living relationship between families and their ancestors, who remain active participants in household life.",
+          "content": "The butsudan — a household Buddhist altar containing the family's ancestral register (kako kaiku chō) — is the spiritual center of most Japanese homes. Japanese ancestor worship is fundamentally Buddhist: the dead require care and attention to make their journey safely through the afterlife, and families perform memorial services at 35 days, 100 days, one year, three years, seven years, and then at regular intervals thereafter (13th, 23rd, 33rd, 50th, 100th year) to ensure the ancestor's peaceful passage. Bon Festival (Obon) in mid-August is the annual occasion when ancestors are believed to return to visit their descendants; families clean their graves, light lanterns, and perform Bon odori dances to welcome and then farewell the visiting dead. The dead in Japan are never truly gone — they remain present in the household, capable of blessing or troubling the living depending on the care taken in their memorial observances."
+        }
+      ]
+    },
+    {
+      "id": "rituals",
+      "title": "Rituals",
+      "icon": "🪔",
+      "entries": [
+        {
+          "period": "Ancient–present",
+          "era": "Life Cycle",
+          "title": "Omiyamairi — The First Shrine Visit",
+          "summary": "On the 32nd day after birth, Japanese families carry their infant to a Shintō shrine to present the child to the kami and receive divine protection.",
+          "content": "The first major ritual in a Japanese life is omiyamairi (literally 'shrines visit') — the presentation of a newborn to the local Shintō shrine at 32 days for girls and 31 days for boys. The family, often with the child dressed in elaborate ceremonial clothing, visits the shrine where a priest performs a simple blessing (miyamori) and presents the child's name to the deity. The child receives a protective charm (omamori) to be kept close throughout childhood. This ritual marks the formal entry of the new member into the community of the protected — the child now has a divine name alongside the family name. The but otherwise baby may be carried to the shrine in a symbolic palanquin (mikago), and the occasion is celebrated with gift-giving and festive meals. The ritual reflects the deep Japanese understanding that human life is precarious at its beginning and requires divine assistance to navigate safely through the world."
+        },
+        {
+          "period": "Nara–Heian Period–present",
+          "era": "Ceremonial Arts",
+          "title": "Cha-no-yu — The Tea Ceremony as Spiritual Discipline",
+          "summary": "The Japanese tea ceremony is not a social pleasantry but a rigorously choreographed spiritual discipline that embodies Zen Buddhist teachings through the most humble of activities.",
+          "content": "Cha-no-yu (hot water for tea), developed by the Zen monk Sen no Rikyū in the 16th century, is among the most formally elaborate rituals in any culture. Every movement — the folding of the silk cloth used to handle the tea implements, the placement of the bamboo ladle, the stirring of the matcha powder in the bowl — has been codified over centuries and carries spiritual meaning. The ceremony takes place in a specially designed tea house (chashitsu), entered through a small ninja entrance (nijiriguchi) that requires all participants — including the greatest lord — to bow to enter, symbolically erasing status distinctions. The 4½ mat (about 9 square meters) tea room represents the entire universe in microcosm. Rikyū taught that the ceremony's essence was 'harmony, reverence, purity, and tranquility' (wa, kei, sei, jaku) — the four principles that structure not only the tea gathering but the Japanese aesthetic sensibility itself."
+        },
+        {
+          "period": "Heian Period–present",
+          "era": "Seasonal",
+          "title": "Hanami and Momijigari — The Ritual of Seasonal Beauty",
+          "summary": "The Japanese calendar is structured around seasonal rituals that honor the transience of natural beauty — cherry blossoms in spring and autumn leaves in fall.",
+          "content": "Hanami (cherry blossom viewing) is Japan's most universally practiced seasonal ritual. From late March to early May, as the cherry blossom front (sakura zensen) sweeps northward from Kyushu to Honshu, Japanese families and offices picnic beneath the blooming trees in a ritual that can last all day and night. The popularity of hanami rests on mono no aware — the acute awareness of impermanence. The cherry blossoms fall within days of reaching peak bloom, and the Japanese found in this fragility a perfect metaphor for human life. General haiku poet Yosano Akiko captured this in 'Kanso': 'arangement / of the cherry blossoms / don't regret that they will scatter.' Momijigari, the autumn leaf-viewing, is the fall equivalent — trips to mountains and temples famous for their maples, with the same picnic culture and contemplative appreciation of transience that defines the spring ritual."
+        },
+        {
+          "period": "Medieval–present",
+          "era": "Death and Memory",
+          "title": "Sesshin and the Temple Stay",
+          "summary": "Zen monastery rituals — week-long meditation retreats called sesshin — offer laypeople structured encounters with impermanence and the possibility of spiritual breakthrough.",
+          "content": "Sesshin (literally 'gathering the mind') is the central practice of Zen monastic life — a week-long period of intensive meditation with up to 18 hours of sitting per day, broken only by meals, walking meditation (kinhin), and brief sleep. During sesshin, laypeople can participate alongside monks, experiencing the discipline that Japanese warriors, samurai, and intellectuals have long considered the ultimate test of the self. The climactic moment of sesshin is often a 'wild fox' encounter with the roshi (master) — a sudden, often startling interaction designed to shatter the intellectual understanding of Zen and produce a direct, wordless realization of the true nature of mind. Beyond sesshin, many Japanese participate in temple stays (shukubō), spending nights in monasteries engaging in morning prayers, sutra copying, and monk-style meals — an accessible encounter with Buddhist discipline that has grown in popularity among urban Japanese seeking spiritual grounding."
+        }
+      ]
+    },
+    {
+      "id": "festivals",
+      "title": "Festivals",
+      "icon": "🎆",
+      "entries": [
+        {
+          "period": "Ancient–present",
+          "era": "New Year",
+          "title": "Shogatsu — The New Year Festival",
+          "summary": "New Year (Shogatsu) is Japan's most important holiday — a week-long celebration of renewal, family reunion, ancestral connection, and hope for divine blessing.",
+          "content": "Shogatsu is the Japanese New Year, celebrated January 1–3 (officially and in practice). Its central meaning is the visitation of kami to bless the new year, and the rituals surrounding it are extensive. Families clean thoroughly before December 31 (susuharai), then gather for a solemn Buddhist temple bell-ringing at midnight — the bon-sho bell is struck 108 times to purify the 108 earthly temptations (bonno) that Buddhist teaching says block enlightenment. New Year's Eve soba (buckwheat noodles) is eaten for long life. On January 1, families eat osechi-ryōri — beautifully arranged traditional foods packed in lacquered boxes — and children receive otoshidama (money envelopes). The New Year shrine visit (hatsumōde) sees tens of millions of Japanese visit Shintō shrines in the first three days. Kadomatsu (bamboo and pine decorations) are placed at doorways, and kagami mochi (mirror rice cakes) are offered to the gods."
+        },
+        {
+          "period": "Ancient–present",
+          "era": "Spring",
+          "title": "Koinobori and Children's Day",
+          "summary": "Children's Day on May 5 marks the最重要 annual celebration of children, particularly boys, with carp-shaped windsocks flying across Japan.",
+          "content": "Kodomo no Hi (Children's Day) on May 5 is a national holiday celebrating children's happiness and expressing gratitude toward mothers. Families fly koinobori — carp-shaped windsocks on poles — from rooftops: black carp for the father, red or pink for the mother, and smaller colored ones for each child. The carp's legendary resistance to currents makes it a symbol of the strength and determination parents wish for their children. Families with sons also display warrior dolls (musha-ningyo) depicting famous samurai heroes and their equipment — helmets, swords, armor — reflecting the festival's historical connection to samurai heritage. Traditional foods include kashiwamochi (rice cakes wrapped in oak leaves) and iris浴 (yuyu) — bathing in water with iris leaves believed to promote health. The festival has ancient agricultural roots connected to the seasonal transition when the rice-planting god enters the fields."
+        },
+        {
+          "period": "Ancient–present",
+          "era": "Summer",
+          "title": "Obon — The Festival of the Returning Dead",
+          "summary": "Obon in mid-August is when the spirits of ancestors are believed to return to visit their families — celebrated with Bon odori dances, lanterns, and offerings.",
+          "content": "Obon is Japan's most emotionally significant annual festival. Based on the Buddhist Ullambana sutra, it holds that during Obon the gates of hell open and the spirits of the dead rise to visit their living descendants. For three days, families clean their homes, set out food and drink offerings at the butsudan, and light entrances (hitodema) and paths (mukaebi) with lanterns and bonfires to guide the returning dead. The Bon odori folk dance is performed around a raised platform (yagura) in towns across Japan — different regions have different songs and movements, but all express joy at the reunion with departed family members. At Obon's end, families perform okuribi — farewell fires on mountainsides — to send the spirits back. In Kyoto, the Gozan Okuribi on August 16 lights five enormous bonfires on mountainsides spelling the characters for 'great' (大) to signal the spirit's departure."
+        },
+        {
+          "period": "Medieval–present",
+          "era": "Religious",
+          "title": "Gion Matsuri — Japan's Most Famous Festival",
+          "summary": "The month-long Gion Festival in Kyoto, dating to the 9th century, is Japan's largest and most historically significant matsuri, climactic with a massive float procession.",
+          "content": "Gion Matsuri in Kyoto is the oldest and most famous festival in Japan, dating to 869 CE when prayers were offered to the Gion Shrine (Yasaka Jinja) to appease plagues. Today it takes place throughout July, culminating in the Yamaboko Junkō procession on July 17: massive, exquisitely crafted floats — some standing 15 meters tall — are pulled through the streets of Kyoto by teams of hundreds of men, accompanied by traditional music from gō (flutes) and taiko drums. The floats are works of art: ancient textiles, intricate wood carvings, and historically significant objects are displayed inside the float houses. The Gion Machi sake breweries sponsor each float, and there is intense rivalry between the different float associations. A peculiar feature is the tradition of revealing the floats' beautiful ornaments only after nightfall, when they are illuminated from within — the architectural precision of the floats and the dramatic lighting create one of Asia's most spectacular street scenes."
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "icon": "🎵",
+      "entries": [
+        {
+          "period": "Nara–Heian Period",
+          "era": "Court Music",
+          "title": "Gagaku — The Imperial Ensemble",
+          "summary": "Gagaku, Japan's ancient court music, is among the world's oldest continuously performed orchestral traditions, blending Chinese, Korean, and indigenous elements.",
+          "content": "Gagaku (elegant music) has been performed at the Japanese imperial court since the Nara period (710–794), and the tradition continues today at the Imperial Palace and Ise Grand Shrine. The ensemble includes wind instruments (shakuhachi bamboo flute, hichiriki double reed), stringed instruments (biwa lute, koto zither), and percussion (shōko gong, kakko drum). Gagaku pieces are divided into three categories: kigaku (instrumental), bugaku (dance accompanied by music), and saibara (songs with text). The repertoire represents a remarkable cultural palimpsest: pieces from Tang dynasty China, from the Korean kingdom of Silla, from India, and from Central Asia — the musical traces of Silk Road exchanges preserved in amber at the Japanese court. UNESCO inscribed gagaku as Intangible Cultural Heritage in 2008, and there are today approximately 1,000 active gagaku practitioners in Japan."
+        },
+        {
+          "period": "Kamakura–Edo Period",
+          "era": "Theater Music",
+          "title": "Noh and Kabuki — Music as Dramatic Soul",
+          "summary": "Noh and Kabuki theater developed distinct musical idioms that fused narration, percussion, and chant into the emotional spine of Japanese drama.",
+          "content": "Noh drama (Nōgaku) — the austere, slow, highly stylized theater developed in the 14th–17th centuries — uses music as its primary emotional medium. A hayashi ensemble of four musicians provides the musical framework: taiko drum, ōtsuzumi hip drum, kotsuzumi shoulder drum, and the shakuhachi flute. The drums communicate not just rhythm but emotional intensity, signaling moments of psychological revelation through complex rhythmic patterns that performers and audiences have internalized over centuries. Kabuki, which developed as popular entertainment in the Edo period, fused the theatrical intensity of Noh with colorful staging, contemporary urban stories, and a musical language including nagashi (recitative), hayashi-kiri (short meter songs), and the iconic Kiyomoto-uta style. The shamisen (three-stringed lute) became Kabuki's signature instrument, its sharp, percussive sound as quintessentially Japanese as the guitar is American."
+        },
+        {
+          "period": "19th century–present",
+          "era": "Folk and Popular",
+          "title": "Min'yō, Enka, and the Soul of Japanese Song",
+          "summary": "Japan's folk and popular song traditions express a distinctive emotional vocabulary — a controlled, almost minimalist aesthetic of longing and loss.",
+          "content": "Min'yō are the folk songs of Japan — work songs from rice planting (taiko uta), fishing, and construction, as well as regional songs with distinctive melodies tied to specific places. The Japanese folk song aesthetic favors a narrow vocal range, ornamental vocal techniques (noh-style breathing, characteristic vibrato), and melodies that evoke landscape and seasonal feeling. Enka, a genre that emerged in the late 19th century and reached mass popularity via radio and TV in the 20th, became the soundtrack of Japanese working-class emotional life — nostalgic ballads about lost love, homesickness, and the hardships of urban migration. The legendary singer Hibari Misora (1937–1989) defined the genre's emotional intensity, her voice carrying the weight of individual suffering against the indifference of modern society. Though J-pop has dominated since the 1980s, enka remains the music of middle-aged and older Japanese — the sound of authentic Japanese feeling unfiltered by Western influence."
+        },
+        {
+          "period": "1950s–present",
+          "era": "Contemporary",
+          "title": "J-Pop, City Pop, and Global Influence",
+          "summary": "From the Showa era's city pop to today's anime soundtracks, Japanese popular music has developed a distinctive sonic identity with enormous global reach.",
+          "content": "Japanese popular music in the postwar era developed in dialogue with American and European influences, creating hybrid forms that eventually achieved global reach. City Pop of the 1970s–1980s — smooth, lushly produced music with jazz and R&B influences — has experienced a remarkable global revival in the 2010s via YouTube and streaming, with artists like Tatsuro Yamashita and Mariya Takeuchi gaining millions of new fans internationally. The anime industry generated an entire parallel music ecosystem: the works of composer Joe Hisaishi (Spirited Away, My Neighbor Totoro) have introduced orchestral Japanese film music to global audiences, while anime theme songs by artists like LiSA and Aimer have topped international streaming charts. Japanese record labels like Lantis and Victor Entertainment have built genre specialist rosters that produce thousands of anime-related tracks annually, making Japan one of the world's most prolific music markets."
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "title": "Literature",
+      "icon": "✍️",
+      "entries": [
+        {
+          "period": "8th century",
+          "era": "Classical",
+          "title": "The Kojiki and Nihon Shoki — Japan's Foundation Texts",
+          "summary": "The Kojiki and Nihon Shoki, compiled in the 8th century, recorded Japan's mythological origins and imperial genealogy in the world's most ancient continuous literary tradition.",
+          "content": "The Kojiki (Records of Ancient Matters, 712 CE) and Nihon Shoki (Chronicles of Japan, 720 CE) are Japan's foundational texts, compiled at imperial command to record the mythology, genealogy, and early history of the Japanese state. The Kojiki, written entirely in the phonetic hiragana script rather than the Chinese characters that dominated official documents, preserves oral mythology and legend in a literary form suffused with magical power — its very purpose was to legitimate the imperial line's descent from the sun goddess. The Nihon Shoki, written in Chinese characters (kanbun) with Japanese pronunciation guides, supplements the Kojiki with additional myths and a more historically oriented account of early Japanese rulers. Together, these texts established the mythological framework — divine origin of the imperial line, the special relationship between Japan and the cosmos — that would justify Japanese identity and imperial claims for over a millennium."
+        },
+        {
+          "period": "Heian Period",
+          "era": "Classical Masterpiece",
+          "title": "The Tale of Genji and Heian Women's Literature",
+          "summary": "Heian Japan produced a brilliant literary culture dominated by women writers who created the world's first psychological fiction in the refined context of the world's most sophisticated court society.",
+          "content": "The Heian period (794–1185) was Japan's literary golden age, and its most celebrated works were almost exclusively written by women — a remarkable fact given the patriarchal Confucian culture that would later dominate. Lady Murasaki Shikibu's The Tale of Genji stands at the summit, but she was part of a constellation: Sei Shōnagon wrote The Pillow Book (Makura no Sōshi), a vivid, sharp-edged collection of observations, lists, and reflections that captures Heian court life with sardonic wit. Both women wrote in hiragana — the phonetic Japanese script associated with women's literature, since Chinese characters were the province of educated men. The aesthetic vocabulary they developed — mono no aware (the pathos of impermanence), yūgen (mysterious, profound beauty), hikimi (elegant simplicity) — defined Japanese aesthetic sensibility for centuries. Waka poetry — 31-syllable poems exchanged in elaborate social ritual — was the era's most prestigious literary form, a medium of social connection and emotional communication as much as artistic expression."
+        },
+        {
+          "period": "Edo Period",
+          "era": "Urban Literature",
+          "title": "Haiku, Kabuki Literature, and the Floating World",
+          "summary": "The Edo period's urban commercial culture produced haiku poetry of cosmic brevity and a vibrant popular literature of urban pleasure districts.",
+          "content": "Matsuo Bashō (1644–1694) elevated haiku from witty salon entertainment to a serious Zen-inflected art form. His 17-syllable verses — typically presenting a stark image followed by a 'cutting word' that creates a leap of understanding — compressed profound perception into minimal form: 'An old silent pond / a frog jumps in / the sound of water.' Bashō traveled Japan on foot, writing haiku that captured the genius loci (spirit of place) of every landscape he encountered, creating a new literary genre (haibun — haiku prose) in the process. Below the elite poetry world, urban popular literature flourished: sharebon (books of the pleasure quarters), kibyōshi (satirical picture books), and ninjōbon (sentimental novels) depicted the lives of kabuki actors, courtesans, and townspeople with a realism that would influence Japanese fiction profoundly. Ihara Saikaku's 1682 novel Five Women Who Loved Love depicted the passionate suicides of courtesans with a psychological directness that startled contemporary readers."
+        },
+        {
+          "period": "Meiji–Present",
+          "era": "Modern and Contemporary",
+          "title": "From Natsume Sōseki to Haruki Murakami",
+          "summary": "Modern Japanese literature grappled with the collision between traditional Japanese identity and Western modernity, producing writers of global stature including two Nobel laureates.",
+          "content": "Meiji era modernization opened Japan to Western literary forms — the novel, the essay, literary criticism — and triggered an intense debate about Japan's cultural identity that animated the greatest literary minds. Natsume Sōseki (1867–1916), Japan's first modern novelist, captured the psychological anguish of educated Japanese caught between traditional obligations and modern individualism in masterpieces like Kokoro (1915) and Botchan (1906). Yukio Mishima (1925–1970), the most internationally celebrated mid-century writer, embodied the tension between aesthetic perfectionism and political reaction that tore Japanese intellectual life in the postwar era — he committed seppuku after a failed political coup in 1970, an act that made him both iconic and deeply controversial. Haruki Murakami, whose novels since Norwegian Wood (1987) have sold tens of millions globally, represents the contemporary Japanese writer navigating a post-postwar identity: saturated in Western popular culture but writing from a distinctly Japanese emotional register of loneliness, grief, and the persistence of memory."
+        }
+      ]
+    },
+    {
+      "id": "dance",
+      "title": "Dance",
+      "icon": "💃",
+      "entries": [
+        {
+          "period": "Nara–Heian Period",
+          "era": "Court Dance",
+          "title": "Bugaku — The Dance of the Imperial Court",
+          "summary": "Bugaku, the ceremonial dance of the Japanese imperial court, preserves ancient dance forms from across East Asia in performances of extraordinary formal elegance.",
+          "content": "Bugaku is the oldest surviving theatrical dance tradition in Japan, performed at imperial court ceremonies, Shintō festivals, and major Buddhist temples since the Nara period. The repertoire includes pieces from Japan, China, Korea, India, and Central Asia — a living museum of ancient dance forms. Bugaku is characterized by extreme formalization: dancers wear elaborate costume and mask, move in prescribed geometric patterns on a square dance floor (bu), and perform the same choreography that has been transmitted without significant change for over a thousand years. Each piece has a specific symbolic meaning and is performed at specific occasions — some to honor the gods, some to represent imperial authority, some to demonstrate mastery over chaos. The bugaku performer trains for decades in the intricate hand positions, footwork patterns, and the subtle breathing techniques that animate the costume without breaking the formal frame. The tradition is maintained today by the Imperial Household Agency's bugaku troupe."
+        },
+        {
+          "period": "14th century–present",
+          "era": "Noh Theater",
+          "title": "Nōgaku — Dance as Spiritual Manifestation",
+          "summary": "Noh theater's dance element (mai) is not performance in the Western sense but a spiritual discipline in which the masked protagonist achieves moments of profound spiritual presence.",
+          "content": "Noh drama's dance element — mai — is among the most distinctive and least Western-understood performance traditions in the world. Unlike Western dance, which emphasizes virtuosity, athleticism, and the display of physical possibility, Noh mai is defined by restraint, stillness, and the achievement of a state that Japanese aesthetics call 'becoming the character.' The Noh actor, wearing a wooden mask and elaborate costume, moves in the restricted, highly formalized style that has been transmitted through the Zeami Motokiyo lineage for 25 generations. The dance typically occupies the first half of a Noh play, establishing the ghost or spirit that will appear; the second half dramatizes the story. The characteristic Noh movement — the mae-geri in which the actor slowly lifts one foot, holds it, and sets it down with precise timing against the percussion — is designed to create moments of heightened presence, as if time itself were suspended. The actor's training focuses not on physical prowess but on spiritual preparation: stillness, breath, and the cultivation of 'flower' (hana) — an ineffable quality of presence that is the highest achievement of Noh performance."
+        },
+        {
+          "period": "Edo Period–present",
+          "era": "Folk and Festival",
+          "title": "Bon Odori — Dancing with the Dead",
+          "summary": "The Bon Odori folk dance, performed across Japan during the Obon festival, is the most widely practiced dance tradition in Japan — a communal ritual of welcome and farewell to visiting ancestors.",
+          "content": "Bon Odori (Obon dance) is the most democratically accessible dance form in Japan — participated in by millions of Japanese each August, regardless of age, ability, or social position. Each region has its own distinctive dance, song, and rhythm: in the northeast, the Bon Odori is energetic and fast-paced; in Kyoto's Nawashizuma, it is slow and refined, performed with a fan. The dance is typically performed around a raised wooden platform (yagura) where musicians play and sing, with dancers moving in concentric circles. The choreography varies from region to region but typically involves simple movements that anyone can learn: stepping, turning, arm gestures that evoke planting rice or drawing water. The central theme is gratitude and joy — dancing in appreciation for the ancestors' return and in celebration of community life. Some Bon Odori traditions involve costumes: dancers in yukata (summer cotton kimono) carrying lit lanterns, or wearing masks and happi coats bearing family crests. The dancing continues into the night, and some locations maintain all-night celebrations."
+        },
+        {
+          "period": "Meiji–Present",
+          "era": "Contemporary",
+          "title": "Butoh — Dance of Darkness and Transcendence",
+          "summary": "Butoh, Japan's radical avant-garde dance form born from post-war trauma and existential horror, became one of the most influential dance movements of the 20th century.",
+          "content": "Butoh (ankoku butoh — 'darkness dance') emerged in 1959 from the collaborations of Tatsumi Hijikata and Kazuo Ohno, two artists who sought a dance form adequate to the experience of atomic bomb devastation, defeat, and the existential crisis of postwar Japan. Hijikata's first major work, 'Kinjirareta Ashi' (Forbidden Actions), featured a half-naked man crawling across the stage like an insect — a radical rejection of ballet's upright idealism and everything Japanese military culture had celebrated. Ohno's 'Admirable looseness of the Madonna' (1988) is considered one of the most transcendent dance performances ever witnessed — a very old man dancing with visions of his dead mother materialized in white makeup, slow walking, and gestures of such emotional directness that audiences worldwide wept. Butoh's influence on contemporary dance worldwide is immense: its emphasis on the body as a site of memory, trauma, and transformation rather than technical virtuosity opened paths that Western dance continues to explore. Dancers from Pina Bausch to Damien Hirst have cited butoh as a foundational influence."
+        }
+      ]
+    }
+  ]
+}

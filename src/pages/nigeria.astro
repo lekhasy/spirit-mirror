@@ -1,21 +1,757 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import data from '../data/nigeria.json';
+const pillars = data.pillars;
 ---
 
-<Layout>
-  <div style="min-height:100vh;background:#0b3d2e;color:#fff;padding-bottom:80px">
-    <header style="padding:48px 6vw;display:flex;justify-content:space-between;align-items:center">
-      <div>
-        <h1 style="margin:0;font-size:48px">Nigeria</h1>
-        <p style="margin:6px 0 0">Bold textiles, storytelling and a vibrant contemporary arts scene.</p>
-      </div>
-      <a href="/" style="background:#ffd36e;color:#0b3d2e;padding:8px 12px;border-radius:8px;text-decoration:none">Back</a>
-    </header>
+<Layout title="Nigeria — Spirit Mirror">
 
-    <section style="padding:36px 6vw;display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-      <div style="background:#14443b;padding:18px;border-radius:8px">Textiles & fashion</div>
-      <div style="background:#14443b;padding:18px;border-radius:8px">Music & film</div>
-      <div style="background:#14443b;padding:18px;border-radius:8px">Cuisine & markets</div>
-    </section>
+<!-- Hero -->
+<section class="ng-hero">
+  <div class="ng-hero-bg" aria-hidden="true">
+    <div class="ng-hero-pattern"></div>
+    <div class="ng-hero-glow"></div>
   </div>
+  <div class="ng-hero-inner">
+    <div class="ng-hero-tag">🇳🇬 Culture · Heritage · Identity</div>
+    <h1 class="ng-hero-title">
+      <span class="ng-h1-naija">Naìjíríà</span>
+    </h1>
+    <p class="ng-hero-subtitle">Two hundred and fifty ethnic groups, countless stories — explored through nine pillars that define Africa's most populous nation and creative powerhouse.</p>
+    <div class="ng-hero-stats">
+      <div class="ng-stat"><span class="ng-stat-n">250+</span><span class="ng-stat-l">Ethnic Groups</span></div>
+      <div class="ng-stat-divider" aria-hidden="true"></div>
+      <div class="ng-stat"><span class="ng-stat-n">220M</span><span class="ng-stat-l">People</span></div>
+      <div class="ng-stat-divider" aria-hidden="true"></div>
+      <div class="ng-stat"><span class="ng-stat-n">9</span><span class="ng-stat-l">Cultural Pillars</span></div>
+    </div>
+  </div>
+  <div class="ng-hero-scroll" aria-hidden="true">
+    <span>Scroll to explore</span>
+    <span class="ng-scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- Pillar Navigation -->
+<nav class="ng-tabs" aria-label="Culture pillars">
+  <div class="ng-tabs-inner">
+    {pillars.map((p, i) => (
+      <button
+        class={`ng-tab${i === 0 ? ' active' : ''}`}
+        data-pillar={p.id}
+        aria-selected={i === 0 ? 'true' : 'false'}
+      >
+        <span class="ng-tab-icon">{p.icon}</span>
+        <span class="ng-tab-label">{p.title}</span>
+      </button>
+    ))}
+  </div>
+</nav>
+
+<!-- Content -->
+<main class="ng-main">
+  {pillars.map((p, pi) => (
+    <section
+      class={`ng-pillar${pi === 0 ? ' active' : ''}`}
+      id={`pillar-${p.id}`}
+      aria-hidden={pi !== 0 ? 'true' : 'false'}
+    >
+      <div class="ng-pillar-header">
+        <div class="ng-pillar-header-left">
+          <span class="ng-pillar-number">0{pi + 1}</span>
+          <div>
+            <h2 class="ng-pillar-title">{p.title}</h2>
+            <p class="ng-pillar-sub">{p.entries.length} chapters across time</p>
+          </div>
+        </div>
+        <span class="ng-pillar-icon-lg">{p.icon}</span>
+      </div>
+
+      <div class="ng-timeline">
+        <div class="ng-timeline-line" aria-hidden="true"></div>
+        {p.entries.map((entry, ei) => (
+          <div class={`ng-card-wrap ${ei % 2 === 0 ? 'left' : 'right'}`}>
+            <div class="ng-timeline-node" aria-hidden="true">
+              <div class="ng-node-outer"></div>
+              <div class="ng-node-inner"></div>
+            </div>
+            <article class="ng-card">
+              <div class="ng-card-top">
+                <span class="ng-card-period">{entry.period}</span>
+                <span class="ng-card-era">{entry.era}</span>
+              </div>
+              <h3 class="ng-card-title">{entry.title}</h3>
+              <p class="ng-card-summary">{entry.summary}</p>
+              <div class="ng-card-content" hidden>
+                <p>{entry.content}</p>
+              </div>
+              <button class="ng-card-toggle" aria-expanded="false">
+                <span class="ng-toggle-text">Read more</span>
+                <span class="ng-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </article>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+</main>
+
+<footer class="ng-footer">
+  <div class="ng-footer-inner">
+    <a href="/" class="ng-footer-logo">Spirit Mirror</a>
+    <p class="ng-footer-copy">Exploring cultures, one story at a time.</p>
+    <a href="/" class="ng-footer-back">← All Cultures</a>
+  </div>
+</footer>
+
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap');
+
+  /* ── Variables ─────────────────────────────── */
+  :root {
+    --ng-green: #008751;
+    --ng-green-dark: #003820;
+    --ng-green-mid: #00a85e;
+    --ng-gold: #f5a623;
+    --ng-black: #0a0a0a;
+    --ng-white: #f8f9f7;
+    --ng-warm: #fdf6ec;
+    --ng-bg: #f5f0e6;
+    --ng-text: #1a1714;
+    --ng-muted: #6b6560;
+    --ng-border: #e0dbd0;
+    --ng-node: #008751;
+  }
+
+  /* ── Global overrides ───────────────────────── */
+  :global(.site-root) {
+    background: var(--ng-bg) !important;
+  }
+  :global(.site-header) {
+    background: var(--ng-green-dark) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+  :global(.site-logo) {
+    color: var(--ng-gold) !important;
+    font-family: 'Playfair Display', serif !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* ── Hero ───────────────────────────────────── */
+  .ng-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 120px;
+    overflow: hidden;
+    background: var(--ng-black);
+  }
+
+  .ng-hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .ng-hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(0, 135, 81, 0.04) 40px,
+        rgba(0, 135, 81, 0.04) 41px
+      );
+  }
+
+  .ng-hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 135, 81, 0.3) 0%, transparent 70%);
+  }
+
+  .ng-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .ng-hero-tag {
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ng-gold);
+    border: 1px solid rgba(245, 166, 35, 0.35);
+    border-radius: 100px;
+    padding: 6px 18px;
+    margin-bottom: 32px;
+  }
+
+  .ng-hero-title {
+    margin: 0 0 28px;
+    display: block;
+  }
+
+  .ng-h1-naija {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    color: var(--ng-green);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 60px rgba(0, 135, 81, 0.4);
+  }
+
+  .ng-hero-subtitle {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(248, 249, 247, 0.5);
+    max-width: 560px;
+    margin: 0 auto 52px;
+  }
+
+  .ng-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .ng-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ng-stat-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .ng-stat-l {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(248, 249, 247, 0.35);
+  }
+
+  .ng-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(248, 249, 247, 0.12);
+  }
+
+  .ng-hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(248, 249, 247, 0.25);
+    z-index: 1;
+  }
+
+  .ng-scroll-arrow {
+    animation: ng-bounce 1.6s ease-in-out infinite;
+    display: block;
+  }
+
+  @keyframes ng-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── Tabs ───────────────────────────────────── */
+  .ng-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 135, 81, 0.2);
+  }
+
+  .ng-tabs-inner {
+    display: flex;
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    padding: 0 8px;
+  }
+  .ng-tabs-inner::-webkit-scrollbar { display: none; }
+
+  .ng-tab {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(248, 249, 247, 0.4);
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .ng-tab:hover {
+    color: rgba(248, 249, 247, 0.8);
+  }
+
+  .ng-tab.active {
+    color: var(--ng-gold);
+    border-bottom-color: var(--ng-green);
+  }
+
+  .ng-tab-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  /* ── Main ───────────────────────────────────── */
+  .ng-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .ng-pillar { display: none; }
+  .ng-pillar.active {
+    display: block;
+    animation: ng-in 0.35s ease;
+  }
+
+  @keyframes ng-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Pillar header */
+  .ng-pillar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--ng-border);
+  }
+
+  .ng-pillar-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ng-pillar-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--ng-border);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .ng-pillar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--ng-text);
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+
+  .ng-pillar-sub {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8rem;
+    color: var(--ng-muted);
+    margin: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .ng-pillar-icon-lg {
+    font-size: 3rem;
+    opacity: 0.12;
+    user-select: none;
+  }
+
+  /* ── Timeline ───────────────────────────────── */
+  .ng-timeline {
+    position: relative;
+  }
+
+  .ng-timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--ng-border) 5%, var(--ng-border) 95%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .ng-card-wrap {
+    position: relative;
+    display: flex;
+    margin-bottom: 56px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .ng-card-wrap.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ng-card-wrap.left {
+    padding-right: calc(50% + 36px);
+  }
+
+  .ng-card-wrap.right {
+    flex-direction: row-reverse;
+    padding-left: calc(50% + 36px);
+  }
+
+  .ng-card-wrap.left .ng-card {
+    text-align: right;
+  }
+
+  .ng-card-wrap.left .ng-card-top {
+    justify-content: flex-end;
+  }
+
+  .ng-card-wrap.left .ng-card-toggle {
+    margin-left: auto;
+  }
+
+  /* Node */
+  .ng-timeline-node {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .ng-node-outer {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--ng-green);
+    background: var(--ng-bg);
+    transition: transform 0.2s;
+  }
+
+  .ng-card-wrap:hover .ng-node-outer {
+    transform: scale(1.3);
+  }
+
+  .ng-node-inner {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ng-green);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Card ───────────────────────────────────── */
+  .ng-card {
+    background: var(--ng-white);
+    border: 1px solid var(--ng-border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    border-left: 4px solid var(--ng-green);
+  }
+
+  .ng-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .ng-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .ng-card-period {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ng-green);
+    background: rgba(0, 135, 81, 0.08);
+    border: 1px solid rgba(0, 135, 81, 0.2);
+    border-radius: 4px;
+    padding: 3px 12px;
+  }
+
+  .ng-card-era {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.72rem;
+    color: var(--ng-muted);
+    font-weight: 400;
+  }
+
+  .ng-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ng-text);
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+
+  .ng-card-summary {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: #4b4540;
+    margin: 0 0 16px;
+    font-weight: 400;
+  }
+
+  .ng-card-content {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.85;
+    color: #374150;
+    border-top: 1px solid var(--ng-border);
+    padding-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .ng-card-content p { margin: 0; }
+
+  .ng-card-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ng-green-mid);
+    padding: 0;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .ng-card-toggle:hover {
+    color: var(--ng-gold);
+  }
+
+  .ng-toggle-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+    position: relative;
+  }
+
+  .ng-toggle-icon::before,
+  .ng-toggle-icon::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 2px;
+  }
+  .ng-toggle-icon::before {
+    width: 7px; height: 1.5px;
+  }
+  .ng-toggle-icon::after {
+    width: 1.5px; height: 7px;
+    transition: transform 0.25s;
+  }
+
+  .ng-card-toggle[aria-expanded="true"] .ng-toggle-icon::after {
+    transform: rotate(90deg);
+  }
+
+  /* ── Footer ─────────────────────────────────── */
+  .ng-footer {
+    background: var(--ng-black);
+    padding: 48px 24px;
+  }
+
+  .ng-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .ng-footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ng-green);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .ng-footer-copy {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(248, 249, 247, 0.25);
+    margin: 0;
+  }
+
+  .ng-footer-back {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ng-gold);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+
+  .ng-footer-back:hover {
+    color: var(--ng-white);
+  }
+
+  /* ── Mobile ─────────────────────────────────── */
+  @media (max-width: 640px) {
+    .ng-timeline-line { left: 16px; }
+
+    .ng-card-wrap.left,
+    .ng-card-wrap.right {
+      flex-direction: column;
+      padding-left: 44px;
+      padding-right: 0;
+    }
+
+    .ng-card-wrap.left .ng-card { text-align: left; }
+    .ng-card-wrap.left .ng-card-top { justify-content: flex-start; }
+    .ng-card-wrap.left .ng-card-toggle { margin-left: 0; }
+
+    .ng-timeline-node {
+      left: 16px;
+      top: 18px;
+    }
+
+    .ng-tab-label { display: none; }
+    .ng-tab { padding: 14px 16px; }
+    .ng-tab-icon { font-size: 1.1rem; }
+
+    .ng-pillar-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .ng-pillar-icon-lg { display: none; }
+
+    .ng-hero-stats { gap: 20px; }
+    .ng-stat-divider { height: 28px; }
+
+    .ng-footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.ng-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.ng-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const target = tab.dataset.pillar;
+      document.querySelectorAll('.ng-pillar').forEach(p => {
+        const active = p.id === `pillar-${target}`;
+        p.classList.toggle('active', active);
+        p.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+
+      observeCards();
+    });
+  });
+
+  // Expand / collapse
+  document.querySelectorAll('.ng-card-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.closest('.ng-card').querySelector('.ng-card-content');
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      content.hidden = open;
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      btn.querySelector('.ng-toggle-text').textContent = open ? 'Read more' : 'Read less';
+    });
+  });
+
+  // Scroll animation
+  let observer;
+  function observeCards() {
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.ng-pillar.active .ng-card-wrap:not(.visible)')
+      .forEach(c => observer.observe(c));
+  }
+
+  observeCards();
+</script>
