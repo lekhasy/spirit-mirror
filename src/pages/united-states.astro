@@ -32,8 +32,8 @@ const pillars = data.pillars;
   </div>
 </section>
 
-<!-- Pillar Navigation -->
-<nav class="us-tabs" aria-label="Culture pillars">
+<!-- Element Navigation -->
+<nav class="us-tabs" aria-label="Cultural elements">
   <div class="us-tabs-inner">
     {pillars.map((p, i) => (
       <button
@@ -53,7 +53,7 @@ const pillars = data.pillars;
   {pillars.map((p, pi) => (
     <section
       class={`us-pillar${pi === 0 ? ' active' : ''}`}
-      id={`pillar-${p.id}`}
+      id={`element-${p.id}`}
       aria-hidden={pi !== 0 ? 'true' : 'false'}
     >
       <div class="us-pillar-header">
@@ -682,7 +682,7 @@ const pillars = data.pillars;
 
       const target = tab.dataset.pillar;
       document.querySelectorAll('.us-pillar').forEach(p => {
-        const active = p.id === `pillar-${target}`;
+        const active = p.id === `element-${target}`;
         p.classList.toggle('active', active);
         p.setAttribute('aria-hidden', active ? 'false' : 'true');
       });

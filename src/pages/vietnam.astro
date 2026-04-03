@@ -15,13 +15,13 @@ const pillars = data.pillars;
       <span class="vn-hero-viet">Việt</span>
       <span class="vn-hero-nam">Nam</span>
     </h1>
-    <p class="vn-hero-subtitle">Four thousand years of resilience, artistry, and spirit — explored through the pillars that define who the Vietnamese people are.</p>
+    <p class="vn-hero-subtitle">Four thousand years of resilience, artistry, and spirit — explored through the cultural elements that define who the Vietnamese people are.</p>
     <div class="vn-hero-stats">
       <div class="vn-stat"><span class="vn-stat-n">4,000+</span><span class="vn-stat-l">Years of History</span></div>
       <div class="vn-stat-divider" aria-hidden="true"></div>
       <div class="vn-stat"><span class="vn-stat-n">54</span><span class="vn-stat-l">Ethnic Groups</span></div>
       <div class="vn-stat-divider" aria-hidden="true"></div>
-      <div class="vn-stat"><span class="vn-stat-n">9</span><span class="vn-stat-l">Cultural Pillars</span></div>
+      <div class="vn-stat"><span class="vn-stat-n">9</span><span class="vn-stat-l">Cultural Elements</span></div>
     </div>
   </div>
   <div class="vn-hero-scroll" aria-hidden="true">
@@ -30,8 +30,8 @@ const pillars = data.pillars;
   </div>
 </section>
 
-<!-- Pillar Navigation -->
-<nav class="vn-tabs" aria-label="Culture pillars">
+<!-- Element Navigation -->
+<nav class="vn-tabs" aria-label="Cultural elements">
   <div class="vn-tabs-inner">
     {pillars.map((p, i) => (
       <button
@@ -51,7 +51,7 @@ const pillars = data.pillars;
   {pillars.map((p, pi) => (
     <section
       class={`vn-pillar${pi === 0 ? ' active' : ''}`}
-      id={`pillar-${p.id}`}
+      id={`element-${p.id}`}
       aria-hidden={pi !== 0 ? 'true' : 'false'}
     >
       <div class="vn-pillar-header">
@@ -352,7 +352,7 @@ const pillars = data.pillars;
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Pillar header */
+  /* Element header */
   .vn-pillar-header {
     display: flex;
     align-items: center;
@@ -703,7 +703,7 @@ const pillars = data.pillars;
 
       const target = tab.dataset.pillar;
       document.querySelectorAll('.vn-pillar').forEach(p => {
-        const active = p.id === `pillar-${target}`;
+        const active = p.id === `element-${target}`;
         p.classList.toggle('active', active);
         p.setAttribute('aria-hidden', active ? 'false' : 'true');
       });

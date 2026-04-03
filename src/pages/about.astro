@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Spirit Mirror">
+
+<div class="about">
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <p class="about-eyebrow">Our story</p>
+      <h1 class="about-title">We believe understanding<br />starts with <em>listening</em></h1>
+      <p class="about-lead">Spirit Mirror exists to help people truly see each other — not through the lens of politics or headlines, but through the quiet, profound things that shape who people are: how they raise their children, what they believe, the stories they tell, the rituals that mark their lives.</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="about-section">
+    <div class="about-section-inner">
+      <div class="about-text-block">
+        <h2 class="about-h2">The problem we are trying to solve</h2>
+        <p>Most cultural information is surface-level. You read a Wikipedia article, you learn some dates, you memorize some facts — and you feel like you understand. But you don't. You understand a description of a culture, not the lived experience of it.</p>
+        <p>We are living through a period of unprecedented cultural friction. People who have never met each other are making decisions that affect each other's lives — voters, policymakers, neighbors — based on stereotypes, inherited prejudices, and headlines that reward outrage over understanding.</p>
+        <p>At the same time, most people genuinely want to understand each other. They just lack the framework to go deeper.</p>
+      </div>
+      <div class="about-aside">
+        <blockquote class="about-quote">"The single greatest barrier to human connection is the assumption that others experience the world the way we do."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework -->
+  <section class="about-section about-section--alt">
+    <div class="about-section-inner">
+      <div class="about-text-block">
+        <h2 class="about-h2">Culture is fluid, not structural</h2>
+        <p>We believe a person's worldview — the deep architecture of how they think, what they value, how they see the world — is shaped by a set of cultural elements. But unlike a blueprint, these elements are not fixed. They vary enormously from culture to culture.</p>
+        <p>Some cultures are defined primarily by their religious belief. Others by their music. Others by the rituals that mark every life transition. Some have rich traditions of storytelling that shape how people think about morality. Others are shaped more by their festivals, their visual art, their food culture, or their relationship to the land.</p>
+        <p>There is no fixed formula. That is precisely the point. Every culture is a unique combination of elements, and the elements that matter most in one culture may be almost absent in another. Understanding this — that the combination itself is what makes a culture distinct — is a form of understanding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we're not -->
+  <section class="about-section">
+    <div class="about-section-inner">
+      <div class="about-text-block">
+        <h2 class="about-h2">What we are — and what we are not</h2>
+        <p>Spirit Mirror is not a travel guide. You will not find restaurant recommendations or hotel tips here. It is not a Wikipedia article. It does not summarize — it <em>excavates</em>.</p>
+        <p>We are not claiming that understanding a culture's elements will make you an expert on every individual from that culture. People are individuals. They contain multitudes, contradict themselves, resist the patterns of their upbringing, and surprise you. A framework illuminates; it does not determine.</p>
+        <p>What we are claiming is this: understanding a culture's elements gives you a better starting point for genuine curiosity than you had before. It opens a door. Walking through it is up to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="about-section about-section--alt">
+    <div class="about-section-inner">
+      <div class="about-text-block">
+        <h2 class="about-h2">What we hope for</h2>
+        <p>We hope for a world where people reaching across cultural distance do so with genuine curiosity rather than inherited suspicion. Where the first instinct when encountering a stranger from a different background is not fear or judgment, but: <em>"Tell me how you see the world."</em></p>
+        <p>We hope that Spirit Mirror gives people around the world a place to show their best — to be understood on their own terms, in their own depth, rather than through the reductive lens of headlines and stereotypes.</p>
+        <p>Every culture in the world has something beautiful, complex, and worth understanding at depth. We are building the infrastructure for that understanding to be accessible to anyone with genuine curiosity and a willingness to listen.</p>
+      </div>
+      <div class="about-aside">
+        <div class="about-callout">
+          <p>"To know another soul fully is to find reflected in them the whole range of human possibility."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The future -->
+  <section class="about-section">
+    <div class="about-section-inner">
+      <div class="about-text-block">
+        <h2 class="about-h2">This is just the beginning</h2>
+        <p>We have started with six countries that we believe represent a wide range of cultural experiences. But every country in the world deserves this kind of depth and care. Every culture has something irreplaceable to offer.</p>
+        <p>If you share our vision — if you believe that understanding is the foundation of connection — we want to hear from you. Help us build Spirit Mirror into something truly global. Every culture understood. Every human being on this planet, seen.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,600&display=swap');
+
+  /* ── Tokens ─────────────────────────────── */
+  :root {
+    --bg: #f5f8f4;
+    --bg-alt: #edf3ed;
+    --white: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #4b4540;
+    --muted: #6b6560;
+    --accent: #2d7a4a;
+    --accent-light: rgba(45,122,74,0.08);
+    --border: #e0ddd5;
+    --radius: 12px;
+  }
+
+  :global(.site-header) {
+    background: rgba(255,255,255,0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(45,122,74,0.1) !important;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05) !important;
+  }
+  :global(.site-logo) {
+    color: var(--accent) !important;
+    font-family: 'Playfair Display', serif !important;
+  }
+  :global(.site-root) {
+    background: var(--bg) !important;
+  }
+
+  /* ── Hero ─────────────────────────────── */
+  .about-hero {
+    padding: 120px 24px 80px;
+    text-align: center;
+  }
+
+  .about-hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .about-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 24px;
+  }
+
+  .about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin: 0 0 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .about-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .about-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.75;
+    color: var(--text-light);
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* ── Sections ─────────────────────────────── */
+  .about-section {
+    padding: 72px 24px;
+    background: var(--white);
+  }
+
+  .about-section--alt {
+    background: var(--bg);
+  }
+
+  .about-section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-text-block {
+    max-width: 680px;
+  }
+
+  .about-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 24px;
+    line-height: 1.25;
+  }
+
+  .about-text-block p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin: 0 0 18px;
+  }
+
+  .about-text-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-text-block p + p {
+    margin-top: 4px;
+  }
+
+  /* ── Quote / Callout ─────────────────────────────── */
+  .about-aside {
+    margin-top: 40px;
+  }
+
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .about-callout {
+    background: var(--accent-light);
+    border: 1px solid rgba(45,122,74,0.15);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
+
+  .about-callout p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── Mobile ─────────────────────────────── */
+  @media (max-width: 640px) {
+    .about-hero {
+      padding: 100px 24px 60px;
+    }
+
+    .about-section {
+      padding: 48px 24px;
+    }
+  }
+</style>

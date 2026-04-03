@@ -14,6 +14,9 @@ body{
 .site-header{position:fixed;inset:0 auto auto 0;height:72px;top:0;left:0;right:0;z-index:60;display:flex;align-items:center}
 .site-header-inner{width:100%;max-width:1200px;margin:0 auto;padding:12px 24px;box-sizing:border-box;position:relative;display:flex;align-items:center}
 .site-logo{color:var(--accent-1);font-weight:800;font-size:18px;text-decoration:none;letter-spacing:0.6px;z-index:2}
+.site-nav{display:flex;gap:24px;margin-left:auto}
+.site-nav-link{color:var(--accent-1);font-size:0.875rem;font-weight:500;text-decoration:none;opacity:0.7;transition:opacity 0.2s}
+.site-nav-link:hover{opacity:1}
 .site-current{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.95);font-weight:700;font-size:16px;pointer-events:none}
 .site-root{padding-top:72px}
 

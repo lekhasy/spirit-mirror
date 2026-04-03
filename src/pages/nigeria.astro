@@ -17,13 +17,13 @@ const pillars = data.pillars;
     <h1 class="ng-hero-title">
       <span class="ng-h1-naija">Naìjíríà</span>
     </h1>
-    <p class="ng-hero-subtitle">Two hundred and fifty ethnic groups, countless stories — explored through nine pillars that define Africa's most populous nation and creative powerhouse.</p>
+    <p class="ng-hero-subtitle">Two hundred and fifty ethnic groups, countless stories — explored through the cultural elements that define Africa's most populous nation and creative powerhouse.</p>
     <div class="ng-hero-stats">
       <div class="ng-stat"><span class="ng-stat-n">250+</span><span class="ng-stat-l">Ethnic Groups</span></div>
       <div class="ng-stat-divider" aria-hidden="true"></div>
       <div class="ng-stat"><span class="ng-stat-n">220M</span><span class="ng-stat-l">People</span></div>
       <div class="ng-stat-divider" aria-hidden="true"></div>
-      <div class="ng-stat"><span class="ng-stat-n">9</span><span class="ng-stat-l">Cultural Pillars</span></div>
+      <div class="ng-stat"><span class="ng-stat-n">9</span><span class="ng-stat-l">Cultural Elements</span></div>
     </div>
   </div>
   <div class="ng-hero-scroll" aria-hidden="true">
@@ -32,8 +32,8 @@ const pillars = data.pillars;
   </div>
 </section>
 
-<!-- Pillar Navigation -->
-<nav class="ng-tabs" aria-label="Culture pillars">
+<!-- Element Navigation -->
+<nav class="ng-tabs" aria-label="Cultural elements">
   <div class="ng-tabs-inner">
     {pillars.map((p, i) => (
       <button
@@ -53,7 +53,7 @@ const pillars = data.pillars;
   {pillars.map((p, pi) => (
     <section
       class={`ng-pillar${pi === 0 ? ' active' : ''}`}
-      id={`pillar-${p.id}`}
+      id={`element-${p.id}`}
       aria-hidden={pi !== 0 ? 'true' : 'false'}
     >
       <div class="ng-pillar-header">
@@ -368,7 +368,7 @@ const pillars = data.pillars;
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Pillar header */
+  /* Element header */
   .ng-pillar-header {
     display: flex;
     align-items: center;
@@ -720,7 +720,7 @@ const pillars = data.pillars;
 
       const target = tab.dataset.pillar;
       document.querySelectorAll('.ng-pillar').forEach(p => {
-        const active = p.id === `pillar-${target}`;
+        const active = p.id === `element-${target}`;
         p.classList.toggle('active', active);
         p.setAttribute('aria-hidden', active ? 'false' : 'true');
       });
