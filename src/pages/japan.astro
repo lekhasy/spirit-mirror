@@ -5,103 +5,157 @@ const pillars = data.pillars;
 const seasonMap = {
   history: 'autumn', parenting: 'winter', stories: 'spring',
   belief: 'autumn', rituals: 'winter', festivals: 'spring',
-  music: 'summer', literature: 'autumn', dance: 'summer'
+  music: 'summer', literature: 'summer', dance: 'summer'
 };
 ---
 
 <Layout title="Japan — Spirit Mirror">
 
-<!-- Hero -->
+<!-- ═══════════════════════════════════════════════════════════
+     HERO — Yozora Night Sky + Fuji + Rising Sun
+     Feel: Stepping into a Japanese scroll painting at dawn
+══════════════════════════════════════════════════════════════ -->
 <section class="jp-hero">
-  <div class="jp-hero-bg" aria-hidden="true">
-    <!-- Washi paper grain texture -->
-    <div class="jp-washi-texture"></div>
-    <!-- Rising sun radial gradient -->
-    <div class="jp-sun-gradient"></div>
-    <!-- Fuji mountain silhouette -->
-    <div class="jp-fuji">
-      <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <!-- Atmospheric haze at base -->
-        <ellipse cx="450" cy="415" rx="420" ry="28" fill="rgba(200,180,160,0.12)"/>
-        <!-- Main Fuji body - natural S-curve profile -->
-        <path d="M450 60
-                 C478 95 530 155 578 220
-                 C608 265 648 310 700 365
-                 L200 365
-                 C252 310 292 265 322 220
-                 C370 155 422 95 450 60Z"
-              fill="#EDE5D8" opacity="0.95"/>
-        <!-- Left slope shadow - gives natural depth -->
-        <path d="M450 60
-                 C440 85 428 115 418 145
-                 C408 115 400 90 395 70
-                 C415 65 430 60 450 60Z"
-              fill="rgba(180,155,135,0.18)"/>
-        <!-- Snow cap - organic asymmetric blob -->
-        <path d="M450 60
-                 C440 82 430 100 422 115
-                 C432 108 440 98 450 90
-                 C460 98 468 108 478 115
-                 C470 100 460 82 450 60Z"
-              fill="#FFFEFB"/>
-        <path d="M450 60
-                 C442 78 435 94 430 108
-                 C420 100 415 90 420 80
-                 C430 75 440 68 450 60Z"
-              fill="#FFFEFB"/>
-        <path d="M450 60
-                 C458 78 465 94 470 108
-                 C480 100 485 90 480 80
-                 C470 75 460 68 450 60Z"
-              fill="#FFFEFB"/>
-        <!-- Snow streak left -->
-        <path d="M415 130 C410 145 408 158 412 168 C405 158 405 145 415 130Z"
-              fill="#FFFEFB" opacity="0.85"/>
-        <!-- Snow streak right -->
-        <path d="M485 130 C490 145 492 158 488 168 C495 158 495 145 485 130Z"
-              fill="#FFFEFB" opacity="0.85"/>
-        <!-- Subtle contour line -->
-        <path d="M450 60
-                 C478 95 530 155 578 220
-                 C608 265 648 310 700 365
-                 L200 365
-                 C252 310 292 265 322 220
-                 C370 155 422 95 450 60Z"
-              fill="none" stroke="rgba(160,140,120,0.25)" stroke-width="1.2"/>
-      </svg>
-    </div>
-    <!-- Seigaiha wave watermark (subtle) -->
-    <div class="jp-wave-watermark" aria-hidden="true">
-      <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" opacity="0.04">
-        <path d="M0 30 Q25 0 50 30 T100 30 T150 30 T200 30" fill="none" stroke="#C41E3A" stroke-width="3"/>
-        <path d="M0 45 Q25 15 50 45 T100 45 T150 45 T200 45" fill="none" stroke="#C41E3A" stroke-width="3"/>
-        <path d="M0 60 Q25 30 50 60 T100 60 T150 60 T200 60" fill="none" stroke="#C41E3A" stroke-width="3"/>
-      </svg>
-    </div>
+  <!-- Yozora night sky gradient at top -->
+  <div class="jp-yozora" aria-hidden="true"></div>
+  
+  <!-- Washi paper grain texture -->
+  <div class="jp-washi-texture" aria-hidden="true"></div>
+  
+  <!-- Rising sun radial gradient -->
+  <div class="jp-sun-gradient" aria-hidden="true"></div>
+  
+  <!-- Fuji mountain silhouette — ukiyo-e composition -->
+  <div class="jp-fuji" aria-hidden="true">
+    <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <!-- Atmospheric haze at base — sumi-e quality -->
+      <ellipse cx="450" cy="490" rx="440" ry="35" fill="rgba(200,185,170,0.10)"/>
+      <ellipse cx="450" cy="485" rx="380" ry="20" fill="rgba(200,185,170,0.08)"/>
+      
+      <!-- Main Fuji body — organic S-curve with brush quality -->
+      <path d="M450 65
+               C480 100 535 168 585 240
+               C618 292 662 348 720 410
+               L180 410
+               C238 348 282 292 315 240
+               C365 168 420 100 450 65Z"
+            fill="#EDE5D8" opacity="0.97"/>
+      
+      <!-- Left slope shadow — natural depth, sumi-e ink wash -->
+      <path d="M450 65
+               C438 95 424 128 412 162
+               C400 128 392 100 385 75
+               C408 70 425 65 450 65Z"
+            fill="rgba(160,138,122,0.22)"/>
+      
+      <!-- Right slope — slightly lighter, atmospheric -->
+      <path d="M450 65
+               C462 95 476 128 488 162
+               C500 128 508 100 515 75
+               C492 70 475 65 450 65Z"
+            fill="rgba(180,160,145,0.12)"/>
+      
+      <!-- Snow cap — organic asymmetric blobs, not geometric -->
+      <!-- Center main snow cap -->
+      <path d="M450 65
+               C438 90 428 112 420 130
+               C430 122 440 108 450 100
+               C460 108 470 122 480 130
+               C472 112 462 90 450 65Z"
+            fill="#FFFEFB"/>
+      
+      <!-- Left snow streak — organic drip -->
+      <path d="M450 65
+               C440 85 432 105 426 122
+               C418 112 416 100 420 90
+               C430 82 440 73 450 65Z"
+            fill="#FFFEFB" opacity="0.95"/>
+      
+      <!-- Right snow streak -->
+      <path d="M450 65
+               C460 85 468 105 474 122
+               C482 112 484 100 480 90
+               C470 82 460 73 450 65Z"
+            fill="#FFFEFB" opacity="0.95"/>
+      
+      <!-- Small left snow patch -->
+      <path d="M412 148 C408 158 407 168 410 175 C403 168 403 158 412 148Z"
+            fill="#FFFEFB" opacity="0.80"/>
+      
+      <!-- Small right snow patch -->
+      <path d="M488 148 C492 158 493 168 490 175 C497 168 497 158 488 148Z"
+            fill="#FFFEFB" opacity="0.80"/>
+      
+      <!-- Subtle sumi-e contour — brush stroke quality -->
+      <path d="M450 65
+               C480 100 535 168 585 240
+               C618 292 662 348 720 410
+               L180 410
+               C238 348 282 292 315 240
+               C365 168 420 100 450 65Z"
+            fill="none" stroke="rgba(140,120,105,0.18)" stroke-width="1.5"/>
+      
+      <!-- Mist layer at base — ukiyo-e atmospheric effect -->
+      <path d="M0 430 Q225 415 450 425 Q675 435 900 420 L900 500 L0 500Z"
+            fill="rgba(245,239,230,0.4)"/>
+      <path d="M0 450 Q225 438 450 445 Q675 452 900 442 L900 500 L0 500Z"
+            fill="rgba(245,239,230,0.3)"/>
+    </svg>
+  </div>
+  
+  <!-- Seigaiha wave watermark — subtle, lower right -->
+  <div class="jp-wave-watermark" aria-hidden="true">
+    <svg viewBox="0 0 180 55" xmlns="http://www.w3.org/2000/svg" opacity="0.035">
+      <path d="M0 28 Q22.5 0 45 28 T90 28 T135 28 T180 28" fill="none" stroke="#C41E3A" stroke-width="3"/>
+      <path d="M0 42 Q22.5 14 45 42 T90 42 T135 42 T180 42" fill="none" stroke="#C41E3A" stroke-width="3"/>
+      <path d="M-22.5 56 Q0 28 22.5 56 T67.5 56 T112.5 56 T157.5 56" fill="none" stroke="#C41E3A" stroke-width="3"/>
+    </svg>
   </div>
 
   <div class="jp-hero-inner">
-    <div class="jp-hero-tag"> Culture · Heritage · Identity</div>
+    <!-- Tag pill — gold accent -->
+    <div class="jp-hero-tag">Culture · Heritage · Identity</div>
+    
+    <!-- Main title -->
     <h1 class="jp-hero-title">
       <span class="jp-h1-kanji">日本</span>
       <span class="jp-h1-hiragana">にほん</span>
     </h1>
-    <p class="jp-hero-subtitle">Two thousand six hundred years of refinement, resilience, and the art of impermanence — explored through the cultural elements that define the Japanese soul.</p>
+    
+    <!-- Subtitle -->
+    <p class="jp-hero-subtitle">
+      Two thousand six hundred years of refinement, resilience, and the art of impermanence — explored through the cultural elements that define the Japanese soul.
+    </p>
+    
+    <!-- Stats — staggered, like annotations in a scroll painting -->
     <div class="jp-hero-stats">
-      <div class="jp-stat"><span class="jp-stat-n">2,600</span><span class="jp-stat-l">Years of History</span></div>
+      <div class="jp-stat">
+        <span class="jp-stat-n">2,600</span>
+        <span class="jp-stat-l">Years of History</span>
+      </div>
       <div class="jp-stat-divider" aria-hidden="true"></div>
-      <div class="jp-stat"><span class="jp-stat-n">125M</span><span class="jp-stat-l">People</span></div>
+      <div class="jp-stat">
+        <span class="jp-stat-n">125M</span>
+        <span class="jp-stat-l">People</span>
+      </div>
       <div class="jp-stat-divider" aria-hidden="true"></div>
-      <div class="jp-stat"><span class="jp-stat-n">9</span><span class="jp-stat-l">Cultural Elements</span></div>
+      <div class="jp-stat">
+        <span class="jp-stat-n">9</span>
+        <span class="jp-stat-l">Cultural Elements</span>
+      </div>
     </div>
   </div>
+  
+  <!-- Scroll indicator — fades on scroll -->
   <div class="jp-hero-scroll" aria-hidden="true">
     <span>Scroll to explore</span>
     <span class="jp-scroll-arrow">↓</span>
   </div>
 </section>
 
-<!-- Element Navigation -->
+<!-- ═══════════════════════════════════════════════════════════
+     ELEMENT NAVIGATION — Sticky, frosted shoji glass feel
+══════════════════════════════════════════════════════════════ -->
 <nav class="jp-tabs" aria-label="Cultural elements">
   <div class="jp-tabs-inner">
     {pillars.map((p, i) => (
@@ -117,44 +171,76 @@ const seasonMap = {
   </div>
 </nav>
 
-<!-- Content -->
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN CONTENT — Emakimono scroll rhythm
+══════════════════════════════════════════════════════════════ -->
 <main class="jp-main">
   {pillars.map((p, pi) => (
-      <section
-        class={`jp-pillar${pi === 0 ? ' active' : ''}`}
-        id={`element-${p.id}`}
-        aria-hidden={pi !== 0 ? 'true' : 'false'}
-        data-season={seasonMap[p.id] || 'autumn'}
-      >
+    <section
+      class={`jp-pillar jp-pillar--${seasonMap[p.id]}${pi === 0 ? ' active' : ''}`}
+      id={`element-${p.id}`}
+      aria-hidden={pi !== 0 ? 'true' : 'false'}
+      data-season={seasonMap[p.id]}
+    >
+      <!-- Sumi-e brush stroke divider before each section -->
+      <div class="jp-section-divider" aria-hidden="true">
+        <svg viewBox="0 0 300 6" xmlns="http://www.w3.org/2000/svg" opacity="0.12">
+          <path d="M0 3 Q75 1 150 4 Q225 7 300 3" 
+                fill="none" stroke="#1A1714" stroke-width="1.5" 
+                stroke-linecap="round"/>
+        </svg>
+      </div>
+      
+      <!-- Pillar header -->
       <div class="jp-pillar-header">
         <div class="jp-pillar-header-left">
-          <span class="jp-pillar-number">0{pi + 1}</span>
+          <span class="jp-pillar-number">{String(pi + 1).padStart(2, '0')}</span>
           <div>
             <h2 class="jp-pillar-title">{p.title}</h2>
             <p class="jp-pillar-sub">{p.entries.length} chapters across time</p>
           </div>
         </div>
-        <span class="jp-pillar-icon-lg">{p.icon}</span>
+        <!-- Kumiko-inspired geometric watermark -->
+        <div class="jp-pillar-icon-lg" aria-hidden="true">
+          <svg viewBox="0 0 60 52" xmlns="http://www.w3.org/2000/svg" opacity="0.08">
+            <polygon points="30,2 56,39 4,39" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <polygon points="30,50 4,13 56,13" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="30" cy="26" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
       </div>
 
+      <!-- Timeline — emakimono scroll format -->
       <div class="jp-timeline">
         <div class="jp-timeline-line" aria-hidden="true"></div>
         {p.entries.map((entry, ei) => (
-          <div class={`jp-card-wrap ${ei % 2 === 0 ? 'left' : 'right'}`}>
+          <div class={`jp-card-wrap ${ei % 2 === 0 ? 'left' : 'right'}${ei === 0 ? ' first-in-section' : ''}`}>
             <div class="jp-timeline-node" aria-hidden="true">
               <div class="jp-node-outer"></div>
               <div class="jp-node-inner"></div>
             </div>
+            
             <article class="jp-card">
+              <!-- Asanoha pattern corner accent -->
+              <div class="jp-card-asanoha" aria-hidden="true">
+                <svg viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg" opacity="0.05">
+                  <polygon points="20,1 38,26 2,26" fill="none" stroke="#1A1714" stroke-width="0.8"/>
+                  <polygon points="20,34 2,9 38,9" fill="none" stroke="#1A1714" stroke-width="0.8"/>
+                </svg>
+              </div>
+              
               <div class="jp-card-top">
                 <span class="jp-card-period">{entry.period}</span>
                 <span class="jp-card-era">{entry.era}</span>
               </div>
+              
               <h3 class="jp-card-title">{entry.title}</h3>
               <p class="jp-card-summary">{entry.summary}</p>
+              
               <div class="jp-card-content" hidden>
                 <p>{entry.content}</p>
               </div>
+              
               <button class="jp-card-toggle" aria-expanded="false">
                 <span class="jp-toggle-text">Continue reading</span>
                 <span class="jp-toggle-icon" aria-hidden="true"></span>
@@ -166,35 +252,43 @@ const seasonMap = {
     </section>
   ))}
 
-
-  <!-- Ainu / Okinawa Callout -->
+  <!-- ════════════════════════════════════════════════════════
+       CALL OUT BOX — Ainu & Okinawa cultural acknowledgment
+       Styled differently: indigo/sumi tones, wave pattern
+  ════════════════════════════════════════════════════════════════ -->
   <aside class="jp-callout" aria-label="Cultural diversity note">
     <div class="jp-callout-inner">
+      <!-- Seigaiha wave accent in corner -->
       <div class="jp-callout-wave" aria-hidden="true">
-        <svg viewBox="0 0 160 48" xmlns="http://www.w3.org/2000/svg" opacity="0.3">
-          <path d="M0 24 Q20 0 40 24 T80 24 T120 24 T160 24" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
-          <path d="M0 36 Q20 12 40 36 T80 36 T120 36 T160 36" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
-          <path d="M0 48 Q20 24 40 48 T80 48 T120 48 T160 48" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
+        <svg viewBox="0 0 140 42" xmlns="http://www.w3.org/2000/svg" opacity="0.12">
+          <path d="M0 21 Q17.5 0 35 21 T70 21 T105 21 T140 21" fill="none" stroke="#1B2A4A" stroke-width="2"/>
+          <path d="M0 31.5 Q17.5 10.5 35 31.5 T70 31.5 T105 31.5 T140 31.5" fill="none" stroke="#1B2A4A" stroke-width="2"/>
+          <path d="M-17.5 42 Q0 21 17.5 42 T52.5 42 T87.5 42 T122.5 42" fill="none" stroke="#1B2A4A" stroke-width="2"/>
         </svg>
       </div>
-      <div class="jp-callout-content">
-        <p class="jp-callout-label">A note on cultural breadth</p>
-        <p class="jp-callout-text">Japanese cultural identity encompasses the <strong>Ainu people of Hokkaidō</strong> — Japan's indigenous inhabitants whose culture honors the natural world through a tradition of bear ceremonialism and intricate textile artistry — and the <strong>distinct Ryūkyūan culture of Okinawa</strong>, with its own language, music (sanshin string tradition), and maritime heritage shaped by centuries of trade with Southeast Asia. Japan is a cultural archipelago within a single national identity.</p>
-      </div>
+      
+      <p class="jp-callout-label">A note on cultural breadth</p>
+      <p class="jp-callout-text">
+        Japanese cultural identity encompasses the <strong>Ainu people of Hokkaidō</strong> — Japan's indigenous inhabitants whose culture honors the natural world through bear ceremonialism and intricate textile artistry — and the <strong>distinct Ryūkyūan culture of Okinawa</strong>, with its own language, music (sanshin string tradition), and maritime heritage. Japan is a cultural archipelago within a single national identity.
+      </p>
     </div>
   </aside>
 </main>
 
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER — Quiet, considered, like last brushstroke on a scroll
+══════════════════════════════════════════════════════════════ -->
 <footer class="jp-footer">
-  <!-- Torii silhouette accent -->
+  <!-- Torii gate silhouette — stroke only, nearly invisible -->
   <div class="jp-footer-torii" aria-hidden="true">
-    <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" opacity="0.07">
-      <rect x="8" y="10" width="3" height="28" fill="#C41E3A"/>
-      <rect x="49" y="10" width="3" height="28" fill="#C41E3A"/>
-      <rect x="2" y="4" width="56" height="4" rx="1" fill="#C41E3A"/>
-      <rect x="6" y="8" width="48" height="2.5" rx="0.5" fill="#C41E3A"/>
+    <svg viewBox="0 0 80 56" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 8 Q40 -2 78 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M10 16 L70 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 16 L16 52" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M64 16 L64 52" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
   </div>
+  
   <div class="jp-footer-inner">
     <a href="/" class="jp-footer-logo">Spirit Mirror</a>
     <p class="jp-footer-copy">Exploring cultures, one story at a time.</p>
@@ -205,49 +299,109 @@ const seasonMap = {
 </Layout>
 
 <style>
+  /* ═══════════════════════════════════════════════════════════
+     JAPAN THEME — Complete Redesign
+     Philosophy: Ma (negative space) · Mono no aware (impermanence)
+                 Wabi-sabi (beauty in imperfection)
+  ═══════════════════════════════════════════════════════════════ */
+  
   @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap');
 
-  /* ── Variables ─────────────────────────────── */
+  /* ── VARIABLES ──────────────────────────────────────────────── */
   :root {
-    --jp-vermillion: #BC1B21;
-    --jp-vermillion-deep: #A0151C;
-    --jp-vermillion-soft: #D94F45;
-    --jp-cream: #FAF7F2;
-    --jp-gold: #C9A84C;
-    --jp-sumi: #1B2A4A;
-    --jp-white: #FFFDF9;
-    --jp-ink: #1A1714;
-    --jp-warm-gray: #6B6560;
-    --jp-pale-sand: #E8DDD0;
-    --jp-shadow: rgba(26, 23, 20, 0.08);
-    --jp-shadow-deep: rgba(26, 23, 20, 0.15);
-
-    /* Spring tint (Stories, Festivals) */
-    --jp-spring-tint: rgba(255, 240, 238, 0.45);
-    /* Summer tint (Music, Dance) */
-    --jp-summer-tint: rgba(230, 238, 245, 0.35);
-    /* Autumn tint (History, Belief) */
-    --jp-autumn-tint: rgba(248, 238, 220, 0.5);
-    /* Winter tint (Parenting, Rituals) */
-    --jp-winter-tint: rgba(242, 240, 235, 0.4);
+    /* CORE VERMILLION FAMILY (shu- 赤) */
+    --jp-vermillion:        #C41E3A;
+    --jp-vermillion-deep:    #8B1520;
+    --jp-vermillion-soft:    #D94F45;
+    --jp-vermillion-pale:    #F5C4BE;
+    
+    /* WASHI CREAM FAMILY (和紙) */
+    --jp-cream:             #FAF7F2;
+    --jp-washi:             #F5EFE6;
+    --jp-washi-dark:        #D9CEBF;
+    --jp-washi-tint:        #EDE5D8;
+    
+    /* GOLD FAMILY (kikushoku - 菊色) */
+    --jp-gold:              #C9A84C;
+    --jp-gold-pale:         #E8D49A;
+    
+    /* SUMI INK FAMILY (墨) */
+    --jp-sumi:              #1A1714;
+    --jp-sumi-light:        #2D2926;
+    
+    /* INDIGO FAMILY (ai - 藍) */
+    --jp-indigo-deep:       #1B2A4A;
+    --jp-indigo:            #2D3E6E;
+    --jp-indigo-pale:       #4A5B8C;
+    
+    /* MATCHA FAMILY (抹茶色) */
+    --jp-matcha:            #6B8E5A;
+    --jp-matcha-soft:       #8FAF7C;
+    
+    /* BENI FAMILY (紅 - rose/coral) */
+    --jp-beni:              #D94F45;
+    --jp-beni-soft:         #E8847A;
+    --jp-beni-pale:         #F5C4BE;
+    
+    /* SHIKON/PURPLE FAMILY (紫根) */
+    --jp-shikon:            #5B3A6E;
+    --jp-shikon-soft:       #8A6B9E;
+    --jp-shikon-pale:       #C4B0D4;
+    
+    /* AI BLUE (アイ blue dye) */
+    --jp-ai-blue:           #3D5A8C;
+    --jp-ai-blue-pale:      #8FAED4;
+    
+    /* SURFACES */
+    --jp-white:             #FFFDF9;
+    --jp-warm-gray:         #6B6560;
+    --jp-pale-sand:         #E8DDD0;
+    
+    /* SHADOWS — all warm-tinted, never cool gray */
+    --jp-shadow:            rgba(26, 23, 20, 0.07);
+    --jp-shadow-deep:       rgba(26, 23, 20, 0.14);
+    --jp-shadow-warm:       rgba(196, 30, 58, 0.08);
+    --jp-shadow-gold:       rgba(201, 168, 76, 0.12);
+    
+    /* SEASONAL BACKGROUNDS */
+    --jp-spring-bg:         rgba(245, 196, 190, 0.10);
+    --jp-spring-accent:      #E8847A;
+    --jp-summer-bg:         rgba(61, 90, 140, 0.06);
+    --jp-summer-accent:     #3D5A8C;
+    --jp-autumn-bg:         rgba(201, 168, 76, 0.08);
+    --jp-autumn-accent:     #8B1520;
+    --jp-winter-bg:         rgba(91, 58, 110, 0.06);
+    --jp-winter-accent:     #5B3A6E;
+    
+    /* JAPANESE EASING — deliberate, contemplative */
+    --ease-arrival:         cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-departure:       cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-scroll:          cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* FONTS */
+    --font-heading:         'Shippori Mincho', 'Noto Serif JP', serif;
+    --font-body:            'Inter', 'Noto Sans JP', sans-serif;
   }
 
-  /* ── Global overrides ───────────────────────── */
+  /* ── GLOBAL OVERRIDES ──────────────────────────────────────── */
   :global(.site-root) {
     background: var(--jp-cream) !important;
   }
   :global(.site-header) {
-    background: rgba(250, 247, 242, 0.97) !important;
-    border-bottom: 1px solid rgba(196, 30, 58, 0.1) !important;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.05) !important;
+    background: rgba(250, 247, 242, 0.94) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(196, 30, 58, 0.08) !important;
+    box-shadow: 0 1px 12px rgba(26, 23, 20, 0.05) !important;
   }
   :global(.site-logo) {
     color: var(--jp-vermillion) !important;
-    font-family: 'Shippori Mincho', serif !important;
-    letter-spacing: 0.08em !important;
+    font-family: var(--font-heading) !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 700 !important;
   }
 
-  /* ── Hero ───────────────────────────────────── */
+  /* ── HERO ──────────────────────────────────────────────────── */
   .jp-hero {
     position: relative;
     min-height: 92vh;
@@ -256,31 +410,54 @@ const seasonMap = {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 80px 24px 120px;
+    padding: 80px 24px 140px;
     overflow: hidden;
     background: var(--jp-cream);
   }
 
-  /* Washi paper texture overlay */
+  /* Yozora night sky gradient at top — dissolves into cream */
+  .jp-yozora {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25vh;
+    background: linear-gradient(
+      180deg,
+      rgba(27, 42, 74, 0.06) 0%,
+      rgba(27, 42, 74, 0.03) 40%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Washi paper texture — subtle fiber grain */
   .jp-washi-texture {
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='washi'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23washi)' opacity='0.022'/%3E%3C/svg%3E");
     background-repeat: repeat;
     pointer-events: none;
     z-index: 1;
   }
 
-  /* Rising sun radial gradient */
+  /* Rising sun radial gradient — warm, diffuse, like light through paper */
   .jp-sun-gradient {
     position: absolute;
-    top: 3%;
+    top: 4%;
     left: 50%;
     transform: translateX(-50%);
-    width: min(800px, 92vw);
-    height: min(800px, 92vw);
+    width: min(900px, 95vw);
+    height: min(900px, 95vw);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(188, 27, 33, 0.22) 0%, rgba(188, 27, 33, 0.10) 30%, rgba(188, 27, 33, 0.04) 55%, transparent 75%);
+    background: radial-gradient(
+      circle,
+      rgba(196, 30, 58, 0.18) 0%,
+      rgba(196, 30, 58, 0.10) 25%,
+      rgba(196, 30, 58, 0.04) 50%,
+      transparent 70%
+    );
     pointer-events: none;
     z-index: 2;
   }
@@ -288,18 +465,22 @@ const seasonMap = {
   .jp-sun-gradient::after {
     content: '';
     position: absolute;
-    inset: 15%;
+    inset: 20%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(188, 27, 33, 0.12) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(217, 79, 69, 0.10) 0%,
+      transparent 65%
+    );
   }
 
-  /* Fuji mountain */
+  /* Fuji mountain — ukiyo-e composition, organic brush quality */
   .jp-fuji {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 55vh;
+    height: 58vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -310,114 +491,124 @@ const seasonMap = {
   .jp-fuji svg {
     width: 100%;
     height: 100%;
-    max-height: 55vh;
+    max-height: 58vh;
   }
 
   /* Seigaiha wave watermark */
   .jp-wave-watermark {
     position: absolute;
-    bottom: 12%;
-    right: 5%;
+    bottom: 10%;
+    right: 4%;
     width: 160px;
     pointer-events: none;
     z-index: 3;
-    opacity: 0.5;
   }
 
+  /* Hero inner content */
   .jp-hero-inner {
     position: relative;
     z-index: 10;
-    max-width: 800px;
+    max-width: 820px;
+    padding-top: 8vh;
   }
 
+  /* Gold tag pill */
   .jp-hero-tag {
     display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
+    font-family: var(--font-body);
+    font-size: 0.70rem;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--jp-gold);
-    border: 1px solid rgba(201, 168, 76, 0.35);
+    border: 1px solid rgba(201, 168, 76, 0.30);
     border-radius: 100px;
-    padding: 6px 18px;
-    margin-bottom: 32px;
+    padding: 7px 20px;
+    margin-bottom: 36px;
+    animation: jp-fade-in 600ms var(--ease-arrival) both;
   }
 
+  /* Main title — kanji + hiragana stack */
   .jp-hero-title {
-    margin: 0 0 28px;
+    margin: 0 0 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    animation: jp-title-arrive 700ms var(--ease-arrival) 200ms both;
   }
 
   .jp-h1-kanji {
-    font-family: 'Shippori Mincho', 'Playfair Display', serif;
-    font-size: clamp(4rem, 18vw, 10rem);
+    font-family: var(--font-heading);
+    font-size: clamp(4.5rem, 18vw, 11rem);
     font-weight: 700;
     color: var(--jp-vermillion);
-    line-height: 1;
-    letter-spacing: 0.1em;
-    text-shadow: 0 0 60px rgba(196, 30, 58, 0.2);
+    line-height: 0.95;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 80px rgba(196, 30, 58, 0.18);
   }
 
   .jp-h1-hiragana {
-    font-family: 'Shippori Mincho', serif;
-    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    font-family: var(--font-heading);
+    font-size: clamp(0.8rem, 2vw, 1.05rem);
     font-weight: 400;
-    color: rgba(196, 30, 58, 0.4);
-    letter-spacing: 0.3em;
+    color: rgba(196, 30, 58, 0.38);
+    letter-spacing: 0.35em;
     text-transform: lowercase;
   }
 
+  /* Subtitle */
   .jp-hero-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    font-family: var(--font-body);
+    font-size: clamp(0.92rem, 2vw, 1.02rem);
     font-weight: 300;
-    line-height: 1.85;
-    color: rgba(26, 23, 20, 0.55);
+    line-height: 1.9;
+    color: rgba(26, 23, 20, 0.52);
     max-width: 560px;
-    margin: 0 auto 52px;
+    margin: 0 auto 56px;
+    animation: jp-fade-in 600ms var(--ease-arrival) 350ms both;
   }
 
+  /* Stats row — staggered entrance */
   .jp-hero-stats {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 36px;
     flex-wrap: wrap;
+    animation: jp-fade-in 600ms var(--ease-arrival) 480ms both;
   }
 
   .jp-stat {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
   }
 
   .jp-stat-n {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
     font-weight: 700;
-    color: var(--jp-ink);
+    color: var(--jp-sumi);
     line-height: 1;
   }
 
   .jp-stat-l {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--jp-warm-gray);
   }
 
   .jp-stat-divider {
     width: 1px;
-    height: 40px;
-    background: var(--jp-pale-sand);
+    height: 44px;
+    background: var(--jp-washi-dark);
   }
 
+  /* Scroll indicator */
   .jp-hero-scroll {
     position: absolute;
     bottom: 32px;
@@ -426,36 +617,48 @@ const seasonMap = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(26, 23, 20, 0.25);
+    color: rgba(26, 23, 20, 0.22);
     z-index: 10;
     transition: opacity 0.5s ease;
+    animation: jp-fade-in 500ms var(--ease-arrival) 700ms both;
   }
 
   .jp-scroll-arrow {
-    animation: jp-bounce 1.8s ease-in-out infinite;
+    animation: jp-float 2.2s ease-in-out infinite;
     display: block;
   }
 
-  @keyframes jp-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(5px); }
+  /* ── KEYFRAME ANIMATIONS ───────────────────────────────────── */
+  @keyframes jp-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Tabs ───────────────────────────────────── */
+  @keyframes jp-title-arrive {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes jp-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── TABS — Sticky frosted shoji glass ────────────────────── */
   .jp-tabs {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(250, 247, 242, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(196, 30, 58, 0.1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    background: rgba(250, 247, 242, 0.93);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(196, 30, 58, 0.08);
+    box-shadow: 0 2px 16px rgba(26, 23, 20, 0.04);
   }
 
   .jp-tabs-inner {
@@ -464,7 +667,7 @@ const seasonMap = {
     max-width: 1100px;
     margin: 0 auto;
     scrollbar-width: none;
-    padding: 0 8px;
+    padding: 0 12px;
   }
   .jp-tabs-inner::-webkit-scrollbar { display: none; }
 
@@ -473,67 +676,91 @@ const seasonMap = {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 16px 20px;
+    padding: 17px 20px;
     background: none;
     border: none;
     border-bottom: 2px solid transparent;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.82rem;
+    font-family: var(--font-body);
+    font-size: 0.80rem;
     font-weight: 400;
-    color: rgba(26, 23, 20, 0.4);
-    transition: all 0.2s ease;
+    color: rgba(26, 23, 20, 0.38);
+    transition: color 0.2s ease, background 0.2s ease;
     white-space: nowrap;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
     border-radius: 3px 3px 0 0;
   }
 
   .jp-tab:hover {
-    color: rgba(26, 23, 20, 0.75);
-    background: rgba(196, 30, 58, 0.03);
+    color: rgba(26, 23, 20, 0.70);
+    background: rgba(196, 30, 58, 0.025);
   }
 
   .jp-tab.active {
     color: var(--jp-vermillion);
     border-bottom-color: var(--jp-vermillion);
-    background: rgba(196, 30, 58, 0.04);
+    background: rgba(196, 30, 58, 0.03);
   }
 
   .jp-tab-icon {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1;
   }
 
-  /* ── Main ───────────────────────────────────── */
+  /* ── MAIN ──────────────────────────────────────────────────── */
   .jp-main {
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 72px 24px 96px;
+    padding: 88px 24px 100px;
   }
 
-  .jp-pillar { display: none; }
+  /* Pillar sections — hidden by default */
+  .jp-pillar {
+    display: none;
+    animation: jp-pillar-in 400ms var(--ease-arrival) both;
+  }
+
   .jp-pillar.active {
     display: block;
-    animation: jp-in 0.35s ease-out;
   }
 
-  @keyframes jp-in {
-    from { opacity: 0; transform: translateY(12px); }
+  @keyframes jp-pillar-in {
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Seasonal tints per section */
-  .jp-pillar[data-season="spring"] { background: linear-gradient(180deg, transparent 0%, var(--jp-spring-tint) 100%); }
-  .jp-pillar[data-season="summer"] { background: linear-gradient(180deg, transparent 0%, var(--jp-summer-tint) 100%); }
-  .jp-pillar[data-season="autumn"] { background: linear-gradient(180deg, transparent 0%, var(--jp-autumn-tint) 100%); }
-  .jp-pillar[data-season="winter"] { background: linear-gradient(180deg, transparent 0%, var(--jp-winter-tint) 100%); }
+  /* Seasonal backgrounds — subtle atmospheric tinting */
+  .jp-pillar[data-season="spring"] {
+    background: linear-gradient(180deg, transparent 0%, var(--jp-spring-bg) 100%);
+  }
+  .jp-pillar[data-season="summer"] {
+    background: linear-gradient(180deg, transparent 0%, var(--jp-summer-bg) 100%);
+  }
+  .jp-pillar[data-season="autumn"] {
+    background: linear-gradient(180deg, transparent 0%, var(--jp-autumn-bg) 100%);
+  }
+  .jp-pillar[data-season="winter"] {
+    background: linear-gradient(180deg, transparent 0%, var(--jp-winter-bg) 100%);
+  }
 
-  /* Element header */
+  /* Section divider — sumi-e brush stroke */
+  .jp-section-divider {
+    max-width: 300px;
+    margin: 0 auto 72px;
+    text-align: center;
+  }
+
+  .jp-section-divider svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Pillar header */
   .jp-pillar-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
     padding-bottom: 24px;
     border-bottom: 1px solid var(--jp-pale-sand);
   }
@@ -541,62 +768,73 @@ const seasonMap = {
   .jp-pillar-header-left {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
   }
 
   .jp-pillar-number {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
     font-weight: 700;
-    color: var(--jp-pale-sand);
+    color: var(--jp-washi-dark);
     line-height: 1;
     user-select: none;
+    letter-spacing: -0.02em;
   }
 
   .jp-pillar-title {
-    font-family: 'Shippori Mincho', serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
     font-weight: 700;
-    color: var(--jp-ink);
-    margin: 0 0 4px;
-    line-height: 1.1;
+    color: var(--jp-sumi);
+    margin: 0 0 6px;
+    line-height: 1.15;
   }
 
   .jp-pillar-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
     color: var(--jp-warm-gray);
     margin: 0;
     letter-spacing: 0.03em;
   }
 
   .jp-pillar-icon-lg {
-    font-size: 3rem;
-    opacity: 0.1;
+    font-size: 3.5rem;
+    opacity: 0.08;
     user-select: none;
+    color: var(--jp-sumi);
   }
 
-  /* ── Timeline ───────────────────────────────── */
+  /* ── TIMELINE ─────────────────────────────────────────────── */
   .jp-timeline {
     position: relative;
   }
 
+  /* Timeline line — fades at top and bottom */
   .jp-timeline-line {
     position: absolute;
     left: 50%;
-    top: 0; bottom: 0;
+    top: 0;
+    bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--jp-pale-sand) 5%, var(--jp-pale-sand) 95%, transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--jp-washi-dark) 8%,
+      var(--jp-washi-dark) 92%,
+      transparent 100%
+    );
     transform: translateX(-50%);
   }
 
+  /* Card wrapper */
   .jp-card-wrap {
     position: relative;
     display: flex;
-    margin-bottom: 56px;
+    margin-bottom: 60px;
     opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    transform: translateY(16px);
+    transition: opacity 0.4s var(--ease-arrival), transform 0.4s var(--ease-arrival);
   }
 
   .jp-card-wrap.visible {
@@ -604,32 +842,36 @@ const seasonMap = {
     transform: translateY(0);
   }
 
+  /* First card in section gets "unroll" treatment */
+  .jp-card-wrap.first-in-section.visible {
+    animation: jp-card-unroll 450ms var(--ease-arrival) both;
+  }
+
+  @keyframes jp-card-unroll {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
   .jp-card-wrap.left {
-    padding-right: calc(50% + 36px);
+    padding-right: calc(50% + 40px);
   }
 
   .jp-card-wrap.right {
     flex-direction: row-reverse;
-    padding-left: calc(50% + 36px);
+    padding-left: calc(50% + 40px);
   }
 
-  .jp-card-wrap.left .jp-card {
-    text-align: left;
-  }
-
-  .jp-card-wrap.left .jp-card-top {
-    justify-content: flex-start;
-  }
-
-  .jp-card-wrap.left .jp-card-toggle {
-    margin-left: 0;
-  }
-
-  /* Node */
+  /* Timeline node */
   .jp-timeline-node {
     position: absolute;
     left: 50%;
-    top: 22px;
+    top: 24px;
     transform: translateX(-50%);
     width: 16px;
     height: 16px;
@@ -645,12 +887,12 @@ const seasonMap = {
     border-radius: 50%;
     border: 1.5px solid var(--jp-vermillion);
     background: var(--jp-cream);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
   }
 
   .jp-card-wrap:hover .jp-node-outer {
-    transform: scale(1.35);
-    box-shadow: 0 0 10px rgba(188, 27, 33, 0.4);
+    transform: scale(1.4);
+    box-shadow: 0 0 14px rgba(196, 30, 58, 0.35);
   }
 
   .jp-node-inner {
@@ -660,28 +902,47 @@ const seasonMap = {
     background: var(--jp-vermillion);
     position: relative;
     z-index: 1;
+    transition: box-shadow 0.18s ease;
   }
 
-  /* ── Card ───────────────────────────────────── */
+  .jp-card-wrap:hover .jp-node-inner {
+    box-shadow: 0 0 10px rgba(196, 30, 58, 0.6);
+  }
+
+  /* ── CARD ──────────────────────────────────────────────────── */
   .jp-card {
     background: var(--jp-white);
-    border: 1px solid var(--jp-pale-sand);
-    border-radius: 2px;
-    padding: 24px 28px;
-    width: 100%;
-    max-width: 480px;
-    box-shadow: 0 1px 4px var(--jp-shadow), 0 4px 16px rgba(0,0,0,0.03);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(232, 221, 208, 0.7);
     border-left: 3px solid var(--jp-vermillion);
-    /* Emakimono proportion: wider than tall */
-    aspect-ratio: 5 / 4;
+    border-radius: 2px 4px 2px 2px;
+    padding: 26px 30px;
+    width: 100%;
+    max-width: 500px;
+    /* Horizontal tatami ratio — wider than tall */
+    aspect-ratio: 3 / 2.1;
+    max-height: 280px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 1px 4px var(--jp-shadow), 0 3px 12px rgba(0,0,0,0.025);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    position: relative;
+    overflow: hidden;
   }
 
   .jp-card:hover {
-    box-shadow: 0 3px 10px var(--jp-shadow-deep), 0 8px 32px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 14px var(--jp-shadow-deep), 0 8px 32px rgba(0,0,0,0.06);
     transform: translateY(-2px);
+  }
+
+  /* Asanoha corner accent — very subtle geometric pattern */
+  .jp-card-asanoha {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 32px;
+    pointer-events: none;
+    opacity: 0.6;
   }
 
   .jp-card-top {
@@ -693,48 +954,48 @@ const seasonMap = {
   }
 
   .jp-card-period {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     color: var(--jp-vermillion);
-    background: rgba(196, 30, 58, 0.06);
-    border: 1px solid rgba(196, 30, 58, 0.15);
+    background: rgba(196, 30, 58, 0.05);
+    border: 1px solid rgba(196, 30, 58, 0.12);
     border-radius: 2px;
     padding: 3px 12px;
   }
 
   .jp-card-era {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
+    font-family: var(--font-body);
+    font-size: 0.70rem;
     color: var(--jp-warm-gray);
     font-weight: 400;
   }
 
   .jp-card-title {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 2vw, 1.22rem);
     font-weight: 700;
-    color: var(--jp-ink);
-    margin: 0 0 10px;
+    color: var(--jp-sumi);
+    margin: 0 0 12px;
     line-height: 1.35;
   }
 
   .jp-card-summary {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.85;
-    color: rgba(26, 23, 20, 0.75);
-    margin: 0 0 16px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    line-height: 1.88;
+    color: rgba(26, 23, 20, 0.72);
+    margin: 0 0 14px;
     font-weight: 400;
     flex: 1;
   }
 
   .jp-card-content {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-size: 0.84rem;
     line-height: 1.85;
-    color: rgba(26, 23, 20, 0.8);
+    color: rgba(26, 23, 20, 0.78);
     border-top: 1px solid var(--jp-pale-sand);
     padding-top: 14px;
     margin-bottom: 14px;
@@ -746,12 +1007,12 @@ const seasonMap = {
   .jp-card-toggle {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     background: none;
     border: none;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
+    font-family: var(--font-body);
+    font-size: 0.76rem;
     font-weight: 600;
     color: var(--jp-vermillion);
     padding: 0;
@@ -764,16 +1025,17 @@ const seasonMap = {
     color: var(--jp-gold);
   }
 
+  /* Plus/X toggle icon */
   .jp-toggle-icon {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
     background: currentColor;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.25s var(--ease-arrival);
     position: relative;
   }
 
@@ -781,37 +1043,39 @@ const seasonMap = {
   .jp-toggle-icon::after {
     content: '';
     position: absolute;
-    background: var(--jp-cream);
+    background: var(--jp-white);
     border-radius: 2px;
   }
   .jp-toggle-icon::before {
-    width: 7px; height: 1.5px;
+    width: 7px;
+    height: 1.5px;
   }
   .jp-toggle-icon::after {
-    width: 1.5px; height: 7px;
-    transition: transform 0.3s ease;
+    width: 1.5px;
+    height: 7px;
+    transition: transform 0.25s var(--ease-arrival);
   }
 
   .jp-card-toggle[aria-expanded="true"] .jp-toggle-icon::after {
     transform: rotate(90deg);
   }
 
-  /* ── Callout ────────────────────────────────── */
+  /* ── CALLOUT BOX — Ainu & Okinawa ────────────────────────── */
   .jp-callout {
-    margin-top: 80px;
-    padding: 0 8px;
+    margin-top: 96px;
+    padding: 0 4px;
   }
 
   .jp-callout-inner {
     position: relative;
-    border: 2px solid rgba(27, 42, 74, 0.2);
-    border-radius: 4px;
-    padding: 28px 32px;
-    background: rgba(27, 42, 74, 0.018);
+    border: 1px solid rgba(27, 42, 74, 0.18);
+    border-radius: 3px;
+    padding: 28px 34px;
+    background: rgba(27, 42, 74, 0.02);
     overflow: hidden;
   }
 
-  /* Seigaiha wave rule at top */
+  /* Seigaiha wave pattern at top */
   .jp-callout-inner::before {
     content: '';
     position: absolute;
@@ -821,8 +1085,8 @@ const seasonMap = {
     height: 3px;
     background: repeating-linear-gradient(
       90deg,
-      rgba(27, 42, 74, 0.18) 0px,
-      rgba(27, 42, 74, 0.18) 8px,
+      rgba(27, 42, 74, 0.15) 0px,
+      rgba(27, 42, 74, 0.15) 8px,
       transparent 8px,
       transparent 16px
     );
@@ -832,27 +1096,26 @@ const seasonMap = {
     position: absolute;
     top: 0;
     right: 0;
-    width: 120px;
+    width: 110px;
     pointer-events: none;
-    opacity: 0.12;
   }
 
   .jp-callout-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--jp-sumi);
+    color: var(--jp-shikon);
     margin: 0 0 10px;
-    opacity: 0.65;
+    opacity: 0.80;
   }
 
   .jp-callout-text {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.875rem;
-    line-height: 1.8;
-    color: rgba(27, 42, 74, 0.72);
+    line-height: 1.82;
+    color: rgba(27, 42, 74, 0.70);
     margin: 0;
   }
 
@@ -861,27 +1124,29 @@ const seasonMap = {
     font-weight: 600;
   }
 
-  /* ── Footer ─────────────────────────────────── */
+  /* ── FOOTER ───────────────────────────────────────────────── */
   .jp-footer {
     background: var(--jp-cream);
-    padding: 48px 24px;
-    border-top: 1px solid var(--jp-pale-sand);
+    padding: 52px 24px;
+    border-top: 1px solid rgba(232, 221, 208, 0.6);
     position: relative;
     overflow: hidden;
   }
 
+  /* Torii silhouette — stroke only, nearly invisible */
   .jp-footer-torii {
     position: absolute;
     top: 50%;
-    right: 8%;
+    right: 7%;
     transform: translateY(-50%);
-    width: 70px;
+    width: 68px;
+    color: var(--jp-vermillion);
     pointer-events: none;
-    opacity: 0.09;
+    opacity: 0.07;
   }
 
   .jp-footer-inner {
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -891,24 +1156,29 @@ const seasonMap = {
   }
 
   .jp-footer-logo {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--jp-vermillion);
     text-decoration: none;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+  }
+
+  .jp-footer-logo:hover {
+    color: var(--jp-vermillion-deep);
   }
 
   .jp-footer-copy {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
     color: var(--jp-warm-gray);
     margin: 0;
   }
 
   .jp-footer-back {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
     font-weight: 500;
     color: var(--jp-gold);
     text-decoration: none;
@@ -920,9 +1190,11 @@ const seasonMap = {
     color: var(--jp-vermillion);
   }
 
-  /* ── Mobile ─────────────────────────────────── */
+  /* ── MOBILE RESPONSIVE ────────────────────────────────────── */
   @media (max-width: 640px) {
-    .jp-timeline-line { left: 16px; }
+    .jp-timeline-line {
+      left: 16px;
+    }
 
     .jp-card-wrap.left,
     .jp-card-wrap.right {
@@ -931,52 +1203,90 @@ const seasonMap = {
       padding-right: 0;
     }
 
-    .jp-card-wrap.left .jp-card { text-align: left; }
-    .jp-card-wrap.left .jp-card-top { justify-content: flex-start; }
-    .jp-card-wrap.left .jp-card-toggle { margin-left: 0; }
-
     .jp-card {
       max-width: 100%;
       aspect-ratio: auto;
+      max-height: none;
       min-height: 0;
     }
 
     .jp-timeline-node {
       left: 16px;
-      top: 18px;
+      top: 20px;
     }
 
-    .jp-tab-label { display: none; }
-    .jp-tab { padding: 14px 16px; }
-    .jp-tab-icon { font-size: 1.1rem; }
+    .jp-tab-label {
+      display: none;
+    }
+    .jp-tab {
+      padding: 15px 16px;
+    }
+    .jp-tab-icon {
+      font-size: 1.05rem;
+    }
 
-    .jp-pillar-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-    .jp-pillar-icon-lg { display: none; }
+    .jp-pillar-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .jp-pillar-icon-lg {
+      display: none;
+    }
 
-    .jp-hero-stats { gap: 20px; }
-    .jp-stat-divider { height: 28px; }
+    .jp-hero-stats {
+      gap: 22px;
+    }
+    .jp-stat-divider {
+      height: 30px;
+    }
 
-    .jp-footer-inner { flex-direction: column; text-align: center; }
-    .jp-footer-torii { display: none; }
+    .jp-footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+    .jp-footer-torii {
+      display: none;
+    }
 
     .jp-h1-kanji {
-      font-size: clamp(3.5rem, 22vw, 7rem);
+      font-size: clamp(3.8rem, 22vw, 7rem);
     }
 
-    .jp-callout-inner { padding: 20px 24px; }
+    .jp-callout-inner {
+      padding: 22px 24px;
+    }
+
+    .jp-main {
+      padding: 64px 16px 80px;
+    }
+
+    .jp-section-divider {
+      margin-bottom: 56px;
+    }
+
+    .jp-card {
+      padding: 22px 22px;
+    }
   }
 
   @media (max-width: 380px) {
     .jp-card {
-      padding: 20px 20px;
+      padding: 18px 18px;
+    }
+    .jp-hero-inner {
+      padding-top: 4vh;
     }
   }
 </style>
 
 <script>
-  // Tab switching
+  // ═══════════════════════════════════════════════════════════
+  // TAB SWITCHING — deliberate, breath-like transition
+  // ═══════════════════════════════════════════════════════════
   document.querySelectorAll('.jp-tab').forEach(tab => {
     tab.addEventListener('click', () => {
+      // Update tab states
       document.querySelectorAll('.jp-tab').forEach(t => {
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
@@ -984,32 +1294,69 @@ const seasonMap = {
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
 
-      const target = tab.dataset.pillar;
-      document.querySelectorAll('.jp-pillar').forEach(p => {
-        const active = p.id === `element-${target}`;
-        p.classList.toggle('active', active);
-        p.setAttribute('aria-hidden', active ? 'false' : 'true');
-      });
+      // Fade out current pillar
+      const currentPillar = document.querySelector('.jp-pillar.active');
+      if (currentPillar) {
+        currentPillar.style.opacity = '0';
+        currentPillar.style.transform = 'translateY(-8px)';
+        currentPillar.classList.remove('active');
+        currentPillar.setAttribute('aria-hidden', 'true');
+      }
 
-      observeCards();
+      // Show new pillar after brief pause
+      const targetId = `element-${tab.dataset.pillar}`;
+      const targetPillar = document.getElementById(targetId);
+      
+      setTimeout(() => {
+        if (targetPillar) {
+          targetPillar.style.opacity = '';
+          targetPillar.style.transform = '';
+          targetPillar.classList.add('active');
+          targetPillar.setAttribute('aria-hidden', 'false');
+          observeCards();
+          // Scroll to top of pillar
+          targetPillar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 120);
     });
   });
 
-  // Expand / collapse with smooth height transition
+  // ═══════════════════════════════════════════════════════════
+  // CARD EXPAND / COLLAPSE — smooth unrolling
+  // ═══════════════════════════════════════════════════════════
   document.querySelectorAll('.jp-card-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
-      const content = btn.closest('.jp-card').querySelector('.jp-card-content');
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      content.hidden = open;
-      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-      btn.querySelector('.jp-toggle-text').textContent = open ? 'Continue reading' : 'Read less';
+      const card = btn.closest('.jp-card');
+      const content = card.querySelector('.jp-card-content');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      if (!isExpanded) {
+        // Expand — reveal content
+        content.hidden = false;
+        content.style.maxHeight = content.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+        btn.querySelector('.jp-toggle-text').textContent = 'Read less';
+      } else {
+        // Collapse
+        content.style.maxHeight = '0';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.querySelector('.jp-toggle-text').textContent = 'Continue reading';
+        setTimeout(() => {
+          content.hidden = true;
+          content.style.maxHeight = '';
+        }, 320);
+      }
     });
   });
 
-  // Scroll animation
+  // ═══════════════════════════════════════════════════════════
+  // SCROLL ANIMATION — cards arrive like scrolls being unrolled
+  // ═══════════════════════════════════════════════════════════
   let observer;
+  
   function observeCards() {
     if (observer) observer.disconnect();
+    
     observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1017,20 +1364,41 @@ const seasonMap = {
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+    }, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -20px 0px'
+    });
 
-    document.querySelectorAll('.jp-pillar.active .jp-card-wrap:not(.visible)')
-      .forEach(c => observer.observe(c));
+    const activePillar = document.querySelector('.jp-pillar.active');
+    if (activePillar) {
+      activePillar.querySelectorAll('.jp-card-wrap:not(.visible)')
+        .forEach((c, i) => {
+          // Stagger cards within same section
+          (c as HTMLElement).style.transitionDelay = `${i * 55}ms`;
+          observer.observe(c);
+        });
+    }
   }
 
+  // Initial observation
   observeCards();
 
-  // Fade scroll indicator on scroll
+  // ═══════════════════════════════════════════════════════════
+  // SCROLL INDICATOR — fades as user scrolls
+  // ═══════════════════════════════════════════════════════════
   const scrollIndicator = document.querySelector('.jp-hero-scroll');
   if (scrollIndicator) {
     window.addEventListener('scroll', () => {
-      const opacity = Math.max(0, 1 - window.scrollY / 200);
-      scrollIndicator.style.opacity = opacity.toString();
+      const opacity = Math.max(0, 1 - window.scrollY / 180);
+      (scrollIndicator as HTMLElement).style.opacity = opacity.toString();
     }, { passive: true });
   }
+
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR SECTION TRANSITIONS — smooth opacity
+  // ═══════════════════════════════════════════════════════════
+  // Make all pillars transition-ready
+  document.querySelectorAll('.jp-pillar').forEach(p => {
+    (p as HTMLElement).style.transition = 'opacity 0.28s var(--ease-departure), transform 0.28s var(--ease-departure)';
+  });
 </script>
