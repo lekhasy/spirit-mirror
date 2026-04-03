@@ -12,6 +12,52 @@ const seasonMap = {
 <Layout title="Japan — Spirit Mirror">
 
 <!-- ═══════════════════════════════════════════════════════════
+     FULL-SCREEN CULTURAL MODAL
+══════════════════════════════════════════════════════════════ -->
+<div id="jp-modal" class="jp-modal" role="dialog" aria-modal="true" aria-labelledby="jp-modal-title" hidden>
+  <div class="jp-modal-backdrop"></div>
+  <div class="jp-modal-panel">
+    <!-- Washi texture overlay -->
+    <div class="jp-modal-washi" aria-hidden="true"></div>
+    <!-- Seigaiha wave accent top -->
+    <div class="jp-modal-wave-top" aria-hidden="true">
+      <svg viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 15 Q25 0 50 15 T100 15 T150 15 T200 15 T250 15 T300 15 T350 15 T400 15" fill="none" stroke="rgba(196,30,58,0.15)" stroke-width="1.5"/>
+        <path d="M0 22 Q25 7 50 22 T100 22 T150 22 T200 22 T250 22 T300 22 T350 22 T400 22" fill="none" stroke="rgba(196,30,58,0.08)" stroke-width="1"/>
+      </svg>
+    </div>
+    <!-- Close button -->
+    <button class="jp-modal-close" id="jp-modal-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <!-- Modal content area -->
+    <div class="jp-modal-content">
+      <div class="jp-modal-meta">
+        <span class="jp-modal-period" id="jp-modal-period"></span>
+        <span class="jp-modal-era" id="jp-modal-era"></span>
+      </div>
+      <h2 class="jp-modal-title" id="jp-modal-title"></h2>
+      <div class="jp-modal-divider" aria-hidden="true">
+        <svg viewBox="0 0 200 4" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 2 Q50 0 100 2 Q150 4 200 2" fill="none" stroke="rgba(196,30,58,0.25)" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="jp-modal-body" id="jp-modal-body"></div>
+    </div>
+    <!-- Kumiko pattern watermark -->
+    <div class="jp-modal-kumiko" aria-hidden="true">
+      <svg viewBox="0 0 80 70" xmlns="http://www.w3.org/2000/svg" opacity="0.05">
+        <polygon points="40,2 76,52 4,52" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <polygon points="40,68 4,18 76,18" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="40" cy="35" r="3.5" fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
      HERO — Yozora Night Sky + Fuji + Rising Sun
      Feel: Stepping into a Japanese scroll painting at dawn
 ══════════════════════════════════════════════════════════════ -->
@@ -237,13 +283,13 @@ const seasonMap = {
               <h3 class="jp-card-title">{entry.title}</h3>
               <p class="jp-card-summary">{entry.summary}</p>
               
-              <div class="jp-card-content" hidden>
-                <p>{entry.content}</p>
-              </div>
-              
-              <button class="jp-card-toggle" aria-expanded="false">
-                <span class="jp-toggle-text">Continue reading</span>
-                <span class="jp-toggle-icon" aria-hidden="true"></span>
+              <button class="jp-card-open" data-period={entry.period} data-era={entry.era} data-title={entry.title} data-content={entry.content} aria-label={`Read more about ${entry.title}`}>
+                <span class="jp-open-text">Read full entry</span>
+                <span class="jp-open-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
               </button>
             </article>
           </div>
@@ -1025,6 +1071,59 @@ const seasonMap = {
     color: var(--jp-gold);
   }
 
+  /* "Read full entry" open button */
+  .jp-card-open {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid rgba(196, 30, 58, 0.22);
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--jp-vermillion);
+    padding: 7px 16px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .jp-card-open:hover {
+    background: var(--jp-vermillion);
+    color: var(--jp-white);
+    border-color: var(--jp-vermillion);
+    transform: translateY(-1px);
+  }
+
+  .jp-card-open:active {
+    transform: translateY(0);
+  }
+
+  .jp-open-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+  .jp-open-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .jp-card-open:hover .jp-open-icon {
+    transform: translateX(3px);
+  }
+
+  /* Full-width clickable card cursor */
+  .jp-card {
+    cursor: pointer;
+  }
+
   /* Plus/X toggle icon */
   .jp-toggle-icon {
     width: 17px;
@@ -1190,6 +1289,232 @@ const seasonMap = {
     color: var(--jp-vermillion);
   }
 
+  /* ═══════════════════════════════════════════════════════════
+     FULL-SCREEN CULTURAL MODAL
+  ═══════════════════════════════════════════════════════════════ */
+  .jp-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .jp-modal[hidden] {
+    display: none;
+  }
+
+  /* Dark overlay backdrop */
+  .jp-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 16, 12, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: jp-modal-backdrop-in 350ms var(--ease-arrival) both;
+  }
+
+  @keyframes jp-modal-backdrop-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Main panel */
+  .jp-modal-panel {
+    position: relative;
+    background: var(--jp-washi);
+    border: 1px solid rgba(196, 30, 58, 0.15);
+    border-top: 3px solid var(--jp-vermillion);
+    border-radius: 3px 3px 4px 4px;
+    width: min(860px, 92vw);
+    max-height: 88vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow:
+      0 24px 80px rgba(26, 23, 20, 0.35),
+      0 8px 24px rgba(26, 23, 20, 0.18),
+      inset 0 1px 0 rgba(255, 253, 249, 0.6);
+    animation: jp-modal-panel-in 420ms var(--ease-arrival) both;
+    /* Washi paper base */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23w)' opacity='0.025'/%3E%3C/svg%3E");
+  }
+
+  /* Custom scrollbar */
+  .jp-modal-panel::-webkit-scrollbar {
+    width: 5px;
+  }
+  .jp-modal-panel::-webkit-scrollbar-track {
+    background: var(--jp-washi-dark);
+  }
+  .jp-modal-panel::-webkit-scrollbar-thumb {
+    background: rgba(196, 30, 58, 0.25);
+    border-radius: 3px;
+  }
+
+  @keyframes jp-modal-panel-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Washi texture overlay inside panel */
+  .jp-modal-washi {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='w2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23w2)' opacity='0.03'/%3E%3C/svg%3E");
+    border-radius: inherit;
+  }
+
+  /* Seigaiha wave at top */
+  .jp-modal-wave-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    overflow: hidden;
+  }
+  .jp-modal-wave-top svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Close button */
+  .jp-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(196, 30, 58, 0.2);
+    background: rgba(250, 247, 242, 0.9);
+    color: var(--jp-vermillion);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    padding: 0;
+  }
+  .jp-modal-close svg {
+    width: 17px;
+    height: 17px;
+  }
+  .jp-modal-close:hover {
+    background: var(--jp-vermillion);
+    color: var(--jp-white);
+    border-color: var(--jp-vermillion);
+    transform: scale(1.08);
+  }
+
+  /* Modal content */
+  .jp-modal-content {
+    position: relative;
+    z-index: 1;
+    padding: 48px 56px 56px;
+  }
+
+  .jp-modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .jp-modal-period {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--jp-white);
+    background: var(--jp-vermillion);
+    border-radius: 2px;
+    padding: 4px 14px;
+  }
+
+  .jp-modal-era {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    color: var(--jp-warm-gray);
+    font-weight: 400;
+  }
+
+  .jp-modal-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: var(--jp-sumi);
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+
+  .jp-modal-divider {
+    max-width: 200px;
+    margin-bottom: 28px;
+  }
+  .jp-modal-divider svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .jp-modal-body {
+    font-family: var(--font-body);
+    font-size: clamp(0.92rem, 1.8vw, 1.0rem);
+    line-height: 2.0;
+    color: rgba(26, 23, 20, 0.80);
+    font-weight: 400;
+  }
+
+  .jp-modal-body p {
+    margin: 0 0 1.4em;
+  }
+  .jp-modal-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Kumiko watermark */
+  .jp-modal-kumiko {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    width: 60px;
+    color: var(--jp-sumi);
+    pointer-events: none;
+    opacity: 0.06;
+  }
+
+  @media (max-width: 640px) {
+    .jp-modal-panel {
+      max-height: 92vh;
+      width: 96vw;
+      padding: 0;
+    }
+    .jp-modal-content {
+      padding: 40px 28px 44px;
+    }
+    .jp-modal-close {
+      top: 12px;
+      right: 12px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .jp-modal-content {
+      padding: 36px 20px 40px;
+    }
+  }
+
   /* ── MOBILE RESPONSIVE ────────────────────────────────────── */
   @media (max-width: 640px) {
     .jp-timeline-line {
@@ -1322,30 +1647,66 @@ const seasonMap = {
   });
 
   // ═══════════════════════════════════════════════════════════
-  // CARD EXPAND / COLLAPSE — smooth unrolling
+  // FULL-SCREEN CULTURAL MODAL
   // ═══════════════════════════════════════════════════════════
-  document.querySelectorAll('.jp-card-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.jp-card');
-      const content = card.querySelector('.jp-card-content');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+  const modal = document.getElementById('jp-modal');
+  const modalBackdrop = modal?.querySelector('.jp-modal-backdrop');
+  const modalClose = document.getElementById('jp-modal-close');
+  const modalPeriod = document.getElementById('jp-modal-period');
+  const modalEra = document.getElementById('jp-modal-era');
+  const modalTitle = document.getElementById('jp-modal-title');
+  const modalBody = document.getElementById('jp-modal-body');
 
-      if (!isExpanded) {
-        // Expand — reveal content
-        content.hidden = false;
-        content.style.maxHeight = content.scrollHeight + 'px';
-        btn.setAttribute('aria-expanded', 'true');
-        btn.querySelector('.jp-toggle-text').textContent = 'Read less';
-      } else {
-        // Collapse
-        content.style.maxHeight = '0';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.querySelector('.jp-toggle-text').textContent = 'Continue reading';
-        setTimeout(() => {
-          content.hidden = true;
-          content.style.maxHeight = '';
-        }, 320);
-      }
+  function openModal(entry) {
+    if (!modal || !entry) return;
+    modalPeriod!.textContent = entry.period || '';
+    modalEra!.textContent = entry.era || '';
+    modalTitle!.textContent = entry.title || '';
+    // Render full content as paragraphs
+    const content = entry.content || '';
+    modalBody!.innerHTML = content.split('\n').filter(l => l.trim()).map(p => `<p>${p}</p>`).join('');
+    modal!.hidden = false;
+    document.body.style.overflow = 'hidden';
+    // Focus the close button for accessibility
+    setTimeout(() => modalClose?.focus(), 50);
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  // Open modal when clicking "Read full entry" button
+  document.querySelectorAll('.jp-card-open').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const el = btn as HTMLElement;
+      openModal({
+        period: el.dataset.period || '',
+        era: el.dataset.era || '',
+        title: el.dataset.title || '',
+        content: el.dataset.content || '',
+      });
+    });
+  });
+
+  // Close modal handlers
+  modalClose?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal!.hidden) closeModal();
+  });
+
+  // Allow clicking card itself to open modal (except toggle button)
+  document.querySelectorAll('.jp-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      // Don't trigger if clicking the button directly
+      if (target.closest('.jp-card-open')) return;
+      const btn = card.querySelector('.jp-card-open') as HTMLElement | null;
+      if (btn) btn.click();
     });
   });
 
