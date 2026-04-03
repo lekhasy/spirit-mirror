@@ -17,13 +17,13 @@ const pillars = data.pillars;
     <h1 class="br-hero-title">
       <span class="br-h1-brasil">Brasil</span>
     </h1>
-    <p class="br-hero-subtitle">Five hundred years of mixing, rhythm, and joy — explored through nine pillars that define Brazil's extraordinary cultural synthesis.</p>
+    <p class="br-hero-subtitle">Five hundred years of mixing, rhythm, and joy — explored through the cultural elements that define Brazil's extraordinary cultural synthesis.</p>
     <div class="br-hero-stats">
       <div class="br-stat"><span class="br-stat-n">215M</span><span class="br-stat-l">People</span></div>
       <div class="br-stat-divider" aria-hidden="true"></div>
       <div class="br-stat"><span class="br-stat-n">500+</span><span class="br-stat-l">Years of Mixing</span></div>
       <div class="br-stat-divider" aria-hidden="true"></div>
-      <div class="br-stat"><span class="br-stat-n">9</span><span class="br-stat-l">Cultural Pillars</span></div>
+      <div class="br-stat"><span class="br-stat-n">9</span><span class="br-stat-l">Cultural Elements</span></div>
     </div>
   </div>
   <div class="br-hero-scroll" aria-hidden="true">
@@ -32,8 +32,8 @@ const pillars = data.pillars;
   </div>
 </section>
 
-<!-- Pillar Navigation -->
-<nav class="br-tabs" aria-label="Culture pillars">
+<!-- Element Navigation -->
+<nav class="br-tabs" aria-label="Cultural elements">
   <div class="br-tabs-inner">
     {pillars.map((p, i) => (
       <button
@@ -53,7 +53,7 @@ const pillars = data.pillars;
   {pillars.map((p, pi) => (
     <section
       class={`br-pillar${pi === 0 ? ' active' : ''}`}
-      id={`pillar-${p.id}`}
+      id={`element-${p.id}`}
       aria-hidden={pi !== 0 ? 'true' : 'false'}
     >
       <div class="br-pillar-header">
@@ -365,7 +365,7 @@ const pillars = data.pillars;
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Pillar header */
+  /* Element header */
   .br-pillar-header {
     display: flex;
     align-items: center;
@@ -717,7 +717,7 @@ const pillars = data.pillars;
 
       const target = tab.dataset.pillar;
       document.querySelectorAll('.br-pillar').forEach(p => {
-        const active = p.id === `pillar-${target}`;
+        const active = p.id === `element-${target}`;
         p.classList.toggle('active', active);
         p.setAttribute('aria-hidden', active ? 'false' : 'true');
       });

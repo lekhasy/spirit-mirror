@@ -17,13 +17,13 @@ const pillars = data.pillars;
     <h1 class="jp-hero-title">
       <span class="jp-h1-nihon">日本</span>
     </h1>
-    <p class="jp-hero-subtitle">Two thousand six hundred years of refinement, resilience, and the art of impermanence — explored through nine pillars that define the Japanese soul.</p>
+    <p class="jp-hero-subtitle">Two thousand six hundred years of refinement, resilience, and the art of impermanence — explored through the cultural elements that define the Japanese soul.</p>
     <div class="jp-hero-stats">
       <div class="jp-stat"><span class="jp-stat-n">2,600</span><span class="jp-stat-l">Years of History</span></div>
       <div class="jp-stat-divider" aria-hidden="true"></div>
       <div class="jp-stat"><span class="jp-stat-n">125M</span><span class="jp-stat-l">People</span></div>
       <div class="jp-stat-divider" aria-hidden="true"></div>
-      <div class="jp-stat"><span class="jp-stat-n">9</span><span class="jp-stat-l">Cultural Pillars</span></div>
+      <div class="jp-stat"><span class="jp-stat-n">9</span><span class="jp-stat-l">Cultural Elements</span></div>
     </div>
   </div>
   <div class="jp-hero-scroll" aria-hidden="true">
@@ -32,8 +32,8 @@ const pillars = data.pillars;
   </div>
 </section>
 
-<!-- Pillar Navigation -->
-<nav class="jp-tabs" aria-label="Culture pillars">
+<!-- Element Navigation -->
+<nav class="jp-tabs" aria-label="Cultural elements">
   <div class="jp-tabs-inner">
     {pillars.map((p, i) => (
       <button
@@ -53,7 +53,7 @@ const pillars = data.pillars;
   {pillars.map((p, pi) => (
     <section
       class={`jp-pillar${pi === 0 ? ' active' : ''}`}
-      id={`pillar-${p.id}`}
+      id={`element-${p.id}`}
       aria-hidden={pi !== 0 ? 'true' : 'false'}
     >
       <div class="jp-pillar-header">
@@ -367,7 +367,7 @@ const pillars = data.pillars;
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Pillar header */
+  /* Element header */
   .jp-pillar-header {
     display: flex;
     align-items: center;
@@ -719,7 +719,7 @@ const pillars = data.pillars;
 
       const target = tab.dataset.pillar;
       document.querySelectorAll('.jp-pillar').forEach(p => {
-        const active = p.id === `pillar-${target}`;
+        const active = p.id === `element-${target}`;
         p.classList.toggle('active', active);
         p.setAttribute('aria-hidden', active ? 'false' : 'true');
       });

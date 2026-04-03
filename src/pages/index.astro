@@ -150,7 +150,7 @@ const themes = [
           </div>
           <p class="card-tagline">{c.tagline}</p>
           <p class="card-desc">{c.description}</p>
-          <div class="card-pillars">
+          <div class="card-elements">
             {c.pillars.map(p => <span class="card-pill">{p}</span>)}
           </div>
           <div class="card-cta">
@@ -170,7 +170,7 @@ const themes = [
   </div>
   <div class="theme-row">
     {themes.map(t => (
-      <a href={`/vietnam#pillar-${t.label.toLowerCase()}`} class="theme-card">
+      <a href={`/vietnam#element-${t.label.toLowerCase()}`} class="theme-card">
         <span class="theme-icon">{t.icon}</span>
         <span class="theme-label">{t.label}</span>
         <span class="theme-desc">{t.desc}</span>
@@ -510,7 +510,7 @@ const themes = [
     flex: 1;
   }
 
-  .card-pillars {
+  .card-elements {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
