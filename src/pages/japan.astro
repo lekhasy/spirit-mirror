@@ -9,13 +9,41 @@ const pillars = data.pillars;
 <!-- Hero -->
 <section class="jp-hero">
   <div class="jp-hero-bg" aria-hidden="true">
-    <div class="jp-hero-mountain"></div>
-    <div class="jp-hero-circle"></div>
+    <!-- Washi paper grain texture -->
+    <div class="jp-washi-texture"></div>
+    <!-- Rising sun radial gradient -->
+    <div class="jp-sun-gradient"></div>
+    <!-- Fuji mountain silhouette -->
+    <div class="jp-fuji">
+      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <!-- Mountain base shadow -->
+        <ellipse cx="400" cy="395" rx="380" ry="30" fill="rgba(0,0,0,0.08)"/>
+        <!-- Main Fuji body -->
+        <path d="M400 80 C440 130 520 180 580 260 C610 305 650 340 700 380 L100 380 C150 340 190 305 220 260 C280 180 360 130 400 80Z" fill="#E8DDD0" opacity="0.9"/>
+        <!-- Snow cap -->
+        <path d="M400 80 C408 100 418 120 430 145 C418 135 412 125 400 120 C388 125 382 135 370 145 C382 120 392 100 400 80Z" fill="#FFFDF9"/>
+        <path d="M400 80 C412 105 425 130 438 155 C424 142 416 128 400 120 C384 128 376 142 362 155 C375 130 388 105 400 80Z" fill="#FFFDF9"/>
+        <!-- Snow details -->
+        <path d="M400 120 C390 130 382 138 376 145 C385 140 392 134 400 132 C408 134 415 140 424 145 C418 138 410 130 400 120Z" fill="#FFFDF9"/>
+        <!-- Subtle contour line -->
+        <path d="M400 80 C440 130 520 180 580 260 C610 305 650 340 700 380 L100 380 C150 340 190 305 220 260 C280 180 360 130 400 80Z" fill="none" stroke="rgba(180,150,130,0.2)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <!-- Seigaiha wave watermark (subtle) -->
+    <div class="jp-wave-watermark" aria-hidden="true">
+      <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" opacity="0.04">
+        <path d="M0 30 Q25 0 50 30 T100 30 T150 30 T200 30" fill="none" stroke="#C41E3A" stroke-width="3"/>
+        <path d="M0 45 Q25 15 50 45 T100 45 T150 45 T200 45" fill="none" stroke="#C41E3A" stroke-width="3"/>
+        <path d="M0 60 Q25 30 50 60 T100 60 T150 60 T200 60" fill="none" stroke="#C41E3A" stroke-width="3"/>
+      </svg>
+    </div>
   </div>
+
   <div class="jp-hero-inner">
-    <div class="jp-hero-tag">🇯🇵 Culture · Heritage · Identity</div>
+    <div class="jp-hero-tag"> Culture · Heritage · Identity</div>
     <h1 class="jp-hero-title">
-      <span class="jp-h1-nihon">日本</span>
+      <span class="jp-h1-kanji">日本</span>
+      <span class="jp-h1-hiragana">にほん</span>
     </h1>
     <p class="jp-hero-subtitle">Two thousand six hundred years of refinement, resilience, and the art of impermanence — explored through the cultural elements that define the Japanese soul.</p>
     <div class="jp-hero-stats">
@@ -86,7 +114,7 @@ const pillars = data.pillars;
                 <p>{entry.content}</p>
               </div>
               <button class="jp-card-toggle" aria-expanded="false">
-                <span class="jp-toggle-text">Read more</span>
+                <span class="jp-toggle-text">Continue reading</span>
                 <span class="jp-toggle-icon" aria-hidden="true"></span>
               </button>
             </article>
@@ -95,9 +123,35 @@ const pillars = data.pillars;
       </div>
     </section>
   ))}
+
+  <!-- Ainu / Okinawa Callout -->
+  <aside class="jp-callout" aria-label="Cultural diversity note">
+    <div class="jp-callout-inner">
+      <div class="jp-callout-wave" aria-hidden="true">
+        <svg viewBox="0 0 160 48" xmlns="http://www.w3.org/2000/svg" opacity="0.3">
+          <path d="M0 24 Q20 0 40 24 T80 24 T120 24 T160 24" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
+          <path d="M0 36 Q20 12 40 36 T80 36 T120 36 T160 36" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
+          <path d="M0 48 Q20 24 40 48 T80 48 T120 48 T160 48" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="jp-callout-content">
+        <p class="jp-callout-label">A note on cultural breadth</p>
+        <p class="jp-callout-text">Japanese cultural identity encompasses the <strong>Ainu people of Hokkaidō</strong> — Japan's indigenous inhabitants whose culture honors the natural world through a tradition of bear ceremonialism and intricate textile artistry — and the <strong>distinct Ryūkyūan culture of Okinawa</strong>, with its own language, music (sanshin string tradition), and maritime heritage shaped by centuries of trade with Southeast Asia. Japan is a cultural archipelago within a single national identity.</p>
+      </div>
+    </div>
+  </aside>
 </main>
 
 <footer class="jp-footer">
+  <!-- Torii silhouette accent -->
+  <div class="jp-footer-torii" aria-hidden="true">
+    <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" opacity="0.07">
+      <rect x="8" y="10" width="3" height="28" fill="#C41E3A"/>
+      <rect x="49" y="10" width="3" height="28" fill="#C41E3A"/>
+      <rect x="2" y="4" width="56" height="4" rx="1" fill="#C41E3A"/>
+      <rect x="6" y="8" width="48" height="2.5" rx="0.5" fill="#C41E3A"/>
+    </svg>
+  </div>
   <div class="jp-footer-inner">
     <a href="/" class="jp-footer-logo">Spirit Mirror</a>
     <p class="jp-footer-copy">Exploring cultures, one story at a time.</p>
@@ -112,32 +166,38 @@ const pillars = data.pillars;
 
   /* ── Variables ─────────────────────────────── */
   :root {
-    --jp-ink: #c41e3a;
-    --jp-dark: #0f1118;
-    --jp-dark2: #141820;
-    --jp-red: #c41e3a;
-    --jp-red-light: #e8364f;
-    --jp-cream: #c41e3a;
-    --jp-warm: #f8f5f0;
-    --jp-gold: #c9a84c;
-    --jp-white: #fffafa;
-    --jp-text: #1a1714;
-    --jp-muted: #6b6560;
-    --jp-border: #e8ddd0;
-    --jp-node: #c41e3a;
+    --jp-vermillion: #C41E3A;
+    --jp-vermillion-deep: #B01A2E;
+    --jp-vermillion-soft: #E8564F;
+    --jp-cream: #FAF7F2;
+    --jp-gold: #C9A84C;
+    --jp-sumi: #1B2A4A;
+    --jp-white: #FFFDF9;
+    --jp-ink: #1A1714;
+    --jp-warm-gray: #6B6560;
+    --jp-pale-sand: #E8DDD0;
+    --jp-shadow: rgba(26, 23, 20, 0.08);
+    --jp-shadow-deep: rgba(26, 23, 20, 0.15);
+
+    /* Spring tint (for Stories, Festivals) */
+    --jp-spring-tint: rgba(255, 240, 238, 0.5);
+    /* Summer tint (for Music, Dance) */
+    --jp-summer-tint: rgba(230, 238, 245, 0.4);
+    /* Autumn tint (for History, Belief) */
+    --jp-autumn-tint: rgba(245, 238, 225, 0.5);
   }
 
   /* ── Global overrides ───────────────────────── */
   :global(.site-root) {
-    background: var(--jp-warm) !important;
+    background: var(--jp-cream) !important;
   }
   :global(.site-header) {
-    background: rgba(255,255,250,0.96) !important;
-    border-bottom: 1px solid rgba(196,30,58,0.1) !important;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.06) !important;
+    background: rgba(250, 247, 242, 0.97) !important;
+    border-bottom: 1px solid rgba(196, 30, 58, 0.1) !important;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05) !important;
   }
   :global(.site-logo) {
-    color: var(--jp-red) !important;
+    color: var(--jp-vermillion) !important;
     font-family: 'Shippori Mincho', serif !important;
     letter-spacing: 0.08em !important;
   }
@@ -153,41 +213,67 @@ const pillars = data.pillars;
     text-align: center;
     padding: 80px 24px 120px;
     overflow: hidden;
-    background: var(--jp-warm);
+    background: var(--jp-cream);
   }
 
-  .jp-hero-bg {
+  /* Washi paper texture overlay */
+  .jp-washi-texture {
     position: absolute;
     inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    background-repeat: repeat;
     pointer-events: none;
+    z-index: 1;
   }
 
-  .jp-hero-mountain {
+  /* Rising sun radial gradient */
+  .jp-sun-gradient {
     position: absolute;
-    bottom: 0;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50vw 40vh 50vw;
-    border-color: transparent transparent rgba(196, 30, 58, 0.08) transparent;
+    width: min(700px, 90vw);
+    height: min(700px, 90vw);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 30, 58, 0.15) 0%, rgba(196, 30, 58, 0.06) 35%, transparent 65%);
+    pointer-events: none;
+    z-index: 2;
   }
 
-  .jp-hero-circle {
+  /* Fuji mountain */
+  .jp-fuji {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(196, 30, 58, 0.12) 0%, transparent 70%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .jp-fuji svg {
+    width: 100%;
+    height: 100%;
+    max-height: 55vh;
+  }
+
+  /* Seigaiha wave watermark */
+  .jp-wave-watermark {
+    position: absolute;
+    bottom: 12%;
+    right: 5%;
+    width: 160px;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.5;
   }
 
   .jp-hero-inner {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     max-width: 800px;
   }
 
@@ -207,25 +293,37 @@ const pillars = data.pillars;
 
   .jp-hero-title {
     margin: 0 0 28px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
   }
 
-  .jp-h1-nihon {
+  .jp-h1-kanji {
     font-family: 'Shippori Mincho', 'Playfair Display', serif;
-    font-size: clamp(5rem, 18vw, 11rem);
+    font-size: clamp(4rem, 18vw, 10rem);
     font-weight: 700;
-    color: var(--jp-red);
+    color: var(--jp-vermillion);
     line-height: 1;
     letter-spacing: 0.1em;
-    text-shadow: 0 0 40px rgba(196, 30, 58, 0.15);
+    text-shadow: 0 0 60px rgba(196, 30, 58, 0.2);
+  }
+
+  .jp-h1-hiragana {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    color: rgba(196, 30, 58, 0.4);
+    letter-spacing: 0.3em;
+    text-transform: lowercase;
   }
 
   .jp-hero-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.95rem, 2.2vw, 1.05rem);
     font-weight: 300;
-    line-height: 1.8;
-    color: rgba(60, 40, 30, 0.6);
+    line-height: 1.85;
+    color: rgba(26, 23, 20, 0.55);
     max-width: 560px;
     margin: 0 auto 52px;
   }
@@ -248,7 +346,7 @@ const pillars = data.pillars;
     font-family: 'Shippori Mincho', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--jp-text);
+    color: var(--jp-ink);
     line-height: 1;
   }
 
@@ -258,13 +356,13 @@ const pillars = data.pillars;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--jp-muted);
+    color: var(--jp-warm-gray);
   }
 
   .jp-stat-divider {
     width: 1px;
     height: 40px;
-    background: var(--jp-border);
+    background: var(--jp-pale-sand);
   }
 
   .jp-hero-scroll {
@@ -280,18 +378,19 @@ const pillars = data.pillars;
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(60, 40, 30, 0.3);
-    z-index: 1;
+    color: rgba(26, 23, 20, 0.25);
+    z-index: 10;
+    transition: opacity 0.5s ease;
   }
 
   .jp-scroll-arrow {
-    animation: jp-bounce 1.6s ease-in-out infinite;
+    animation: jp-bounce 1.8s ease-in-out infinite;
     display: block;
   }
 
   @keyframes jp-bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+    50% { transform: translateY(5px); }
   }
 
   /* ── Tabs ───────────────────────────────────── */
@@ -299,11 +398,11 @@ const pillars = data.pillars;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 250, 0.96);
+    background: rgba(250, 247, 242, 0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(196, 30, 58, 0.12);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(196, 30, 58, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   .jp-tabs-inner {
@@ -328,24 +427,27 @@ const pillars = data.pillars;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     font-size: 0.82rem;
-    font-weight: 500;
-    color: rgba(60, 40, 30, 0.45);
-    transition: all 0.2s;
+    font-weight: 400;
+    color: rgba(26, 23, 20, 0.4);
+    transition: all 0.2s ease;
     white-space: nowrap;
     letter-spacing: 0.01em;
+    border-radius: 3px 3px 0 0;
   }
 
   .jp-tab:hover {
-    color: rgba(60, 40, 30, 0.8);
+    color: rgba(26, 23, 20, 0.75);
+    background: rgba(196, 30, 58, 0.03);
   }
 
   .jp-tab.active {
-    color: var(--jp-red);
-    border-bottom-color: var(--jp-red);
+    color: var(--jp-vermillion);
+    border-bottom-color: var(--jp-vermillion);
+    background: rgba(196, 30, 58, 0.04);
   }
 
   .jp-tab-icon {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1;
   }
 
@@ -359,13 +461,18 @@ const pillars = data.pillars;
   .jp-pillar { display: none; }
   .jp-pillar.active {
     display: block;
-    animation: jp-in 0.35s ease;
+    animation: jp-in 0.35s ease-out;
   }
 
   @keyframes jp-in {
-    from { opacity: 0; transform: translateY(16px); }
+    from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* Seasonal tints per section */
+  .jp-pillar[data-season="spring"] { background: linear-gradient(180deg, transparent 0%, var(--jp-spring-tint) 100%); }
+  .jp-pillar[data-season="summer"] { background: linear-gradient(180deg, transparent 0%, var(--jp-summer-tint) 100%); }
+  .jp-pillar[data-season="autumn"] { background: linear-gradient(180deg, transparent 0%, var(--jp-autumn-tint) 100%); }
 
   /* Element header */
   .jp-pillar-header {
@@ -374,7 +481,7 @@ const pillars = data.pillars;
     justify-content: space-between;
     margin-bottom: 64px;
     padding-bottom: 24px;
-    border-bottom: 1px solid var(--jp-border);
+    border-bottom: 1px solid var(--jp-pale-sand);
   }
 
   .jp-pillar-header-left {
@@ -387,7 +494,7 @@ const pillars = data.pillars;
     font-family: 'Shippori Mincho', serif;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--jp-border);
+    color: var(--jp-pale-sand);
     line-height: 1;
     user-select: none;
   }
@@ -396,7 +503,7 @@ const pillars = data.pillars;
     font-family: 'Shippori Mincho', serif;
     font-size: clamp(1.8rem, 4vw, 2.4rem);
     font-weight: 700;
-    color: var(--jp-text);
+    color: var(--jp-ink);
     margin: 0 0 4px;
     line-height: 1.1;
   }
@@ -404,14 +511,14 @@ const pillars = data.pillars;
   .jp-pillar-sub {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    color: var(--jp-muted);
+    color: var(--jp-warm-gray);
     margin: 0;
     letter-spacing: 0.03em;
   }
 
   .jp-pillar-icon-lg {
     font-size: 3rem;
-    opacity: 0.12;
+    opacity: 0.1;
     user-select: none;
   }
 
@@ -425,7 +532,7 @@ const pillars = data.pillars;
     left: 50%;
     top: 0; bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--jp-border) 5%, var(--jp-border) 95%, transparent);
+    background: linear-gradient(to bottom, transparent, var(--jp-pale-sand) 5%, var(--jp-pale-sand) 95%, transparent);
     transform: translateX(-50%);
   }
 
@@ -434,8 +541,8 @@ const pillars = data.pillars;
     display: flex;
     margin-bottom: 56px;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(12px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
   }
 
   .jp-card-wrap.visible {
@@ -453,15 +560,15 @@ const pillars = data.pillars;
   }
 
   .jp-card-wrap.left .jp-card {
-    text-align: right;
+    text-align: left;
   }
 
   .jp-card-wrap.left .jp-card-top {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .jp-card-wrap.left .jp-card-toggle {
-    margin-left: auto;
+    margin-left: 0;
   }
 
   /* Node */
@@ -482,20 +589,21 @@ const pillars = data.pillars;
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 1.5px solid var(--jp-red);
-    background: var(--jp-warm);
-    transition: transform 0.2s;
+    border: 1.5px solid var(--jp-vermillion);
+    background: var(--jp-cream);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .jp-card-wrap:hover .jp-node-outer {
-    transform: scale(1.3);
+    transform: scale(1.35);
+    box-shadow: 0 0 10px rgba(196, 30, 58, 0.35);
   }
 
   .jp-node-inner {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--jp-red);
+    background: var(--jp-vermillion);
     position: relative;
     z-index: 1;
   }
@@ -503,17 +611,22 @@ const pillars = data.pillars;
   /* ── Card ───────────────────────────────────── */
   .jp-card {
     background: var(--jp-white);
-    border: 1px solid var(--jp-border);
+    border: 1px solid var(--jp-pale-sand);
     border-radius: 2px;
     padding: 24px 28px;
     width: 100%;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04);
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
-    border-left: 3px solid var(--jp-red);
+    max-width: 480px;
+    box-shadow: 0 1px 4px var(--jp-shadow), 0 4px 16px rgba(0,0,0,0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-left: 3px solid var(--jp-vermillion);
+    /* Emakimono proportion: wider than tall */
+    aspect-ratio: 5 / 4;
+    display: flex;
+    flex-direction: column;
   }
 
   .jp-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 10px var(--jp-shadow-deep), 0 8px 32px rgba(0,0,0,0.07);
     transform: translateY(-2px);
   }
 
@@ -530,9 +643,9 @@ const pillars = data.pillars;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.06em;
-    color: var(--jp-red);
-    background: rgba(196, 30, 58, 0.08);
-    border: 1px solid rgba(196, 30, 58, 0.2);
+    color: var(--jp-vermillion);
+    background: rgba(196, 30, 58, 0.06);
+    border: 1px solid rgba(196, 30, 58, 0.15);
     border-radius: 2px;
     padding: 3px 12px;
   }
@@ -540,36 +653,38 @@ const pillars = data.pillars;
   .jp-card-era {
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
-    color: var(--jp-muted);
+    color: var(--jp-warm-gray);
     font-weight: 400;
   }
 
   .jp-card-title {
     font-family: 'Shippori Mincho', serif;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--jp-text);
+    color: var(--jp-ink);
     margin: 0 0 10px;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   .jp-card-summary {
     font-family: 'Inter', sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.75;
-    color: #4b4540;
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: rgba(26, 23, 20, 0.75);
     margin: 0 0 16px;
     font-weight: 400;
+    flex: 1;
   }
 
   .jp-card-content {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     line-height: 1.85;
-    color: #374150;
-    border-top: 1px solid var(--jp-border);
+    color: rgba(26, 23, 20, 0.8);
+    border-top: 1px solid var(--jp-pale-sand);
     padding-top: 14px;
     margin-bottom: 14px;
+    overflow: hidden;
   }
 
   .jp-card-content p { margin: 0; }
@@ -584,10 +699,11 @@ const pillars = data.pillars;
     font-family: 'Inter', sans-serif;
     font-size: 0.78rem;
     font-weight: 600;
-    color: var(--jp-red);
+    color: var(--jp-vermillion);
     padding: 0;
     letter-spacing: 0.02em;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
+    align-self: flex-start;
   }
 
   .jp-card-toggle:hover {
@@ -603,7 +719,7 @@ const pillars = data.pillars;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.25s;
+    transition: transform 0.3s ease;
     position: relative;
   }
 
@@ -611,7 +727,7 @@ const pillars = data.pillars;
   .jp-toggle-icon::after {
     content: '';
     position: absolute;
-    background: white;
+    background: var(--jp-cream);
     border-radius: 2px;
   }
   .jp-toggle-icon::before {
@@ -619,18 +735,76 @@ const pillars = data.pillars;
   }
   .jp-toggle-icon::after {
     width: 1.5px; height: 7px;
-    transition: transform 0.25s;
+    transition: transform 0.3s ease;
   }
 
   .jp-card-toggle[aria-expanded="true"] .jp-toggle-icon::after {
     transform: rotate(90deg);
   }
 
+  /* ── Callout ────────────────────────────────── */
+  .jp-callout {
+    margin-top: 80px;
+    padding: 0 8px;
+  }
+
+  .jp-callout-inner {
+    position: relative;
+    border: 1px solid rgba(27, 42, 74, 0.2);
+    border-radius: 4px;
+    padding: 28px 32px;
+    background: rgba(27, 42, 74, 0.02);
+    overflow: hidden;
+  }
+
+  .jp-callout-wave {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    pointer-events: none;
+  }
+
+  .jp-callout-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--jp-sumi);
+    margin: 0 0 10px;
+    opacity: 0.7;
+  }
+
+  .jp-callout-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: rgba(27, 42, 74, 0.75);
+    margin: 0;
+  }
+
+  .jp-callout-text strong {
+    color: rgba(27, 42, 74, 0.9);
+    font-weight: 600;
+  }
+
   /* ── Footer ─────────────────────────────────── */
   .jp-footer {
-    background: var(--jp-warm);
+    background: var(--jp-cream);
     padding: 48px 24px;
-    border-top: 1px solid var(--jp-border);
+    border-top: 1px solid var(--jp-pale-sand);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .jp-footer-torii {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    width: 60px;
+    pointer-events: none;
   }
 
   .jp-footer-inner {
@@ -647,7 +821,7 @@ const pillars = data.pillars;
     font-family: 'Shippori Mincho', serif;
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--jp-red);
+    color: var(--jp-vermillion);
     text-decoration: none;
     letter-spacing: 0.08em;
   }
@@ -655,7 +829,7 @@ const pillars = data.pillars;
   .jp-footer-copy {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    color: var(--jp-muted);
+    color: var(--jp-warm-gray);
     margin: 0;
   }
 
@@ -666,10 +840,11 @@ const pillars = data.pillars;
     color: var(--jp-gold);
     text-decoration: none;
     letter-spacing: 0.03em;
+    transition: color 0.2s ease;
   }
 
   .jp-footer-back:hover {
-    color: var(--jp-cream);
+    color: var(--jp-vermillion);
   }
 
   /* ── Mobile ─────────────────────────────────── */
@@ -687,6 +862,12 @@ const pillars = data.pillars;
     .jp-card-wrap.left .jp-card-top { justify-content: flex-start; }
     .jp-card-wrap.left .jp-card-toggle { margin-left: 0; }
 
+    .jp-card {
+      max-width: 100%;
+      aspect-ratio: auto;
+      min-height: 0;
+    }
+
     .jp-timeline-node {
       left: 16px;
       top: 18px;
@@ -703,6 +884,19 @@ const pillars = data.pillars;
     .jp-stat-divider { height: 28px; }
 
     .jp-footer-inner { flex-direction: column; text-align: center; }
+    .jp-footer-torii { display: none; }
+
+    .jp-h1-kanji {
+      font-size: clamp(3.5rem, 22vw, 7rem);
+    }
+
+    .jp-callout-inner { padding: 20px 24px; }
+  }
+
+  @media (max-width: 380px) {
+    .jp-card {
+      padding: 20px 20px;
+    }
   }
 </style>
 
@@ -728,14 +922,14 @@ const pillars = data.pillars;
     });
   });
 
-  // Expand / collapse
+  // Expand / collapse with smooth height transition
   document.querySelectorAll('.jp-card-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const content = btn.closest('.jp-card').querySelector('.jp-card-content');
       const open = btn.getAttribute('aria-expanded') === 'true';
       content.hidden = open;
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-      btn.querySelector('.jp-toggle-text').textContent = open ? 'Read more' : 'Read less';
+      btn.querySelector('.jp-toggle-text').textContent = open ? 'Continue reading' : 'Read less';
     });
   });
 
@@ -750,11 +944,20 @@ const pillars = data.pillars;
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
 
     document.querySelectorAll('.jp-pillar.active .jp-card-wrap:not(.visible)')
       .forEach(c => observer.observe(c));
   }
 
   observeCards();
+
+  // Fade scroll indicator on scroll
+  const scrollIndicator = document.querySelector('.jp-hero-scroll');
+  if (scrollIndicator) {
+    window.addEventListener('scroll', () => {
+      const opacity = Math.max(0, 1 - window.scrollY / 200);
+      scrollIndicator.style.opacity = opacity.toString();
+    }, { passive: true });
+  }
 </script>
